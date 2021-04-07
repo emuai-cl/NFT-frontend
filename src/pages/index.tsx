@@ -1,8 +1,6 @@
 import * as React from "react"
-import { graphql, Link, PageProps } from "gatsby"
-import {  StaticImage } from "gatsby-plugin-image"
+import { graphql,  PageProps } from "gatsby"
 
-import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Car from "../components/car"
 
