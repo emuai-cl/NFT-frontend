@@ -1,8 +1,9 @@
 import * as React from "react"
-import { graphql,  PageProps } from "gatsby"
+import { graphql, PageProps } from "gatsby"
 
 import Seo from "../components/seo"
 import Car from "../components/car"
+import Eth from "../components/eth"
 
 type DataProps = {
   site: {
@@ -10,10 +11,11 @@ type DataProps = {
   }
 }
 
-const IndexPage: React.FC<PageProps<DataProps>>  = ({ data, path }) => (
+const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => (
   <>
     <Seo title="Home" />
-    <Car/>
+    <Eth />
+    <Car />
     <p>
       You're currently on the page "{path}" which was built on{" "}
       {data.site.buildTime}.
@@ -30,4 +32,3 @@ export const query = graphql`
     }
   }
 `
-
