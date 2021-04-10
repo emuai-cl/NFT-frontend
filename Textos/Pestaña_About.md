@@ -5,6 +5,7 @@ Currently we are a multidisciplinary team of students from the UAI, which is ded
 
 # "NOMBRE DEL AUTO" COMPETITIONS:
 **Bridgestone World Solar Challenge**
+
 The Bridgestone World Solar Challenge (BWSC) is known as the most challenging solar race in the world. A unique feature of this race is that all of the cars are completely different and designed from scratch, which places particular emphasis on their autonomy and functionality.
 The weather conditions are extreme, as the race crosses the Australian desert from Darwin to Adelaide, covering more than 3000 kilometres over 7 days. It will take the cars through strong winds and sometimes rain near the coastal cities. This is why we can say that the BWSC is more than just a race; it is a challenge.
 The next iteration of this race will take place in October 2023, with three different participant categories: Cruiser, Adventure, and Challenger. We have decided to participate in the Challenger class, focusing mainly on the performance of the vehicle and trying to get from start to finish in the shortest possible time.
