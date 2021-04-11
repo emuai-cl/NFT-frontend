@@ -5,6 +5,7 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@loadable/component": "^5.14.1",
     "@react-three/drei": "^4.0.3",
     "@react-three/fiber": "^6.0.8",
     "gatsby": "^3.2.1",
