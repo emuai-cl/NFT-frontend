@@ -31,7 +31,9 @@
   },
   "devDependencies": {
     "node-polyfill-webpack-plugin": "^1.1.0",
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "tailwindcss": "^2.1.1",
+    "twin.macro": "^2.3.2"
   },
   "keywords": [
     "gatsby"

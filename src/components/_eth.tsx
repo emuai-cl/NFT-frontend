@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Web3 from "web3"
 import { Contract } from "web3-eth-contract"
+import { toast } from "react-toastify"
 
 import useConstant from "use-constant"
 
@@ -17,19 +18,23 @@ const initContract = async (
   setContract: React.Dispatch<React.SetStateAction<Contract>>,
   setAddress: React.Dispatch<React.SetStateAction<string>>
 ) => {
-  const [defaultAccount] = await web3.eth.getAccounts()
-  web3.eth.defaultAccount = defaultAccount
-  setAddress(defaultAccount)
-  const contract = new web3.eth.Contract(
-    abi as any,
-    "0x386150C21d2788A261636714CC8F5C9f16320530"
-  )
-  contract.defaultAccount = defaultAccount
+  try {
+    const [defaultAccount] = await web3.eth.getAccounts()
+    web3.eth.defaultAccount = defaultAccount
+    setAddress(defaultAccount)
+    const contract = new web3.eth.Contract(
+      abi as any,
+      "0x386150C21d2788A261636714CC8F5C9f16320530"
+    )
+    contract.defaultAccount = defaultAccount
 
-  setContract(contract)
+    setContract(contract)
 
-  const balance = await contract.methods.getBalance().call()
-  console.log(balance)
+    const balance = await contract.methods.getBalance().call()
+    console.log(balance)
+  } catch (error) {
+    toast.error("Couldn't load")
+  }
 }
 
 const doContracts = async (contract: Contract, address: string) => {

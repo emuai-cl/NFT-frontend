@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import { useGLTF, OrbitControls } from "@react-three/drei"
+import styled from "styled-components"
+import tw from "twin.macro"
 
 export function Model(props) {
   const group = useRef()
@@ -27,31 +29,38 @@ export function Model(props) {
 
 useGLTF.preload("/model.glb")
 
+const Container = styled.div`
+  width: 80vw;
+  margin: auto;
+  ${tw`bg-gray-100`};
+`
+
 export default () => {
   return (
-    <Canvas
-      style={{ height: 500 }}
-      concurrent
-      pixelRatio={[1, 2]}
-      camera={{ position: [0, 0, 2.75] }}
-    >
-      <ambientLight intensity={0.2} />{" "}
-      <spotLight
-        intensity={0.3}
-        angle={0.1}
-        penumbra={1}
-        position={[5, 25, 20]}
-      />
-      <pointLight position={[10, 10, 10]} />
-      <React.Suspense fallback={null}>
-        <Model />
-      </React.Suspense>
-      <OrbitControls
-        minPolarAngle={Math.PI / 2}
-        maxPolarAngle={Math.PI / 2}
-        enableZoom
-        enablePan
-      />
-    </Canvas>
+    <Container>
+      <Canvas
+        concurrent
+        pixelRatio={[1, 2]}
+        camera={{ position: [0, 0, 2.75] }}
+      >
+        <ambientLight intensity={0.2} />
+        <spotLight
+          intensity={0.3}
+          angle={0.1}
+          penumbra={1}
+          position={[5, 25, 20]}
+        />
+        <pointLight position={[10, 10, 10]} />
+        <React.Suspense fallback={null}>
+          <Model />
+        </React.Suspense>
+        <OrbitControls
+          minPolarAngle={Math.PI / 2}
+          maxPolarAngle={Math.PI / 2}
+          enableZoom
+          enablePan
+        />
+      </Canvas>
+    </Container>
   )
 }
