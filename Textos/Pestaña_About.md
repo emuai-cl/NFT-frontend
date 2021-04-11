@@ -29,9 +29,9 @@ Fotos del equipo
 
 Our solar car is a "Challenger" class [https://worldsolarchallenge.org/the-challenge/classes/challenger-class] solar car, wich means it is extremely effiecient. During 2020 we designed the car using the joint knowledge of top class students, teachers, mentors, consultants and partners across many different areas and organized the logistics and strategy for a solar car race. We also had our press department publish us on tens of magazines and showing us on television a couple of times.
 
-The vehicle's structure will be made out of carbon fiber in order for it to be light and strong. Green Composites, a composite materials company is helping us achieve this task as they have vast experience using carbon fiber for building cars. 
+The vehicle's structure will be made out of carbon fiber in order for it to be light and strong. Green Composites, a composite materials company, is helping us achieve this task as they have vast experience using carbon fiber for building cars. 
 
-This year we want to bring this design to rality
+This year we want to bring this design to reality...
 
 
 
