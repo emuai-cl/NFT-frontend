@@ -34,6 +34,9 @@ const Container = styled.div`
   margin: auto;
   ${tw`bg-gray-100`};
 `
+const Input = styled.input`
+  ${tw`bg-gray-100`};
+`
 
 export default () => {
   return (

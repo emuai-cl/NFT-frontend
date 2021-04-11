@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react"
 import Web3 from "web3"
 import { Contract } from "web3-eth-contract"
 import { toast } from "react-toastify"
+import { useForm } from "react-hook-form"
+import styled from "styled-components"
+import tw from "twin.macro"
 
 import useConstant from "use-constant"
 
@@ -47,9 +50,27 @@ const doContracts = async (contract: Contract, address: string) => {
   }
 }
 
+type Inputs = {
+  example: string
+  exampleRequired: string
+}
+
+const Input = styled.input`
+  ${tw`mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md`};
+`
+
+const Label = styled.label`
+  ${tw`block text-sm font-medium text-gray-700`};
+`
+
+const connect = async (data: Inputs) => {
+  console.log(data)
+}
+
 export default () => {
   const [contract, setContract] = useState<Contract>()
   const [address, setAddress] = useState("")
+  const { register, handleSubmit, watch } = useForm<Inputs>()
 
   const web3 = useConstant(() => getWeb3())
   useEffect(() => {
@@ -59,6 +80,20 @@ export default () => {
   return (
     <div>
       <button onClick={onClick}>adad</button>
+      <form onSubmit={handleSubmit(connect)}>
+        {/* register your input into the hook by invoking the "register" function */}
+        {/* <Label for="first_name">First name</Label>
+                <Input type="text" name="first_name" id="first_name" autocomplete="given-name" class=""> */}
+        <Label>First name</Label>
+        <Input name="example" defaultValue="test" {...register("example")} />
+
+        <Label>First name</Label>
+        {/* include validation with required or other standard HTML validation rules */}
+        <Input name="exampleRequired" {...register("exampleRequired")} />
+        {/* errors will return when field validation fails  */}
+
+        <input type="submit" />
+      </form>
       <p>holas</p>
     </div>
   )
