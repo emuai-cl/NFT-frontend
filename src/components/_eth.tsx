@@ -9,58 +9,42 @@ import tw from "twin.macro"
 import useConstant from "use-constant"
 
 import abi from "../assets/abi.json"
+import CountInput from "./CountInput"
 
 const getWeb3 = () => {
-  if (typeof window != undefined && window["ethereum"])
-    return new Web3(window["ethereum"])
-  return new Web3(Web3.givenProvider || "http://127.0.0.1:7545")
+  // if (typeof window != undefined && window["ethereum"])
+  //   return new Web3(window["ethereum"])
+  // return new Web3(Web3.givenProvider || "http://127.0.0.1:7545")
+  return new Web3("http://127.0.0.1:7545")
 }
 
-const initContract = async (
-  web3: Web3,
-  setContract: React.Dispatch<React.SetStateAction<Contract>>,
-  setAddress: React.Dispatch<React.SetStateAction<string>>
-) => {
-  try {
-    const [defaultAccount] = await web3.eth.getAccounts()
-    web3.eth.defaultAccount = defaultAccount
-    setAddress(defaultAccount)
-    const contract = new web3.eth.Contract(
-      abi as any,
-      "0x386150C21d2788A261636714CC8F5C9f16320530"
-    )
-    contract.defaultAccount = defaultAccount
-
-    setContract(contract)
-
-    const balance = await contract.methods.getBalance().call()
-    console.log(balance)
-  } catch (error) {
-    toast.error("Couldn't load")
-  }
-}
-
-const doContracts = async (contract: Contract, address: string) => {
-  for (let i = 0; i < 50; i++) {
-    await contract.methods.mintNFT(100).send({
-      from: address,
-      value: 50000000000000000 * 100,
-      gas: 3_700_000,
-    })
-  }
+const mint = async (contract: Contract, number: number) => {
+  await contract.methods.mintNFT(number).send({
+    from: contract.defaultAccount,
+    value: 50000000000000000 * number,
+    gas: 3_800_000,
+  })
 }
 
 type Inputs = {
-  example: string
-  exampleRequired: string
+  contract: string
+  address: string
 }
 
-const Input = styled.input`
-  ${tw`mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md`};
+const TextInput = styled.input`
+  ${tw`text-sm sm:text-base relative w-full border rounded placeholder-gray-400 focus:border-indigo-400 focus:outline-none py-2  pl-12`};
 `
 
 const Label = styled.label`
-  ${tw`block text-sm font-medium text-gray-700`};
+  ${tw`mb-1 text-xs sm:text-sm tracking-wide text-gray-600`};
+`
+
+const SubmitButton = styled.button`
+  ${tw`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`};
+`
+
+const Container = styled.div`
+  ${tw`mt-5 md:col-span-2 w-3/5 mx-auto p-4 mb-5 shadow-md rounded`};
 `
 
 const connect = async (data: Inputs) => {
@@ -68,33 +52,58 @@ const connect = async (data: Inputs) => {
 }
 
 export default () => {
-  const [contract, setContract] = useState<Contract>()
-  const [address, setAddress] = useState("")
+  const [contract, setContract] = useState<Contract | undefined>()
   const { register, handleSubmit, watch } = useForm<Inputs>()
+  const [numberOfTokens, setNumberOfTokens] = useState(0)
 
+  const connect = async (data: Inputs) => {
+    console.log(data)
+    const web3 = getWeb3()
+    const contract = new web3.eth.Contract(abi as any, data.contract)
+    contract.defaultAccount = data.address
+
+    setContract(contract)
+  }
   const web3 = useConstant(() => getWeb3())
   useEffect(() => {
-    initContract(web3, setContract, setAddress)
+    //initContract(web3, setContract, setAddress)
   }, [web3])
-  const onClick = () => contract && doContracts(contract, address)
   return (
-    <div>
-      <button onClick={onClick}>adad</button>
-      <form onSubmit={handleSubmit(connect)}>
-        {/* register your input into the hook by invoking the "register" function */}
-        {/* <Label for="first_name">First name</Label>
-                <Input type="text" name="first_name" id="first_name" autocomplete="given-name" class=""> */}
-        <Label>First name</Label>
-        <Input name="example" defaultValue="test" {...register("example")} />
+    <>
+      <Container>
+        <form onSubmit={handleSubmit(connect)}>
+          <div>
+            <Label htmlFor="example">Contact address</Label>
+            <TextInput
+              name="contract"
+              defaultValue="test"
+              {...register("contract")}
+            />
+          </div>
 
-        <Label>First name</Label>
-        {/* include validation with required or other standard HTML validation rules */}
-        <Input name="exampleRequired" {...register("exampleRequired")} />
-        {/* errors will return when field validation fails  */}
+          <div>
+            <Label htmlFor="address">Your address</Label>
+            {/* include validation with required or other standard HTML validation rules */}
+            <TextInput name="address" id="address" {...register("address")} />
+          </div>
 
-        <input type="submit" />
-      </form>
-      <p>holas</p>
-    </div>
+          <SubmitButton type="submit"> submit</SubmitButton>
+        </form>
+      </Container>
+      <div>
+        {contract && (
+          <>
+            <CountInput
+              value={numberOfTokens}
+              onDecrement={() => setNumberOfTokens(value => value - 1)}
+              onIncrement={() => setNumberOfTokens(value => value + 1)}
+            />
+            <SubmitButton onClick={() => mint(contract, numberOfTokens)}>
+              MINT
+            </SubmitButton>
+          </>
+        )}
+      </div>
+    </>
   )
 }
