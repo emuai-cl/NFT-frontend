@@ -19,7 +19,7 @@ const getWeb3 = () => {
 }
 
 const mint = async (contract: Contract, number: number) => {
-  await contract.methods.mintNFT(number).send({
+  await contract.methods.mintEMU(number).send({
     from: contract.defaultAccount,
     value: 50000000000000000 * number,
     gas: 3_800_000,
