@@ -31,5 +31,7 @@
    NFT sale ends and the EMUs get printed on the car for the world to admire.
    The car competes in the Telemetry race in October.
    
-The car looks for another competition before the BWSC 2023. Before every race, the EMUs get updated to the current images on the virtual representation of the car.
+* After Telemetry Race: 
+
+   The team looks for another competition before the BWSC 2023. Before every race, the EMUs on the car get updated to the current images on the virtual representation.
 
