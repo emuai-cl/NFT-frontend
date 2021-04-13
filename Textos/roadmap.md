@@ -33,5 +33,5 @@
    
 * After Telemetry Race: 
 
-   The team looks for another competition before the BWSC 2023. Before every race, the EMUs on the car get updated to the current images on the virtual representation.
+   The team looks for another competition before the BWSC 2023. Options are in Chile, South Africa, USA or a race organized by us. Before every race, the EMUs on the car get updated to the current images on the virtual representation.
 
