@@ -18,6 +18,18 @@
   
 * Q2 2021: Manufacturing and Fundraising:
   
-  NFT sale starts, we buy key manufacturing materials and start the manufacturing of the carbon-fiber structure.
+  NFT sale starts. We buy key manufacturing materials and start the manufacturing of the carbon-fiber structure. We also buy the electrical components and start manufacturing custom aluminium mechanical parts such as suspension and direction parts.
 
+* Q3 2021: Main Manufacturing: 
+
+   We finich the carbon-fiber structure of the car and mount the mechanical parts and electrical parts.
+   We start testing the vehicle and messure key constants for the strategy.
+
+* Q4 2021: Fishing of car and Racing
+   
+   We finish the car's last details such as the control systems, cameras and lights.
+   NFT sale ends and the EMUs get printed on the car for the world to admire.
+   The car competes in the Telemetry race in October.
+   
+ * Q1 2022;
 
