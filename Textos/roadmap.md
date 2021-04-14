@@ -14,7 +14,7 @@
 
 * Q1 2021: Transition to Manufacturing:
 
-  After having the car fully designed, we need to find the way to bring it to reality. This is, contacting the necessary supplyers, partnering with key manufacturing companies.
+  After having the car fully designed, we need to find the way to bring it to reality. This is, contacting the necessary supplyers, partnering with key manufacturing companies and finding possible designing problems with them.
   
 * Q2 2021: Manufacturing:
   
