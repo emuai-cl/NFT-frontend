@@ -1,4 +1,4 @@
-# ROADMAP
+# ROADMAP OF THE CAR
 
 * First Half of 2020: State of the art and Team Building
 
@@ -16,9 +16,9 @@
 
   After having the car fully designed, we need to find the way to bring it to reality. This is, contacting the necessary supplyers, partnering with key manufacturing companies.
   
-* Q2 2021: Manufacturing and Fundraising:
+* Q2 2021: Manufacturing:
   
-  NFT sale starts. We buy key manufacturing materials and start the manufacturing of the carbon-fiber structure. We also buy the electrical components and start manufacturing custom aluminium mechanical parts such as suspension and direction parts.
+  We buy key manufacturing materials and start the manufacturing of the carbon-fiber structure. We also buy the electrical components and start manufacturing custom aluminium mechanical parts such as suspension and direction parts.
 
 * Q3 2021: Main Manufacturing: 
 
@@ -28,7 +28,7 @@
 * Q4 2021: Fishing of car and Racing
    
    We finish the car's last details such as the control systems, cameras and lights.
-   NFT sale ends and the EMUs get printed on the car for the world to admire.
+   EMUs get printed on the car for the world to admire.
    The car competes in the Telemetry race in October.
    
 * After Telemetry Race: 
