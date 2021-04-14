@@ -10,7 +10,7 @@
   
 * Q4 2020: Specific design
 
-  With the general design ready and with the team having all the skills neccesary, it's time to dive into the really technical aspect of the project. This is where we think about erery possible detail of the car, from the suspension and direction systems to the hinge wich opens our roof to capture the sun better when the car is parked. Also, this is where the strategy team overtakes the desition making process, giving objective reasons to design conflicts between different áreas.
+  With the general design ready and with the team having all the skills neccesary, it's time to dive into the really technical aspect of the project. This is where we think about erery possible detail of the car, from the suspension and direction systems to the hinge wich opens our roof to capture the sun better when the car is parked. Also, this is where the strategy team overtakes the desition making process, giving objective reasoning in design conflicts.
 
 * Q1 2021: Transition to Manufacturing:
 
