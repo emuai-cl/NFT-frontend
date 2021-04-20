@@ -11,11 +11,13 @@ import useConstant from "use-constant"
 import abi from "../assets/abi.json"
 import CountInput from "./CountInput"
 
-const getWeb3 = () => {
-  // if (typeof window != undefined && window["ethereum"])
-  //   return new Web3(window["ethereum"])
-  // return new Web3(Web3.givenProvider || "http://127.0.0.1:7545")
-  return new Web3("http://127.0.0.1:7545")
+const getWeb3 = async () => {
+  if (typeof window != undefined && window["ethereum"]) {
+    await window["ethereum"].enable()
+    return new Web3(window["ethereum"])
+  }
+
+  return new Web3(Web3.givenProvider || "http://127.0.0.1:7545")
 }
 
 const mint = async (contract: Contract, number: number) => {
@@ -58,7 +60,7 @@ export default () => {
 
   const connect = async (data: Inputs) => {
     console.log(data)
-    const web3 = getWeb3()
+    const web3 = await getWeb3()
     const contract = new web3.eth.Contract(abi as any, data.contract)
     contract.defaultAccount = data.address
 
