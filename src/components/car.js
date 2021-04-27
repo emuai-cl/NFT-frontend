@@ -48,8 +48,8 @@ export function Model(props) {
 useGLTF.preload("/model.glb")
 
 const Container = styled.div`
-  width: 80vmin;
-  height: 60vmin;
+  width: 100vmin;
+  height: 80vmin;
   margin: auto;
   ${tw`bg-gray-100`};
 `
