@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify"
 import Seo from "../components/seo"
 import Car from "../components/car"
 import Eth from "../components/eth"
+import Navbar from "../components/navbar"
 
 import "react-toastify/dist/ReactToastify.css"
 
@@ -16,6 +17,7 @@ type DataProps = {
 
 const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => (
   <>
+    <Navbar />
     <Seo title="Home" />
     <Eth />
     <Car />
