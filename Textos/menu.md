@@ -11,7 +11,7 @@ In EMUAI, we want to sell pieces of our solar car's surface for people to cover 
 
 
 
-##Dear prospective supporter,
+## Dear prospective supporter,
 
 On behalf of the Electromovilidad team of Adolfo Ibáñez University, I would like to thank you for your interest in our project. Our team aims to push the limits of what is possible not only with sustainable transport, but also with NFTs and funding methods, introducing people to our community through our participation in solar car competitions. For these, we create original concept vehicles powered by solar energy, and put them to the test in races through harsh conditions.
 We have already taken our first step in the 2018 Atacama Solar Race in Chile, where we competed with a hybrid solar car and came out on top. Now it's time to take our second big step: we will compete internationally at the Bridgestone World Solar Challenge with a 100% solar car, capable of crossing the Australian continent with nothing but the sun's energy.
