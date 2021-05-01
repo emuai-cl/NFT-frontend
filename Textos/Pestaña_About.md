@@ -1,3 +1,11 @@
+# Revolutionazing Crowdfunding with an Innovative NFT Application
+
+What would happen if the Red Bull stratos, the highest skydive in hystory would have been crowd-funded and the suit and capsule would have been covered by art instead of RedBull logos? How would the narrative have changed and how cool would it have been to own a pice of that suit for the world to see? And how about a Formula One car or a sports team? Now are the days where this is possible, where the funding for the entretainment industry can come from people like you and me instead of big corporations. But noone has ever done this kind of crowdfunding before, not unil today.
+
+In EMUAI, we want to sell pieces of our solar car's surface for people to cover with images they find special. Maybe history will remember us as the pioneers and maybe we will be the first in this new and better way to get funding. And the best part is that you can be a part in this, all of this thanks to Cryptocurrencies, Smart Contracts and NFTs.
+
+
+
 # History
 
 EMUAI was founded in 2017, born of the initiative of several students from the Faculty of Engineering and Sciences of the Adolfo Ibáñez University (UAI), whose main objective was to build a two-seater solar hybrid vehicle that would be able to compete in the most important race in Latin America, the Carrera Solar de Atacama 2018. In this race, we were crowned champions with our first solar car: The Emu-Alpha.
