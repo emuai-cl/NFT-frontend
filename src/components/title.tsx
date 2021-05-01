@@ -40,7 +40,7 @@ const Use = styled(UnstyledUse)`
     animation-delay: -3.6s;
   }
   &:nth-child(5n + 4) {
-    stroke: #2d9cca;
+    stroke: #716b94;
     -webkit-animation-delay: -4.8s;
     animation-delay: -4.8s;
   }
@@ -51,12 +51,12 @@ const Use = styled(UnstyledUse)`
   }
 `
 
-export const Title = () => {
+export const Title = ({ title = "EMUS" }) => {
   return (
-    <Svg viewBox="0 0 600 300">
+    <Svg>
       <symbol id="s-text">
         <text text-anchor="middle" x="50%" y="50%" dy=".35em">
-          EMUS
+          {title}
         </text>
       </symbol>
       <Use xlinkHref="#s-text" />
@@ -67,3 +67,5 @@ export const Title = () => {
     </Svg>
   )
 }
+
+export default Title

@@ -8,8 +8,8 @@ import tw from "twin.macro"
 
 import useConstant from "use-constant"
 
-import abi from "../assets/abi.json"
-import CountInput from "./CountInput"
+import abi from "../../assets/abi.json"
+import CountInput from "../CountInput"
 
 const getWeb3 = async () => {
   if (typeof window != undefined && window["ethereum"]) {

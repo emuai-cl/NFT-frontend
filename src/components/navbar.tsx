@@ -2,9 +2,12 @@ import React, { useState } from "react"
 import tw from "twin.macro"
 import styled from "styled-components"
 import { Link } from "gatsby"
+// import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 const Navbar = styled.nav`
   ${tw`w-full z-30 top-0 text-white py-1 lg:py-4`};
+  position: absolute;
+  top: 0;
 `
 
 const NavbarContainer = styled.div`
@@ -28,19 +31,20 @@ const ListItem = styled.li`
 `
 
 const StyledLink = styled(Link)`
-  ${tw`inline-block py-2 px-4 text-black font-bold no-underline`};
+  ${tw`inline-block py-2 px-4 text-white  font-bold no-underline`};
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 `
 
 const SpecialLink = styled(Link)`
-  ${tw`mx-auto lg:mx-0 hover:underline text-white font-extrabold rounded mt-4 lg:mt-0 mx-5 lg:mx-5 py-4 px-8 shadow opacity-75 bg-green-500`};
+  ${tw`mx-auto lg:mx-0 hover:underline text-white font-extrabold rounded mt-4 lg:mt-0 mx-5 lg:mx-5 py-4 px-8 shadow-md bg-pink-500`};
 `
 
 const MobileMenuContainer = styled.div`
-  ${tw`block lg:hidden pr-4`};
+  ${tw`block lg:hidden  pr-4`};
 `
 
 const MobileMenuButton = styled.button`
-  ${tw`flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-green-500 appearance-none focus:outline-none`};
+  ${tw`flex items-center px-3 py-2 border rounded text-white border-white hover:text-gray-800 hover:border-pink-500 appearance-none focus:outline-none`};
 `
 
 const Svg = styled.svg`
@@ -56,6 +60,7 @@ const Icon = () => (
 
 const NavbarComponent = () => {
   const [open, setOpen] = useState(false)
+
   const toggleOpen = () => setOpen(open => !open)
   return (
     <Navbar>

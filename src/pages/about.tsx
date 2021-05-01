@@ -15,7 +15,7 @@ import {
 } from "../components/common"
 
 const Container = styled.div`
-  ${tw`container mx-auto min-h-screen`};
+  ${tw`container mx-auto min-h-screen pt-40`};
 `
 
 const AboutSection = styled.div`
