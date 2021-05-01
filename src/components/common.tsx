@@ -15,6 +15,6 @@ export const PageLink = styled.a`
 `
 
 export const Accent = styled.span`
-  color: rgb(253, 102, 148);
+  color: ${({ theme }) => theme.colors.accent};
   font-weight: bold;
 `

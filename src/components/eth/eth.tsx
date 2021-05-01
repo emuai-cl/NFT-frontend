@@ -9,7 +9,7 @@ import tw from "twin.macro"
 import useConstant from "use-constant"
 
 import abi from "../../assets/abi.json"
-import CountInput from "../CountInput"
+import CountInput from "../count-input"
 
 const getWeb3 = async () => {
   if (typeof window != undefined && window["ethereum"]) {
@@ -42,7 +42,10 @@ const Label = styled.label`
 `
 
 const SubmitButton = styled.button`
-  ${tw`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`};
+  ${tw`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white`};
+  ${({ theme }) => theme.backgrounds.accent};
+  ${({ theme }) => theme.backgrounds.hoverAccent};
+  ${({ theme }) => theme.backgrounds.focusAccent};
 `
 
 const Container = styled.div`

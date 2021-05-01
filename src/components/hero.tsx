@@ -17,15 +17,8 @@ const gradient = keyframes`
 	}
 `
 
-// 253 102 148
 const Background = styled.div`
-  background: linear-gradient(
-    45deg,
-    #ee7752,
-    #e73c7e,
-    rgb(196, 91, 173),
-    rgb(69, 32, 147)
-  );
+  background: ${({ theme }) => theme.gradients.main};
   background-size: 200% 200%;
   animation: ${gradient} 15s ease infinite;
   width: stretch;
@@ -80,7 +73,10 @@ const ButtonContainer = styled.div`
 `
 
 const Button = styled.button`
-  ${tw`bg-pink-500 px-10 py-4 rounded shadow text-white uppercase font-bold`};
+  ${tw`px-10 py-4 rounded shadow text-white uppercase font-bold`};
+  ${({ theme }) => theme.backgrounds.accent};
+  ${({ theme }) => theme.backgrounds.hoverAccent};
+  ${({ theme }) => theme.backgrounds.focusAccent};
 `
 
 export default () => {

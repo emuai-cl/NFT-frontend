@@ -12,6 +12,8 @@ import Navbar from "../components/navbar"
 import "react-toastify/dist/ReactToastify.css"
 import { Powered } from "../components/powered"
 import { Sale } from "../components/sale"
+import { Team } from "../components/team"
+import { Footer } from "../components/footer"
 
 type DataProps = {
   site: {
@@ -30,12 +32,10 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => (
     <Powered />
     <Eth />
     {/* <Car /> */}
+    <Team />
 
-    <p>
-      You're currently on the page "{path}" which was built on{" "}
-      {data.site.buildTime}.
-    </p>
     <ToastContainer />
+    <Footer buildTime={data.site.buildTime} />
   </>
 )
 
@@ -44,7 +44,7 @@ export default IndexPage
 export const query = graphql`
   {
     site {
-      buildTime(formatString: "YYYY-MM-DD hh:mm a z")
+      buildTime
     }
   }
 `

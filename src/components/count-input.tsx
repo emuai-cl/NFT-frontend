@@ -43,7 +43,12 @@ const CountInput: React.FC<CountInputProps> = ({
         <Button onClick={onDecrement}>
           <Span>−</Span>
         </Button>
-        <Input type="number" name="custom-input-number" value={value || 0} />
+        <Input
+          onChange={console.log}
+          type="number"
+          name="custom-input-number"
+          value={value || 0}
+        />
         <Button onClick={onIncrement}>
           <Span>+</Span>
         </Button>

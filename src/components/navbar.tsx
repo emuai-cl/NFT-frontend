@@ -1,8 +1,7 @@
 import React, { useState } from "react"
 import tw from "twin.macro"
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 import { Link } from "gatsby"
-// import { useScrollPosition } from "@n8tb1t/use-scroll-position"
 
 const Navbar = styled.nav`
   ${tw`w-full z-30 top-0 text-white py-1 lg:py-4`};
@@ -19,8 +18,12 @@ const InnerContainer = styled.div`
 `
 
 const Content = styled.div<{ open: boolean }>`
-  ${tw`w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 text-black p-4 lg:p-0 z-20`}
-  display: ${({ open }) => (!open ? "none" : "")};
+  ${tw`w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 text-black p-4 lg:p-0 z-20`};
+  ${({ open }) =>
+    !open &&
+    css`
+      display: none;
+    `};
 `
 
 const List = styled.ul`
@@ -36,7 +39,10 @@ const StyledLink = styled(Link)`
 `
 
 const SpecialLink = styled(Link)`
-  ${tw`mx-auto lg:mx-0 hover:underline text-white font-extrabold rounded mt-4 lg:mt-0 mx-5 lg:mx-5 py-4 px-8 shadow-md bg-pink-500`};
+  ${tw`mx-auto lg:mx-0 text-white font-extrabold rounded mt-4 lg:mt-0 mx-5 lg:mx-5 py-4 px-8 shadow-md`};
+  ${({ theme }) => theme.backgrounds.accent};
+  ${({ theme }) => theme.backgrounds.hoverAccent};
+  ${({ theme }) => theme.backgrounds.focusAccent};
 `
 
 const MobileMenuContainer = styled.div`
@@ -44,7 +50,7 @@ const MobileMenuContainer = styled.div`
 `
 
 const MobileMenuButton = styled.button`
-  ${tw`flex items-center px-3 py-2 border rounded text-white border-white hover:text-gray-800 hover:border-pink-500 appearance-none focus:outline-none`};
+  ${tw`flex items-center px-3 py-2 border rounded text-gray-300 border-gray-300 hover:text-white hover:border-white appearance-none focus:outline-none`};
 `
 
 const Svg = styled.svg`

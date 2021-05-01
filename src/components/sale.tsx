@@ -12,7 +12,7 @@ const H1 = styled(ReactTypingEffect)`
   ${tw`text-gray-700 font-bold text-3xl uppercase text-center `};
 `
 const Container = styled.div`
-  ${tw`flex justify-center mx-auto mb-40`}
+  ${tw`flex justify-center mx-auto mt-10 mb-40`}
 `
 
 dayjs.extend(relativeTime)
@@ -29,7 +29,6 @@ export const Sale = () => {
           `Sale starts ${startDate.fromNow()}`,
           `Sale ends ${endDate.fromNow()}`,
         ]}
-        //   displayTextRenderer={text => <H1>{text}</H1>}
       />
     </Container>
   )

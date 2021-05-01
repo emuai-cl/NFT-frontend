@@ -23,19 +23,14 @@ const AboutSection = styled.div`
 `
 
 const About: React.FC<{}> = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      file(relativePath: { eq: "images/emuai.jpeg" }) {
-        childImageSharp {
-          # Specify a fixed image and fragment.
-          # The default width is 400 pixels
-          fixed {
-            ...GatsbyImageSharpFixed
-          }
-        }
-      }
+  const data = useStaticQuery(graphql`{
+  file(relativePath: {eq: "images/emuai.jpeg"}) {
+    childImageSharp {
+      gatsbyImageData(layout: FIXED)
     }
-  `)
+  }
+}
+`)
   return (
     <>
       <Navbar />
