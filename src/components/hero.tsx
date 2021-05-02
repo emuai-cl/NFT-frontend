@@ -79,7 +79,11 @@ const Button = styled.button`
   ${({ theme }) => theme.backgrounds.focusAccent};
 `
 
-export default () => {
+type HeroProps = {
+  buyRef: React.MutableRefObject<HTMLDivElement>
+}
+
+const Hero: React.FC<HeroProps> = ({ buyRef }) => {
   return (
     <Background>
       <Title>EMUS</Title>
@@ -88,7 +92,16 @@ export default () => {
         <Accent>history.</Accent>
       </Subtitle>
       <ButtonContainer>
-        <Button>Buy now</Button>
+        <Button
+          onClick={() =>
+            buyRef.current?.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            })
+          }
+        >
+          Buy now
+        </Button>
       </ButtonContainer>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
         <path
@@ -100,3 +113,5 @@ export default () => {
     </Background>
   )
 }
+
+export default Hero

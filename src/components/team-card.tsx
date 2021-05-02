@@ -3,8 +3,15 @@ import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import styled from "styled-components"
 import tw from "twin.macro"
 
+import { IconBaseProps } from "react-icons"
 import { ImHome } from "react-icons/im"
-import { SiTiktok, SiFacebook, SiInstagram, SiLinkedin } from "react-icons/si"
+import {
+  SiTiktok,
+  SiFacebook,
+  SiInstagram,
+  SiLinkedin,
+  SiGithub,
+} from "react-icons/si"
 import { Accent } from "./common"
 
 const CardContainer = styled.div`
@@ -34,12 +41,27 @@ const SocialNetworkItem = styled.a`
 const Image = styled(GatsbyImage)`
   ${tw`h-full w-full`};
 `
-const SocialNetIcon = props => {
-  if (props.name == "tiktok") return <SiTiktok />
-  if (props.name == "facebook") return <SiFacebook />
-  if (props.name == "instagram") return <SiInstagram />
-  if (props.name == "linkedin") return <SiLinkedin />
-  return <ImHome />
+
+export enum SupportedIcons {
+  tiktok = "tiktok",
+  facebook = "facebook",
+  instagram = "instagram",
+  linkedin = "linkedin",
+  github = "github",
+}
+
+type SocialNetIconProps = IconBaseProps & {
+  name: string
+}
+
+const SocialNetIcon: React.FC<SocialNetIconProps> = ({ name, ...props }) => {
+  if (name === SupportedIcons.tiktok) return <SiTiktok {...props} />
+  if (name === SupportedIcons.facebook) return <SiFacebook {...props} />
+  if (name === SupportedIcons.instagram) return <SiInstagram {...props} />
+  if (name === SupportedIcons.linkedin) return <SiLinkedin {...props} />
+  if (name === SupportedIcons.github) return <SiGithub {...props} />
+
+  return <ImHome {...props} />
 }
 
 type TeamCardProps = {
@@ -47,7 +69,7 @@ type TeamCardProps = {
   position: string
   description: string
   socialNetworks: {
-    name: string
+    name: SupportedIcons | string
     link: string
   }[]
   img: IGatsbyImageData
@@ -74,7 +96,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
       <SocialNetworksList>
         {socialNetworks.map(social => (
           <li>
-            <SocialNetworkItem href={social.link}>
+            <SocialNetworkItem href={social.link} target="_blank">
               <SocialNetIcon name={social.name} />
             </SocialNetworkItem>
           </li>

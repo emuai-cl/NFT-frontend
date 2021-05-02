@@ -11,7 +11,7 @@ export const PageParagraph = styled.p`
   ${tw`font-normal text-gray-700`};
 `
 export const PageLink = styled.a`
-  ${tw`text-pink-500`}
+  color: ${({ theme }) => theme.colors.accent};
 `
 
 export const Accent = styled.span`

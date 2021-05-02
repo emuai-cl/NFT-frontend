@@ -14,6 +14,7 @@ import { Powered } from "../components/powered"
 import { Sale } from "../components/sale"
 import { Team } from "../components/team"
 import { Footer } from "../components/footer"
+import { useRef } from "react"
 
 type DataProps = {
   site: {
@@ -21,23 +22,27 @@ type DataProps = {
   }
 }
 
-const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => (
-  <>
-    <Navbar />
-    <Seo title="Home" />
+const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
+  const buyRef = useRef<HTMLDivElement>()
 
-    <Hero />
-    <Sale />
+  return (
+    <>
+      <Navbar />
+      <Seo title="Home" />
 
-    <Powered />
-    <Eth />
-    {/* <Car /> */}
-    <Team />
+      <Hero buyRef={buyRef} />
+      <Sale />
 
-    <ToastContainer />
-    <Footer buildTime={data.site.buildTime} />
-  </>
-)
+      <Powered />
+      <Eth passRef={buyRef} />
+      {/* <Car /> */}
+      <Team />
+
+      <ToastContainer />
+      <Footer buildTime={data.site.buildTime} />
+    </>
+  )
+}
 
 export default IndexPage
 

@@ -56,7 +56,7 @@ const connect = async (data: Inputs) => {
   console.log(data)
 }
 
-export default () => {
+const Eth = React.forwardRef<HTMLDivElement>((props, ref) => {
   const [contract, setContract] = useState<Contract | undefined>()
   const { register, handleSubmit, watch } = useForm<Inputs>()
   const [numberOfTokens, setNumberOfTokens] = useState(0)
@@ -75,7 +75,7 @@ export default () => {
   }, [web3])
   return (
     <>
-      <Container>
+      <Container ref={ref}>
         <form onSubmit={handleSubmit(connect)}>
           <div>
             <Label htmlFor="example">Contact address</Label>
@@ -111,4 +111,5 @@ export default () => {
       </div>
     </>
   )
-}
+})
+export default Eth

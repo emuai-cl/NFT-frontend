@@ -42,12 +42,16 @@ export const Team = () => {
           img={gabriel}
           socialNetworks={[
             {
-              name: "instagram",
-              link: "https://www.instagram.com/gabrieeelperez/",
+              name: "github",
+              link: "https://www.github.com/Yhozen",
             },
             {
               name: "linkedin",
               link: "https://www.linkedin.com/in/gabrielperezaguirre/",
+            },
+            {
+              name: "instagram",
+              link: "https://www.instagram.com/gabrieeelperez/",
             },
           ]}
         />
