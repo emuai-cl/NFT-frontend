@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@loadable/component": "^5.14.1",
+    "@loadingio/loading-bar": "https://github.com/loadingio/loading-bar",
     "@n8tb1t/use-scroll-position": "^2.0.3",
     "@react-three/drei": "^4.0.3",
     "@react-three/fiber": "^6.0.8",
@@ -23,6 +24,7 @@
     "gatsby-plugin-webfonts": "^2.1.0",
     "gatsby-source-filesystem": "^3.2.0",
     "gatsby-transformer-sharp": "^3.2.0",
+    "polished": "^4.1.2",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

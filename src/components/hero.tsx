@@ -1,7 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import tw from "twin.macro"
-import { Link } from "gatsby"
 
 import { Accent } from "./common"
 

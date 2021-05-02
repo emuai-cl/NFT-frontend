@@ -4,6 +4,8 @@ import { ToastContainer } from "react-toastify"
 
 import Seo from "../components/seo"
 import Car from "../components/car"
+import Sold from "../components/sold"
+
 import Eth from "../components/eth"
 import Hero from "../components/hero"
 
@@ -32,10 +34,11 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
 
       <Hero buyRef={buyRef} />
       <Sale />
-
+      <Sold />
       <Powered />
-      <Eth passRef={buyRef} />
-      {/* <Car /> */}
+      <Car />
+      <Eth ref={buyRef} />
+
       <Team />
 
       <ToastContainer />
