@@ -1,6 +1,10 @@
 # FIRST NFT RACE CAR FUNDING
 
 
+We are a Solar Racecar Team that wants to change how funding is done. We give you the opportunity to buy space on our solar car's surface where you can put an image of your choice. Each 1.5 x 1.5 cm space will be an NFT wich you can then trade on the market.
+
+
+
 ## Dear prospective supporter,
 
 On behalf of the Electromovilidad team of Adolfo Ibáñez University, I would like to thank you for your interest in our project. Our team aims to push the limits of what is possible not only with sustainable transport, but also with NFTs and funding methods, introducing people to our community through our participation in solar car competitions. For these, we create original concept vehicles powered by solar energy, and put them to the test in races through harsh conditions.
