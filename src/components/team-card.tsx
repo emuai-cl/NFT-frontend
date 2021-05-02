@@ -95,7 +95,7 @@ const TeamCard: React.FC<TeamCardProps> = ({
 
       <SocialNetworksList>
         {socialNetworks.map(social => (
-          <li>
+          <li key={`${name}-${social.name}-${social.link}`}>
             <SocialNetworkItem href={social.link} target="_blank">
               <SocialNetIcon name={social.name} />
             </SocialNetworkItem>
