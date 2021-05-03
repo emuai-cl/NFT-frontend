@@ -15,4 +15,4 @@ After you update your EMU's image, it takes time for it to update. Please wait 2
 ## If you care about the planet so much, how are you doing NFTs on Ethereum?
 
 More congestion on the nwtwork doesn't mean more ennergy consumption. More miners do. Now, you could argue that more congestion increases the gas price and thus the incentive to mine, and so increasing the energy consumption and the emisions.
-While this is probably true, wew admit to have a meaningful carbon footprint just by the logistics of a race and the fabrication of a solar car. Our mission is to motivate and educate young people by promoting the development of sustainable transport. 
+While this may be true, we admit to have a meaningful carbon footprint just by the logistics of a race and the fabrication of a solar car. Our mission is to motivate and educate young people by promoting the development of sustainable transport so that we can accelerate it's adoption. The future impact that we make on the planet will greately surpass of carbon footprint. We know that around 80% of our ex-teammembers now work in the electromobility or solar energy sector.
