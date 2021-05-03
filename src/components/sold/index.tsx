@@ -1,9 +1,10 @@
 import React from "react"
 import loadable from "@loadable/component"
-import { fetchContract } from "./fetchContract"
 
 export default loadable(async () => {
   if (typeof window == "undefined") return null
+
+  const { fetchContract } = await import("./fetchContract")
   const { MAX_SUPPLY, TOTAL_SUPPLY } = await fetchContract()
   const { default: Sold } = await import("./sold")
 
