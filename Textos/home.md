@@ -1,7 +1,7 @@
 # FIRST NFT RACE CAR FUNDING
 
 
-We are a Solar Racecar Team that wants to change how funding is done. We give you the opportunity to buy space on our solar car's surface where you can put an image of your choice. Each 1.5 x 1.5 cm space will be an NFT which you can then trade on the market.
+We are a Solar Racecar Team that wants to change how funding is done. We give you the opportunity to buy space on our solar car's surface where you can put an image of your choice. Each 1.5 x 1.5 cm space will be an NFT which you can persolalize if you own it.
 
 
 
