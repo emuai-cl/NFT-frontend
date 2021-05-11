@@ -16,7 +16,7 @@ Currently we are a multidisciplinary team of students from the UAI dedicated to 
 We like emus. They are fast, cool and they won a war against Australia, which is where the World Solar Challenge takes place and where we want to win.
 Also, we are called EMUAI which has "emu" in it. EMUAI comes from Electromovilidad Universidad Adolfo Ibáñez or Electromobility of the Adolfo Ibáñez University.
 
-# Next Competitions:
+# Next Competitions
 
 The Bridgestone World Solar Challenge (BWSC) is known as the most challenging solar race in the world. A unique feature of this race is that all the cars are completely different and designed from scratch, which places particular emphasis on their autonomy and functionality.
 The weather conditions are extreme, as the race crosses the Australian desert from Darwin to Adelaide, covering more than 3000 kilometers over 7 days. It will take the cars through strong winds and sometimes rain near the coastal cities. Therefore, we can say that the BWSC is more than just a race; it is a challenge.
