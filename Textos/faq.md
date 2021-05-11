@@ -16,7 +16,7 @@ EMUs are meant to represent the ownership of a pice of our solar car, so you can
 
 Yes, you can! EMUs adhere to the ERC-721 standard, so they can be traded publicly on platforms such as OpenSea. Do make sure you’re buying only EMUs that are contained within the verified collection! These are the only verifiably legitimate EMUs backed by provenance.
 
-## What will you use your funding for?
+## What will you use this funding for?
 
 We are a non profit organization and as such, our private pockets won't see a single wei of what you donate. All of EMUAI's funding goes to building solar cars, the logistics of solar car races and to infrastructure neccesary to design and build future cars.
 
@@ -35,5 +35,5 @@ While this may be true, we admit having a meaningful carbon footprint for exampl
 
 ## Still not sure if you are a real project. How can I make sure?
 
-Our activity online may seem to have just appeared out of nowhere, like our twitter or this webpage, but this were only done for the NFT-fundraising idea, because our previous activity online has been in Spanish. You can visit our official Instagram [https://www.instagram.com/emuai_chile/] where we have been posting since our origins in 2017. Feel free to message us there. Also, you can take a look at our official team website [emuai.cl].
+Our activity online may seem to have just appeared out of nowhere, like our twitter or this webpage, but this were only done for the NFT-fundraising idea, because our previous activity online has been in Spanish. You can visit our official Instagram [https://www.instagram.com/emuai_chile/] where we have been posting since our origins in 2017. Feel free to message us there. Also, you can take a look at our official team website [emuai.cl] and see our extensive media appearances under "Noticias".
 
