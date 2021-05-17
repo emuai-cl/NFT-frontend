@@ -29,13 +29,20 @@ type CountInputProps = {
   value: number
   onDecrement: () => void
   onIncrement: () => void
+  setNumberOfTokens: React.Dispatch<React.SetStateAction<number>>
 }
 
 const CountInput: React.FC<CountInputProps> = ({
   onDecrement,
   onIncrement,
+  setNumberOfTokens,
   value,
 }) => {
+  const onChange: React.ChangeEventHandler<HTMLInputElement> = event => {
+    const number = Number(event.target.value)
+    if (number < 0 || number > 250) return
+    setNumberOfTokens(number)
+  }
   return (
     <Container>
       <Label htmlFor="custom-input-number">Tokens</Label>
@@ -44,7 +51,7 @@ const CountInput: React.FC<CountInputProps> = ({
           <Span>−</Span>
         </Button>
         <Input
-          onChange={console.log}
+          onChange={onChange}
           type="number"
           name="custom-input-number"
           value={value || 0}

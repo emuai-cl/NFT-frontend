@@ -10,6 +10,7 @@ import useConstant from "use-constant"
 
 import abi from "../../assets/abi.json"
 import CountInput from "../count-input"
+import { CONTRACT_ADDRESS } from "../../helpers/constants"
 
 const getWeb3 = async () => {
   if (typeof window != undefined && window["ethereum"]) {
@@ -56,6 +57,16 @@ const connect = async (data: Inputs) => {
   console.log(data)
 }
 
+const valueInBounds = (n: number) => Math.min(Math.max(n, 0), 250)
+
+const createSignTypedData = (web3: Web3) => (object: unknown) =>
+  new Promise((resolve, reject) =>
+    web3.currentProvider["sendAsync"](object, (error, response) => {
+      if (error) reject(error)
+      resolve(response)
+    })
+  )
+
 const Eth = React.forwardRef<HTMLDivElement>((props, ref) => {
   const [contract, setContract] = useState<Contract | undefined>()
   const { register, handleSubmit, watch } = useForm<Inputs>()
@@ -64,28 +75,43 @@ const Eth = React.forwardRef<HTMLDivElement>((props, ref) => {
   const connect = async (data: Inputs) => {
     console.log(data)
     const web3 = await getWeb3()
-    const contract = new web3.eth.Contract(abi as any, data.contract)
+    const contract = new web3.eth.Contract(abi as any, CONTRACT_ADDRESS)
     contract.defaultAccount = data.address
 
     setContract(contract)
   }
-  const web3 = useConstant(() => getWeb3())
   useEffect(() => {
-    //initContract(web3, setContract, setAddress)
-  }, [web3])
+    const init = async () => {
+      const web3 = await getWeb3()
+      const accounts = await web3.eth.getAccounts()
+      const address = accounts[0]
+
+      if (!address) return
+      const signTypedData = createSignTypedData(web3)
+      const result = await signTypedData({
+        method: "eth_signTypedData",
+        params: [
+          [
+            {
+              type: "string",
+              name: "path",
+              value: "QmajXXuz6qPL72FwWV4X8ANk3USjmrAQPJqbCjVREPfnvP",
+            },
+            { type: "uint32", name: "id", value: 1 },
+          ],
+          address,
+        ],
+        from: address,
+      })
+
+      console.log(result)
+    }
+    init()
+  }, [])
   return (
     <>
       <Container ref={ref}>
         <form onSubmit={handleSubmit(connect)}>
-          <div>
-            <Label htmlFor="example">Contact address</Label>
-            <TextInput
-              name="contract"
-              defaultValue="test"
-              {...register("contract")}
-            />
-          </div>
-
           <div>
             <Label htmlFor="address">Your address</Label>
             {/* include validation with required or other standard HTML validation rules */}
@@ -100,8 +126,13 @@ const Eth = React.forwardRef<HTMLDivElement>((props, ref) => {
           <>
             <CountInput
               value={numberOfTokens}
-              onDecrement={() => setNumberOfTokens(value => value - 1)}
-              onIncrement={() => setNumberOfTokens(value => value + 1)}
+              setNumberOfTokens={setNumberOfTokens}
+              onDecrement={() =>
+                setNumberOfTokens(value => valueInBounds(value - 1))
+              }
+              onIncrement={() =>
+                setNumberOfTokens(value => valueInBounds(value + 1))
+              }
             />
             <SubmitButton onClick={() => mint(contract, numberOfTokens)}>
               MINT
