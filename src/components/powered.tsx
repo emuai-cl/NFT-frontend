@@ -3,7 +3,7 @@ import EthereumAnimation from "./lottie/ethereum"
 
 import styled from "styled-components"
 import tw from "twin.macro"
-import { Accent, PageParagraph, PageSubtitle } from "./common"
+import { Accent, PageLink, PageParagraph, PageSubtitle } from "./common"
 
 const Container = styled.div`
   ${tw`grid lg:grid-cols-3 grid-cols-1`};
@@ -18,8 +18,16 @@ export const Powered = () => {
           Powered by <Accent>Ethereum</Accent>
         </PageSubtitle>
         <PageParagraph>
-          This Non Fungible Token will fund a real project thanks to the
-          Ethereum Blockchain.
+          This an{" "}
+          <PageLink
+            href="https://eips.ethereum.org/EIPS/eip-721"
+            target="_blank"
+          >
+            ERC-721
+          </PageLink>{" "}
+          Non Fungible Token (NFT) that will directly fund the our solar car.
+          Moreover, each NFT owner will have the ability to add any 100x100
+          picture he likes directly on our car!.
         </PageParagraph>
       </div>
       <div>
