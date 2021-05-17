@@ -13,6 +13,12 @@ export const PageParagraph = styled.p`
 export const PageLink = styled.a`
   color: ${({ theme }) => theme.colors.accent};
 `
+export const Button = styled.button`
+  ${tw`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white`};
+  ${({ theme }) => theme.backgrounds.accent};
+  ${({ theme }) => theme.backgrounds.hoverAccent};
+  ${({ theme }) => theme.backgrounds.focusAccent};
+`
 
 export const Accent = styled.span`
   color: ${({ theme }) => theme.colors.accent};
