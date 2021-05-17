@@ -1,1 +1,1 @@
-# Estos son los textos tentativos que irían en la página web.
+# Estos son los textos que irían en la página web.
