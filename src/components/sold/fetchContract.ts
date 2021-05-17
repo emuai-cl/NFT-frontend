@@ -11,11 +11,12 @@ const axiosInstance = axios.create({
 export const fetchContract = async () => {
   try {
     const { data } = await axiosInstance.get("/nft/supply")
-    const MAX_SUPPLY = Number(data.totalSupply)
-    const TOTAL_SUPPLY = Number(data.currentSupply)
+    const MAX_SUPPLY = Number(data?.totalSupply)
+    const TOTAL_SUPPLY = Number(data?.currentSupply)
 
     return { MAX_SUPPLY, TOTAL_SUPPLY }
   } catch (error) {
     toast(error)
+    return { MAX_SUPPLY: 0, TOTAL_SUPPLY: 5940 }
   }
 }
