@@ -5,19 +5,11 @@ import { toast } from "react-toastify"
 import styled from "styled-components"
 import tw from "twin.macro"
 
-import abi from "../../assets/abi.json"
 import CountInput from "../count-input"
-import { CONTRACT_ADDRESS } from "../../helpers/constants"
 import { Button, PageParagraph, PageSubtitle } from "../common"
-
-const getWeb3 = async () => {
-  if (typeof window != undefined && window["ethereum"]) {
-    await window["ethereum"].enable()
-    return new Web3(window["ethereum"])
-  }
-
-  return new Web3(Web3.givenProvider || "http://127.0.0.1:7545")
-}
+import { useConnect } from "../../hooks/useConnect"
+import { useContract } from "../../hooks/useContract"
+import { useWeb3 } from "../../hooks/useWeb3"
 
 const estimateGas = (number: number) =>
   Math.floor((30763 * number + 35236) * 1.5)
@@ -56,43 +48,37 @@ const createSignTypedData = (web3: Web3) => (object: unknown) =>
     })
   )
 
+const signNFTUpdate = async (web3: Web3) => {
+  const [address] = await web3.eth.getAccounts()
+
+  if (!address) return
+  const signTypedData = createSignTypedData(web3)
+  const result = await signTypedData({
+    method: "eth_signTypedData",
+    params: [
+      [
+        {
+          type: "string",
+          name: "path",
+          value: "QmajXXuz6qPL72FwWV4X8ANk3USjmrAQPJqbCjVREPfnvP",
+        },
+        { type: "uint32", name: "id", value: 1 },
+      ],
+      address,
+    ],
+    from: address,
+  })
+
+  console.log(result)
+}
+
 const Eth = React.forwardRef<HTMLDivElement>((props, ref) => {
-  const [contract, setContract] = useState<Contract | undefined>()
+  const contract = useContract()
+  const connect = useConnect()
+  const web3 = useWeb3()
   const [numberOfTokens, setNumberOfTokens] = useState(0)
 
-  const connect = async () => {
-    const web3 = await getWeb3()
-    const contract = new web3.eth.Contract(abi as any, CONTRACT_ADDRESS)
-    const [address] = await web3.eth.getAccounts()
-    contract.defaultAccount = address
-    setContract(contract)
-    toast.success("Wallet successfully connected")
-  }
   useEffect(() => {
-    const init = async () => {
-      const web3 = await getWeb3()
-      const [address] = await web3.eth.getAccounts()
-
-      if (!address) return
-      const signTypedData = createSignTypedData(web3)
-      const result = await signTypedData({
-        method: "eth_signTypedData",
-        params: [
-          [
-            {
-              type: "string",
-              name: "path",
-              value: "QmajXXuz6qPL72FwWV4X8ANk3USjmrAQPJqbCjVREPfnvP",
-            },
-            { type: "uint32", name: "id", value: 1 },
-          ],
-          address,
-        ],
-        from: address,
-      })
-
-      console.log(result)
-    }
     // init()
   }, [])
   return (

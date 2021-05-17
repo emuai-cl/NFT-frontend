@@ -11,6 +11,8 @@ import { ImageUpload } from "../components/image-upload"
 import { CustomModal } from "../components/modal"
 
 import "react-image-crop/dist/ReactCrop.css"
+import { useContract } from "../hooks/useContract"
+import { useConnect } from "../hooks/useConnect"
 
 const Spacer = styled.div`
   padding-bottom: 100px;
@@ -26,7 +28,8 @@ const Button = styled.button`
 const Manage = () => {
   const [hash, setHash] = useState<string>()
   const [isOpen, setOpen] = useState(false)
-
+  const contract = useContract()
+  const connect = useConnect()
   const [node, setNode] = useState<IPFS>()
 
   useEffect(() => {
@@ -42,7 +45,11 @@ const Manage = () => {
     <>
       <Navbar />
       <Spacer />
-
+      {contract ? (
+        <p>{contract.defaultAccount}</p>
+      ) : (
+        <button onClick={connect}>connect</button>
+      )}
       <Button onClick={() => setOpen(true)}>open modal</Button>
       {hash && (
         <>
