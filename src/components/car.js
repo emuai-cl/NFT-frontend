@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useRef } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import {
   useGLTF,
@@ -99,9 +99,6 @@ const Container = styled.div`
   margin: auto;
   ${tw`bg-gray-100`};
 `
-const Input = styled.input`
-  ${tw`bg-gray-100`};
-`
 
 export default () => {
   return (
@@ -126,6 +123,7 @@ export default () => {
         <OrbitControls
           minPolarAngle={Math.PI / 2}
           maxPolarAngle={Math.PI / 2}
+          enablePan={false}
         />
       </Canvas>
     </Container>
