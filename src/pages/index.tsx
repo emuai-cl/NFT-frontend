@@ -3,7 +3,7 @@ import { graphql, PageProps } from "gatsby"
 import { ToastContainer } from "react-toastify"
 
 import Seo from "../components/seo"
-import Car from "../components/car"
+import Car from "../components/load-car"
 import Sold from "../components/sold"
 
 import Eth from "../components/eth"
