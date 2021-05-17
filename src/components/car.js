@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { Canvas, useFrame } from "@react-three/fiber"
 import {
   useGLTF,
@@ -11,41 +11,87 @@ import tw from "twin.macro"
 
 export function Model(props) {
   const ref = useRef()
-  const { nodes, materials } = useGLTF("/model.glb")
 
   useFrame(state => {
     const t = state.clock.getElapsedTime()
-    // ref.current.rotation.x = Math.cos(t / 4) / 8
-    ref.current.rotation.y = Math.sin(t / 4) / 8
-    ref.current.position.y = (1 + Math.sin(t / 1.5)) / 10
+    ref.current.rotation.y = t / 8
+
+    ref.current.position.y = (1 + Math.sin(t / 1.5)) / 10 - 1.2
   })
 
+  const { nodes, materials } = useGLTF("/final_model.glb")
   return (
-    <group
-      ref={ref}
-      {...props}
-      dispose={null}
-      position={[-6.43, 0, -20]}
-      rotation={[Math.PI / 2, 0, 0]}
-      scale={[0.01, 0.01, 0.01]}
-    >
+    <group ref={ref} {...props} dispose={null}>
       <mesh
-        receiveShadow
-        castShadow
-        geometry={nodes.Ensamble_Estructura_1.geometry}
-        material={materials["152,170,175"]}
+        geometry={nodes.Carenado001.geometry}
+        material={nodes.Carenado001.material}
+        rotation={[Math.PI / 2, 0, 0]}
       />
       <mesh
-        receiveShadow
-        castShadow
-        geometry={nodes.Ensamble_Estructura_2.geometry}
-        material={materials["0,153,255"]}
+        geometry={nodes.tapas_ruedas001.geometry}
+        material={nodes.tapas_ruedas001.material}
+        rotation={[Math.PI / 2, 0, 0]}
       />
+      <mesh
+        geometry={nodes.cristal_luces_luces001.geometry}
+        material={materials["Cristal_luces.001"]}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Paneles_Techo002.geometry}
+        material={materials.SolarPanelsMonocrystallineTypeAClean001_4K}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <group rotation={[Math.PI / 2, 0, 0]}>
+        <mesh
+          geometry={nodes.Borde_cupula001_1.geometry}
+          material={nodes.Borde_cupula001_1.material}
+        />
+        <mesh
+          geometry={nodes.Borde_cupula001_2.geometry}
+          material={materials["Cristal.001"]}
+        />
+      </group>
+      <mesh
+        geometry={nodes.Techo001.geometry}
+        material={nodes.Techo001.material}
+        rotation={[Math.PI / 2, 0, 0]}
+      />
+      <group rotation={[Math.PI / 2, 0, 0]}>
+        <mesh
+          geometry={nodes.llanta001_1.geometry}
+          material={nodes.llanta001_1.material}
+        />
+        <mesh
+          geometry={nodes.llanta001_2.geometry}
+          material={nodes.llanta001_2.material}
+        />
+      </group>
+      <group rotation={[Math.PI / 2, 0, 0]}>
+        <mesh
+          geometry={nodes.llanta003_1.geometry}
+          material={nodes.llanta003_1.material}
+        />
+        <mesh
+          geometry={nodes.llanta003_2.geometry}
+          material={nodes.llanta003_2.material}
+        />
+      </group>
+      <group rotation={[Math.PI / 2, 0, 0]}>
+        <mesh
+          geometry={nodes.Neumatico005_1.geometry}
+          material={nodes.Neumatico005_1.material}
+        />
+        <mesh
+          geometry={nodes.Neumatico005_2.geometry}
+          material={nodes.Neumatico005_2.material}
+        />
+      </group>
     </group>
   )
 }
 
-useGLTF.preload("/model.glb")
+useGLTF.preload("/final_model.glb")
 
 const Container = styled.div`
   width: 100vmin;
@@ -60,12 +106,12 @@ const Input = styled.input`
 export default () => {
   return (
     <Container>
-      <Canvas concurrent camera={{ position: [0, 0, 2.75] }}>
+      <Canvas concurrent camera={{ position: [0, 3.5, 0] }}>
         <ambientLight intensity={0.2} castShadow />
 
         <pointLight position={[10, 10, 10]} castShadow />
         <React.Suspense fallback={null}>
-          <Model />
+          <Model position={[0, -1000, 0]} />
           <Environment preset="city" />
           <ContactShadows
             rotation-x={Math.PI / 2}
@@ -80,8 +126,6 @@ export default () => {
         <OrbitControls
           minPolarAngle={Math.PI / 2}
           maxPolarAngle={Math.PI / 2}
-          enableZoom
-          enablePan
         />
       </Canvas>
     </Container>
