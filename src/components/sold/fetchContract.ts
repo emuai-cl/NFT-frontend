@@ -17,6 +17,6 @@ export const fetchContract = async () => {
     return { MAX_SUPPLY, TOTAL_SUPPLY }
   } catch (error) {
     toast(error)
-    return { MAX_SUPPLY: 0, TOTAL_SUPPLY: 5940 }
+    return { MAX_SUPPLY: 5940, TOTAL_SUPPLY: 0 }
   }
 }
