@@ -1,5 +1,5 @@
 import React from "react"
-import useTeamImages from "../helpers/useTeamImages"
+import useTeamImages from "../hooks/useTeamImages"
 import TeamCard from "./team-card"
 
 import styled from "styled-components"

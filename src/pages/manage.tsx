@@ -10,9 +10,13 @@ import Navbar from "../components/navbar"
 import { ImageUpload } from "../components/image-upload"
 import { CustomModal } from "../components/modal"
 
-import "react-image-crop/dist/ReactCrop.css"
 import { useContract } from "../hooks/useContract"
 import { useConnect } from "../hooks/useConnect"
+import { useWeb3 } from "../hooks/useWeb3"
+import { useSignNFT } from "../hooks/useSignNFT"
+import { waitForNode } from "../helpers/waitForNode"
+
+import "react-image-crop/dist/ReactCrop.css"
 
 const Spacer = styled.div`
   padding-bottom: 100px;
@@ -28,16 +32,15 @@ const Button = styled.button`
 const Manage = () => {
   const [hash, setHash] = useState<string>()
   const [isOpen, setOpen] = useState(false)
-  const contract = useContract()
   const connect = useConnect()
+  const contract = useContract()
+  const web3 = useWeb3()
+  const signNFT = useSignNFT(web3)
   const [node, setNode] = useState<IPFS>()
 
   useEffect(() => {
-    if (!node)
-      import("ipfs").then(Ipfs => Ipfs.create().then(node => setNode(node)))
-
-    return () => node?.stop() && null
-  }, [node])
+    waitForNode().then(setNode)
+  }, [])
 
   const closeModal = () => setOpen(false)
 
@@ -45,8 +48,18 @@ const Manage = () => {
     <>
       <Navbar />
       <Spacer />
-      {contract ? (
-        <p>{contract.defaultAccount}</p>
+      {contract && web3 ? (
+        <>
+          <p>{contract.defaultAccount}</p>
+          <button
+            onClick={async () => {
+              const hola = await signNFT("hola", 2)
+              console.log(hola)
+            }}
+          >
+            sign
+          </button>
+        </>
       ) : (
         <button onClick={connect}>connect</button>
       )}
@@ -63,7 +76,13 @@ const Manage = () => {
         </>
       )}
       <CustomModal isOpen={isOpen} closeModal={closeModal}>
-        <ImageUpload node={node} setHash={setHash} />
+        <ImageUpload
+          node={node}
+          setHash={hash => {
+            setHash(hash)
+            closeModal()
+          }}
+        />
       </CustomModal>
     </>
   )

@@ -5,6 +5,7 @@ import styled from "styled-components"
 
 import { upload } from "../helpers/resizeCanvas"
 import { FileUpload } from "./file-upload"
+import { Accent, Button } from "./common"
 
 const StyledReactCrop = styled(ReactCrop)`
   max-height: 100%;
@@ -88,14 +89,7 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({ setHash, node }) => {
   return (
     <>
       <FileUpload onChange={onSelectFile} />
-
-      <button
-        type="button"
-        disabled={!completedCrop?.width || !completedCrop?.height}
-        onClick={onClick}
-      >
-        Download cropped image
-      </button>
+      <Accent>Preview:</Accent>
       <Canvas ref={previewCanvasRef} />
       <Container>
         <StyledReactCrop
@@ -105,6 +99,13 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({ setHash, node }) => {
           onChange={c => setCrop(c)}
           onComplete={c => setCompletedCrop(c)}
         />
+        <Button
+          type="button"
+          disabled={!completedCrop?.width || !completedCrop?.height}
+          onClick={onClick}
+        >
+          Confirm image
+        </Button>
       </Container>
     </>
   )

@@ -22,14 +22,18 @@ export const useConnect = () => {
 
   const connect = useMemo(
     () => async () => {
-      const web3 = await getWeb3()
-      if (web3 == undefined) return
-      const contract = new web3.eth.Contract(abi as any, CONTRACT_ADDRESS)
-      const [address] = await web3.eth.getAccounts()
-      contract.defaultAccount = address
-      toast.success("Wallet successfully connected")
-      setWeb3(web3)
-      setContract(contract)
+      try {
+        const web3 = await getWeb3()
+        if (web3 == undefined) return
+        const contract = new web3.eth.Contract(abi as any, CONTRACT_ADDRESS)
+        const [address] = await web3.eth.getAccounts()
+        contract.defaultAccount = address
+        toast.success("Wallet successfully connected")
+        setWeb3(web3)
+        setContract(contract)
+      } catch (error) {
+        toast.error(`Failed to connect. Error: ${error.message}`)
+      }
     },
     [setContract, setWeb3]
   )
