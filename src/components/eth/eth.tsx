@@ -33,7 +33,7 @@ const AccentParagraph = styled(PageParagraph)`
   color: ${({ theme }) => theme.colors.accent};
 `
 const Container = styled.div`
-  ${tw`mt-5 md:col-span-2 w-3/5 mx-auto p-4 mb-5 shadow-md rounded`};
+  ${tw`mt-5 md:col-span-2 w-3/5 mx-auto p-4 mb-5 shadow-md rounded bg-white`};
 `
 
 const valueInBounds = (n: number) => Math.min(Math.max(n, 0), 250)
