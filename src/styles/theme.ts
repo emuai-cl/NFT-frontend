@@ -18,6 +18,7 @@ export const theme = {
     accent: tw`bg-blue-500`,
     hoverAccent: tw`hover:bg-blue-600`,
     focusAccent: tw`focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400`,
+    page: '#eee'
   },
 }
 
