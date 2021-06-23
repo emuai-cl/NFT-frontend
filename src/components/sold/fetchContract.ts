@@ -1,12 +1,5 @@
-import axios from "axios"
-
-import { API_URL } from "../../helpers/constants"
 import { toast } from "react-toastify"
-
-const axiosInstance = axios.create({
-  baseURL: API_URL,
-  timeout: 3000,
-})
+import { axiosInstance } from "../../helpers/axios"
 
 export const fetchContract = async () => {
   try {
