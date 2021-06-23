@@ -1,9 +1,9 @@
 import tw from "twin.macro"
 
-export const gradientFirst = `#ee7752`
-export const gradientSecond = `#e73c7e`
-export const gradientThird = `#c45bad`
-export const gradientForth = `#442093`
+export const gradientFirst = `#2D9CCA`
+export const gradientSecond = `#2B7FAB`
+export const gradientThird = `#27446C`
+export const gradientForth = `#25274D`
 
 export const gradientColors = `${gradientFirst}, ${gradientSecond}, ${gradientThird},${gradientForth}`
 
@@ -12,12 +12,12 @@ export const theme = {
     main: `linear-gradient(45deg, ${gradientColors})`,
   },
   colors: {
-    accent: "#FD6694",
+    accent: "#2D9CCA",
   },
   backgrounds: {
-    accent: tw`bg-pink-500`,
-    hoverAccent: tw`hover:bg-pink-600`,
-    focusAccent: tw`focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-400`,
+    accent: tw`bg-blue-500`,
+    hoverAccent: tw`hover:bg-blue-600`,
+    focusAccent: tw`focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400`,
   },
 }
 
