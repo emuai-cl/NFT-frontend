@@ -25,8 +25,8 @@ We finish the carbon-fiber structure of the car and mount the mechanical parts a
 
 * Q4 2021: Fishing of car and Racing
 
-We finish the car's last details such as the control systems, cameras, and lights. EMUs get printed on the car for the world to admire. The car competes in the Telemetry race in October.
+We finish the car's last details such as the control systems, cameras, and lights. EMUs get printed on the car for the world to admire. If time is on our side, the car competes in the Telemetry race in October.
 
 * After Telemetry Race:
 
-The team looks for another competition before the BWSC 2023. Options are in Chile, South Africa or a race organized by us. Before every race, the EMUs on the car get updated to the current images on the virtual representation.
+The team looks for another competition before the BWSC 2023. Options are in Chile , South Africa, United Arab Emirates and/or a race organized by us. Before every race, the EMUs on the car get updated to the current images on the virtual representation.
