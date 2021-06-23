@@ -23,6 +23,7 @@ export const LazyImage: FC<ImageUploadModalProps> = ({ source, ...props }) => {
   const onLoad = () => {
     setLoading(false)
   }
+
   return (
     <div>
       {loading && <Skeleton height={props.height} width={props.width} />}
