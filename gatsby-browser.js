@@ -8,10 +8,17 @@
 
 import React from "react"
 import { ThemeProvider } from "styled-components"
+import { QueryClient, QueryClientProvider } from "react-query"
 
 import { theme } from "./src/styles/theme"
 import "./src/styles/global.css"
 
+const queryClient = new QueryClient()
+
 export const wrapRootElement = ({ element }) => {
-  return <ThemeProvider theme={theme}>{element}</ThemeProvider>
+  return (
+    <ThemeProvider theme={theme}>
+      <QueryClientProvider client={queryClient}>{element}</QueryClientProvider>
+    </ThemeProvider>
+  )
 }

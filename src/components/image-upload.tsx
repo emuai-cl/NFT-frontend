@@ -7,6 +7,8 @@ import { upload } from "../helpers/resizeCanvas"
 import { FileUpload } from "./file-upload"
 import { Accent, Button } from "./common"
 
+import "react-image-crop/dist/ReactCrop.css"
+
 const StyledReactCrop = styled(ReactCrop)`
   max-height: 100%;
 `
@@ -23,9 +25,14 @@ const Container = styled.div`
 type ImageUploadProps = {
   setHash: React.Dispatch<React.SetStateAction<string>>
   node: IPFS
+  onCancel?: () => void
 }
 
-export const ImageUpload: React.FC<ImageUploadProps> = ({ setHash, node }) => {
+export const ImageUpload: React.FC<ImageUploadProps> = ({
+  setHash,
+  node,
+  onCancel,
+}) => {
   const [upImg, setUpImg] = useState<string | ArrayBuffer>()
   const imgRef = useRef(null)
   const previewCanvasRef = useRef<HTMLCanvasElement>(null)
@@ -96,9 +103,12 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({ setHash, node }) => {
           src={upImg}
           onImageLoaded={onLoad}
           crop={crop}
-          onChange={c => setCrop(c)}
-          onComplete={c => setCompletedCrop(c)}
+          onChange={setCrop}
+          onComplete={setCompletedCrop}
         />
+        <Button type="button" onClick={onCancel}>
+          cancel
+        </Button>
         <Button
           type="button"
           disabled={!completedCrop?.width || !completedCrop?.height}

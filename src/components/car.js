@@ -17,18 +17,15 @@ export function Model(props) {
   const texture = useTexture(
     "https://ipfs.infura.io:5001/api/v0/cat?arg=QmNffSDksetf7dt84FTeEYySBXmu8TxefNqtjTjrgVvuCw"
   )
-  //   <meshBasicMaterial
-  //   attach="material"
-  //   map={texture || materials.first.map}
-  // />
   texture.flipY = false
-  console.log(texture)
+
   useFrame(state => {
     const t = state.clock.getElapsedTime()
     ref.current.rotation.y = t / 8
 
     ref.current.position.y = (1 + Math.sin(t / 1.5)) / 10 - 1.2
   })
+
   const { nodes, materials } = useGLTF("/model.glb")
   return (
     <group ref={ref} {...props} dispose={null}>
@@ -93,6 +90,7 @@ export function Model(props) {
       >
         <meshBasicMaterial
           attach="material"
+          transparent
           map={texture || materials.first.map}
         />
       </mesh>

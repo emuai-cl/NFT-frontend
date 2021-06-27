@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useMemo, useState } from "react"
 import type IPFS from "ipfs-core/src/components"
 
 import styled from "styled-components"
 import tw from "twin.macro"
 
-import { PageLink } from "../components/common"
+import { Button, PageLink } from "../components/common"
 import Navbar from "../components/navbar"
 
-import { ImageUpload } from "../components/image-upload"
-import { CustomModal } from "../components/modal"
+import { ManageNFT } from "../components/manage-nft"
 
 import { useContract } from "../hooks/useContract"
 import { useConnect } from "../hooks/useConnect"
@@ -16,17 +15,11 @@ import { useWeb3 } from "../hooks/useWeb3"
 import { useSignNFT } from "../hooks/useSignNFT"
 import { waitForNode } from "../helpers/waitForNode"
 
-import "react-image-crop/dist/ReactCrop.css"
+import NFTList from "../components/nft-list"
+import { ImageUploadModal } from "../components/image-upload-modal"
 
 const Spacer = styled.div`
   padding-bottom: 100px;
-`
-
-const Button = styled.button`
-  ${tw`px-10 py-4 rounded shadow text-white uppercase font-bold`};
-  ${({ theme }) => theme.backgrounds.accent};
-  ${({ theme }) => theme.backgrounds.hoverAccent};
-  ${({ theme }) => theme.backgrounds.focusAccent};
 `
 
 const Manage = () => {
@@ -37,6 +30,20 @@ const Manage = () => {
   const web3 = useWeb3()
   const signNFT = useSignNFT(web3)
   const [node, setNode] = useState<IPFS>()
+
+  useEffect(() => {
+    const init = async () => {
+      if (contract) {
+        const TOTAL_SUPPLY = Number(await contract.methods.totalSupply().call())
+        const balanceOf = Number(
+          await contract.methods.balanceOf(contract.defaultAccount).call()
+        )
+
+        console.log(TOTAL_SUPPLY, balanceOf)
+      }
+    }
+    init()
+  }, [contract == undefined])
 
   useEffect(() => {
     waitForNode().then(setNode)
@@ -75,15 +82,20 @@ const Manage = () => {
           </PageLink>
         </>
       )}
-      <CustomModal isOpen={isOpen} closeModal={closeModal}>
-        <ImageUpload
+      {contract && (
+        <NFTList
+          contract={contract}
           node={node}
-          setHash={hash => {
-            setHash(hash)
-            closeModal()
-          }}
+          setOpen={setOpen}
+          hash={hash}
         />
-      </CustomModal>
+      )}
+      <ImageUploadModal
+        isOpen={isOpen}
+        closeModal={closeModal}
+        node={node}
+        setHash={setHash}
+      />
     </>
   )
 }
