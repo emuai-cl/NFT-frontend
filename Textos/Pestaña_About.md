@@ -16,7 +16,7 @@ Currently we are a multidisciplinary team of students from the UAI dedicated to 
 We like emus. They are fast, cool and they won a war against Australia, which is where the World Solar Challenge takes place and where we want to win.
 Also, we are called EMUAI which has "emu" in it. EMUAI comes from Electromovilidad Universidad Adolfo Ibáñez or Electromobility of the Adolfo Ibáñez University.
 
-# Sunroead's next competitions
+# Sunroad's next competitions
 
 The Bridgestone World Solar Challenge (BWSC) is known as the most challenging solar race in the world. A unique feature of this race is that all the cars are completely different and designed from scratch, which places particular emphasis on their autonomy and functionality.
 The weather conditions are extreme, as the race crosses the Australian desert from Darwin to Adelaide, covering more than 3000 kilometers over 7 days. It will take the cars through strong winds and sometimes rain near the coastal cities. Therefore, we can say that the BWSC is more than just a race; it is a challenge.
@@ -33,12 +33,12 @@ On september 2022 in Suthafrica, the Sasol Solar Challenge [https://www.solarcha
 
 
 
-# Our Solar Car
+# Our solar car
 
 Our solar car is a "Challenger" class [https://worldsolarchallenge.org/the-challenge/classes/challenger-class] solar car, which means it is extremely efficient. During 2020 we designed the car using the joint knowledge of top-class students, teachers, mentors, consultants, and partners across many different areas and organized the logistics and strategy for a solar car race. We also had our press department publish us on tens of magazines and showing us on television a couple of times.
 
 The vehicle's structure will be made of carbon fiber for it to be light and strong. Green Composites, a composite materials company, is helping us achieve this task as they have vast experience using carbon fiber for building cars. The mechanical parts will be custom made in space-grade aluminum. Our solar panels are going to be curved so that they follow the aerodynamic shape of the car. This will be achieved thanks to the help of Gochermann Solar Technology, "a manufacturer of custom solar arrays with very special features required in solar race events". Our motor will be of the most efficient motors in the planet, at a whopping 95% and our batteries, custom made by our team for our specifications. The car will have no mirrors. Instead, it will have cameras and a screen in order to not interfere with aerodynamics. A second screen on the drive-wheel will show relevant information to the driver during que races. 
 
-All of this is just showing you the tip of the iceberg, as we could write several books with all our knowledge.
+All of this is just showing you the tip of the iceberg, as every part of the car could be a project by itself.
 
 This year we want to bring this design to reality, but it is expensive as you may have realized. This is why we want you to be a part of our project and help us bring it alive.
