@@ -2,6 +2,7 @@ import React from "react"
 import Slide from "react-reveal/Slide"
 import styled, { keyframes } from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
+import { Footer } from "../components/footer"
 
 import tw from "twin.macro"
 
@@ -31,6 +32,7 @@ const FAQ: React.FC<{}> = () => {
       <Slide top>
         <PageTitle>Frequently Asked Questions</PageTitle>
       </Slide>
+      <Footer />
     </Container>
   )
 }

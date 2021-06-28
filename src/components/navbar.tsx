@@ -4,13 +4,13 @@ import styled, { css } from "styled-components"
 import { Link } from "gatsby"
 
 const Navbar = styled.nav`
-  ${tw`w-full z-30 top-0 text-white py-1 lg:py-4`};
+  ${tw`w-full z-30 top-0  text-white py-1 lg:py-4`};
   position: absolute;
   top: 0;
 `
 
 const NavbarContainer = styled.div`
-  ${tw`w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-2 lg:py-6`};
+  ${tw`w-full container  mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-2 lg:py-6`};
 `
 
 const InnerContainer = styled.div`
@@ -18,7 +18,7 @@ const InnerContainer = styled.div`
 `
 
 const Content = styled.div<{ open: boolean }>`
-  ${tw`w-full flex-grow lg:flex lg:items-center lg:w-auto lg:block mt-2 lg:mt-0 text-black p-4 lg:p-0 z-20`};
+  ${tw`w-full flex-grow lg:flex lg:items-center  lg:w-auto lg:block mt-2 lg:mt-0 text-black p-4 lg:p-0 z-20`};
   ${({ open }) =>
     !open &&
     css`
@@ -30,9 +30,11 @@ const List = styled.ul`
   ${tw`lg:flex flex-1 w-auto justify-end  items-center`};
 `
 const ListItem = styled.li`
-  ${tw`mr-3`};
+  ${tw`mr-3 `};
 `
-
+const MobileListItem = styled.li`
+  ${tw`mr-12`};
+`
 const StyledLink = styled(Link)`
   ${tw`inline-block py-2 px-4 text-white  font-bold no-underline`};
   text-shadow: 1px 1px rgba(0, 0, 0, 0.5);

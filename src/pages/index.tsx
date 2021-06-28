@@ -42,7 +42,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
       <Team />
 
       <ToastContainer />
-      <Footer buildTime={data.site.buildTime} />
+      <Footer />
     </>
   )
 }
