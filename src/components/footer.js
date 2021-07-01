@@ -84,7 +84,7 @@ export class Footer extends Component {
                   </span>
                   <span class="my-2">
                     <a href="#" class="  text-md hover:text-blue-500">
-                      FQa
+                      FAQ
                     </a>
                   </span>
                 </div>
