@@ -4,6 +4,7 @@ import styled, { keyframes } from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Zoom from "react-reveal/Zoom"
+import { Footer } from "../components/footer"
 
 import { darken, lighten } from "polished"
 import { theme } from "../styles/theme"
@@ -186,6 +187,7 @@ This year we want to bring this design to reality...`}
           </StyledPageParagraph>
         </Zoom>
       </AboutSection>
+      <Footer />
     </>
   )
 }

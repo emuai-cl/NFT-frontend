@@ -7,6 +7,7 @@ import Zoom from "react-reveal/Zoom"
 
 import { darken, lighten } from "polished"
 import { theme } from "../styles/theme"
+import { Footer } from "../components/footer"
 
 import tw from "twin.macro"
 
@@ -154,6 +155,7 @@ const FAQ: React.FC<{}> = () => {
         question="Still not sure if you are a real project. How can I make sure?"
         answer='Our activity online may seem to have just appeared out of nowhere, like our twitter or this webpage, but this were only done for the NFT-fundraising idea, because our previous activity online has been in Spanish. You can visit our official Instagram [https://www.instagram.com/emuai_chile/] where we have been posting since our origins in 2017. Feel free to message us there. Also, you can take a look at our official team website [emuai.cl] and see our extensive media appearances under "Noticias".'
       ></QandA>
+      <Footer />
     </>
   )
 }

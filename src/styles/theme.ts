@@ -18,6 +18,7 @@ export const theme = {
   colors: {
     accent: "#2D9CCA",
   },
+
   backgrounds: {
     accent: tw`bg-blue-500`,
     hoverAccent: tw`hover:bg-blue-600`,
