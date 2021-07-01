@@ -52,13 +52,11 @@ const Container = styled.div`
 const QuestionSection = styled.div`
   ${tw`flex py-10 mx-14 mt-6 rounded-t flex-col md:flex-row`};
   background-color: ${({ theme }) => theme.gradients.third};
-}
 `
 
 const AnswerSection = styled.div`
   ${tw`flex py-10 mx-14 mb-16 rounded-b flex-col md:flex-row`};
   background-color: ${({ theme }) => lighten(0.07, theme.gradients.third)};
-}
 `
 
 const StyledPageTitle = styled(PageTitle)`
