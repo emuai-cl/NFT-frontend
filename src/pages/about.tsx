@@ -6,6 +6,9 @@ import { StaticImage } from "gatsby-plugin-image"
 import Zoom from "react-reveal/Zoom"
 import { Footer } from "../components/footer"
 
+import { darken, lighten } from "polished"
+import { theme } from "../styles/theme"
+
 import tw from "twin.macro"
 
 import Navbar from "../components/navbar"
@@ -47,25 +50,43 @@ const Container = styled.div`
 `
 
 const AboutSection = styled.div`
-  ${tw`my-12`}
+  ${tw`py-12`};
+  background-color: ${({ theme }) => theme.gradients.third};
+  &:nth-child(even) {
+    background-color: ${({ theme }) => lighten(0.07, theme.gradients.third)};
+  }
 `
 
 const StyledPageTitle = styled(PageTitle)`
-  ${tw`pt-16 text-white text-6xl`};
+  ${tw`pt-24 text-white text-6xl`};
   color: white;
 `
 
+const StyledSpan = styled.span`
+  ${tw`bg-white h-1 w-20 block mt-2 mx-auto mb-10`}
+`
+
 const StyledPageSubtitle = styled(PageSubtitle)`
-  ${tw`flex items-center justify-center`}
+  ${tw`flex items-center justify-center`};
+  color: white;
 `
 
 const StyledPageParagraph = styled(PageParagraph)`
-  ${tw`mx-auto text-justify w-4/5`}
+  ${tw`mx-auto text-justify w-4/5`};
+  color: white;
+  font-weight: 600;
 `
 
 const StyledStaticImage = styled(StaticImage)`
   ${tw``}
 `
+
+const SubtitleWithLine = props => (
+  <>
+    <StyledPageSubtitle>{props.children}</StyledPageSubtitle>
+    <StyledSpan />
+  </>
+)
 
 const About: React.FC<{}> = () => {
   const data = useStaticQuery(graphql`
@@ -86,7 +107,7 @@ const About: React.FC<{}> = () => {
         </Slide>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
           <path
-            fill="#fff"
+            fill={theme.gradients.third}
             fillOpacity="1"
             d="M0,256L60,234.7C120,213,240,171,360,181.3C480,192,600,256,720,272C840,288,960,256,1080,224C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
           ></path>
@@ -94,7 +115,7 @@ const About: React.FC<{}> = () => {
       </Background>
       <AboutSection>
         <Slide top>
-          <StyledPageSubtitle>History</StyledPageSubtitle>
+          <SubtitleWithLine>History</SubtitleWithLine>
         </Slide>
         <Zoom>
           <StyledPageParagraph>
@@ -105,9 +126,9 @@ Currently we are a multidisciplinary team of students from the UAI, which is ded
       </AboutSection>
       <AboutSection>
         <Slide top>
-          <StyledPageSubtitle>
-            What has this to do with emus?
-          </StyledPageSubtitle>
+          <SubtitleWithLine>
+            What does this have to do with emus?
+          </SubtitleWithLine>
         </Slide>
         <Zoom>
           <StyledPageParagraph>
@@ -118,9 +139,7 @@ Also, we are called EMUAI wich has an "emu" in it. EMUAI comes from Electromovil
       </AboutSection>
       <AboutSection>
         <Slide top>
-          <StyledPageSubtitle>
-            "NOMBRE DEL AUTO" COMPETITIONS:
-          </StyledPageSubtitle>
+          <SubtitleWithLine>"NOMBRE DEL AUTO" competitions</SubtitleWithLine>
         </Slide>
         <Zoom>
           <StyledPageParagraph>
@@ -136,7 +155,7 @@ But this is not all. We are looking to compete in Chile in 2022 in an extreme ra
         </Zoom>
       </AboutSection>
       <AboutSection>
-        <StyledPageSubtitle>Our team</StyledPageSubtitle>
+        <SubtitleWithLine>Our Team</SubtitleWithLine>
         <StaticImage
           src="../images/emuai.jpeg"
           width={600}
@@ -152,7 +171,7 @@ But this is not all. We are looking to compete in Chile in 2022 in an extreme ra
       </AboutSection>
       <AboutSection>
         <Slide top>
-          <StyledPageSubtitle>Our Solar Car</StyledPageSubtitle>
+          <SubtitleWithLine>Our Solar Car</SubtitleWithLine>
         </Slide>
         <Zoom>
           <StyledPageParagraph>

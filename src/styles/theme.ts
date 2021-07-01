@@ -10,6 +10,10 @@ export const gradientColors = `${gradientFirst}, ${gradientSecond}, ${gradientTh
 export const theme = {
   gradients: {
     main: `linear-gradient(45deg, ${gradientColors})`,
+    first: gradientFirst,
+    second: gradientSecond,
+    third: gradientThird,
+    forth: gradientForth,
   },
   colors: {
     accent: "#2D9CCA",
