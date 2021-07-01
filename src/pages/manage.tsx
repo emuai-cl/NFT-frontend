@@ -22,6 +22,10 @@ const Spacer = styled.div`
   padding-bottom: 100px;
 `
 
+const PageContainer = styled.div`
+  height: 100%;
+`
+
 const Manage = () => {
   const [hash, setHash] = useState<string>()
   const [isOpen, setOpen] = useState(false)
@@ -52,7 +56,7 @@ const Manage = () => {
   const closeModal = () => setOpen(false)
 
   return (
-    <>
+    <PageContainer>
       <Navbar />
       <Spacer />
       {contract && web3 ? (
@@ -96,7 +100,7 @@ const Manage = () => {
         node={node}
         setHash={setHash}
       />
-    </>
+    </PageContainer>
   )
 }
 
