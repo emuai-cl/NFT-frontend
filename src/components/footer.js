@@ -30,7 +30,7 @@ export class Footer extends Component {
                   <div class="flex flex-row mt-4 space-x-2">
                     <div class="flex flex-col">
                       <a
-                        href="#"
+                        href="https://www.instagram.com/emuai_chile/"
                         class="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
                       >
                         <SiInstagram />
@@ -38,7 +38,7 @@ export class Footer extends Component {
                     </div>
                     <div class="flex flex-col">
                       <a
-                        href="#"
+                        href="https://github.com/emuai-cl"
                         class="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
                       >
                         <SiGithub />
@@ -46,7 +46,7 @@ export class Footer extends Component {
                     </div>
                     <div class="flex flex-col">
                       <a
-                        href="#"
+                        href="https://www.linkedin.com/company/electromovilidad-uai/"
                         class="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
                       >
                         <SiLinkedin />
