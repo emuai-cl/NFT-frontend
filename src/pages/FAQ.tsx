@@ -84,18 +84,22 @@ const StyledLetter = styled.div`
   font-weight: 530;
 `
 
-const QandA = props => (
+type QandAProps = {
+  question: string
+  answer: string
+}
+const QandA: React.FC<QandAProps> = ({ question, answer }) => (
   <>
     <Slide left>
       <QuestionSection>
         <StyledLetter>Q</StyledLetter>
-        <StyledPageSubtitle>{props.question}</StyledPageSubtitle>
+        <StyledPageSubtitle>{question}</StyledPageSubtitle>
       </QuestionSection>
     </Slide>
     <Slide right>
       <AnswerSection>
         <StyledLetter>A</StyledLetter>
-        <StyledPageParagraph>{props.answer}</StyledPageParagraph>
+        <StyledPageParagraph>{answer}</StyledPageParagraph>
       </AnswerSection>
     </Slide>
   </>
