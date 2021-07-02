@@ -1,26 +1,13 @@
 import React from "react"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import tw from "twin.macro"
+import { gradientBackground } from "../styles/gradientBackground"
 import { theme } from "../styles/theme"
 
 import { Accent } from "./common"
 
-const gradient = keyframes`
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-`
-
 const Background = styled.div`
-  background: ${({ theme }) => theme.gradients.main};
-  background-size: 200% 200%;
-  animation: ${gradient} 15s ease infinite;
+  ${gradientBackground};
   width: stretch;
   svg {
     display: block;
