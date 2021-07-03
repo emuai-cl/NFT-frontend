@@ -2,7 +2,7 @@
 
 ## How do I get an EMU?
 
-In order to buy an EMU, you need to set up a cryto wallet like metamask and get some ETH. Then you can go to yhe homepage [myemus.info] and choose how many you want to mint. Afer you mint them, they are yours.
+In order to buy an EMU, you need to set up a cryto wallet like metamask and get some ETH. Then you can go to the homepage [myemus.info] and choose how many you want to mint. Afer you mint them, they are yours.
 
 ## What space will I get on the Solar Car?
 
@@ -10,7 +10,7 @@ EMUs are sold in ascending order, so it starts with the ID 1 and ends with the I
 
 ## What can I do with my EMUs?
 
-EMUs are meant to represent the ownership of a pice of our solar car, so you can put any image your hearth desires on your space, as long as it not against our very basic rules (nothing ilegal and nothing that would harm our public image for having on our solar car). You can also put a description of your EMU. This will appear on the markets like OpenSea.
+EMUs are meant to represent the ownership of a piece of our solar car, so you can put any image your hearth desires on your space, as long as it not against our very basic rules (nothing ilegal and nothing that would harm our public image for having on our solar car). You can also put a description of your EMU. This will appear on the markets like OpenSea.
 
 ## Can I trade my EMUs?
 
