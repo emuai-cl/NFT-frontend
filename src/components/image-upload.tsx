@@ -2,12 +2,21 @@ import React, { useCallback, useEffect, useRef, useState } from "react"
 import type IPFS from "ipfs-core/src/components"
 import ReactCrop from "react-image-crop"
 import styled from "styled-components"
+import tw from "twin.macro"
 
 import { upload } from "../helpers/resizeCanvas"
 import { FileUpload } from "./file-upload"
-import { Accent, Button } from "./common"
+import {
+  Accent,
+  Button,
+  GroupContainer,
+  CancelButton,
+  ConfirmButton,
+} from "./common"
+import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai"
 
 import "react-image-crop/dist/ReactCrop.css"
+import { useSetEditing } from "../hooks/useSetEditing"
 
 const StyledReactCrop = styled(ReactCrop)`
   max-height: 100%;
@@ -20,6 +29,14 @@ const Canvas = styled.canvas`
 const Container = styled.div`
   max-width: 45vmin;
   max-height: 45vmin;
+`
+
+const ConfirmIcon = styled(AiOutlineCheck)`
+  ${tw`fill-current w-4 h-4 mr-2`};
+`
+
+const CancelIcon = styled(AiOutlineClose)`
+  ${tw`fill-current w-4 h-4 mr-2`};
 `
 
 type ImageUploadProps = {
@@ -39,6 +56,7 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
   const [crop, setCrop] = useState({ unit: "%", width: 30, aspect: 1 / 1 })
 
   const [completedCrop, setCompletedCrop] = useState(null)
+  const setEditing = useSetEditing()
 
   const onSelectFile: React.ChangeEventHandler<HTMLInputElement> = e => {
     if (e.target.files && e.target.files.length > 0) {
@@ -92,7 +110,11 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
     console.log(hash)
     setHash(hash)
   }
-
+  const handleCancel = () => {
+    onCancel()
+    setHash(null)
+    setEditing(null)
+  }
   return (
     <>
       <FileUpload onChange={onSelectFile} />
@@ -106,16 +128,18 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
           onChange={setCrop}
           onComplete={setCompletedCrop}
         />
-        <Button type="button" onClick={onCancel}>
-          cancel
-        </Button>
-        <Button
-          type="button"
-          disabled={!completedCrop?.width || !completedCrop?.height}
-          onClick={onClick}
-        >
-          Confirm image
-        </Button>
+        <GroupContainer>
+          <CancelButton onClick={handleCancel}>
+            <CancelIcon /> <span>Cancel</span>
+          </CancelButton>
+          <ConfirmButton
+            disabled={!completedCrop?.width || !completedCrop?.height}
+            onClick={onClick}
+          >
+            <ConfirmIcon />
+            <span>Confirm</span>
+          </ConfirmButton>
+        </GroupContainer>
       </Container>
     </>
   )
