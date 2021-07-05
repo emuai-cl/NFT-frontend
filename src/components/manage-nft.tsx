@@ -3,6 +3,7 @@ import type IPFS from "ipfs-core/src/components"
 
 import styled from "styled-components"
 import tw from "twin.macro"
+import { darken } from "polished"
 
 import {
   CancelButton,
@@ -43,6 +44,11 @@ const CancelIcon = styled(AiOutlineClose)`
   ${tw`fill-current w-4 h-4 mr-2`};
 `
 
+const NFTTitle = styled.h2`
+  ${tw`text-center font-bold`};
+  color: ${({ theme }) => darken(0.2, theme.colors.accent)};
+`
+
 type ManageNFTProps = {
   node: IPFS
   id: number
@@ -81,6 +87,7 @@ export const ManageNFT: React.FC<ManageNFTProps> = ({ id, openModal, cid }) => {
   }, [])
   return (
     <NFTCard>
+      <NFTTitle>{`EMU: #${id}`}</NFTTitle>
       <StyledImage
         height={150}
         width={150}
