@@ -20,20 +20,20 @@ export const LazyImage: FC<ImageUploadModalProps> = ({ source, ...props }) => {
     setError(true)
   }
 
-  const onLoad = () => {
-    setLoading(false)
-  }
+  const onLoad = () => setLoading(false)
+  const onLoadStart = () => setLoading(true)
 
   return (
     <div>
-      {loading && <Skeleton height={props.height} width={props.width} />}
       <img
         {...props}
+        onLoadStart={onLoadStart}
         style={loading ? { display: "none" } : props.style ?? {}}
         src={!error ? source : FALLBACK_SOURCE}
         onError={onError}
         onLoad={onLoad}
       />
+      {loading && <Skeleton height={props.height} width={props.width} />}
     </div>
   )
 }
