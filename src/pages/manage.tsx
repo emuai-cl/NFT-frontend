@@ -87,19 +87,9 @@ const Manage = () => {
         </>
       )}
       {contract && (
-        <NFTList
-          contract={contract}
-          node={node}
-          setOpen={setOpen}
-          hash={hash}
-        />
+        <NFTList contract={contract} node={node} setOpen={setOpen} />
       )}
-      <ImageUploadModal
-        isOpen={isOpen}
-        closeModal={closeModal}
-        node={node}
-        setHash={setHash}
-      />
+      <ImageUploadModal isOpen={isOpen} closeModal={closeModal} node={node} />
     </PageContainer>
   )
 }
