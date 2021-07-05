@@ -23,7 +23,7 @@ const Container = styled.div`
 `
 
 type ImageUploadProps = {
-  setHash: React.Dispatch<React.SetStateAction<string>>
+  setHash: (hash: string) => void
   node: IPFS
   onCancel?: () => void
 }
