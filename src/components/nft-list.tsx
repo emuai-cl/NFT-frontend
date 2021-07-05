@@ -20,7 +20,6 @@ const FALLBACK_CID = "QmUwtG6Q1zPLWd4rfk5RyQCE35wJK3CVXXnDWHyiKbNUvA"
 type NFTListProps = {
   contract: Contract
   node: IPFS
-  hash: string
   setOpen: (open: boolean) => void
 }
 
@@ -42,7 +41,7 @@ const loadNFTs = async (contract: Contract) => {
   return NFTs
 }
 
-const NFTList: FC<NFTListProps> = ({ contract, node, setOpen, hash }) => {
+const NFTList: FC<NFTListProps> = ({ contract, node, setOpen }) => {
   const [ids, setIds] = useState<(number | string)[]>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(false)
@@ -89,7 +88,7 @@ const NFTList: FC<NFTListProps> = ({ contract, node, setOpen, hash }) => {
           key={`nft-${id}`}
           node={node}
           id={Number(id)}
-          hash={cid}
+          cid={cid}
           openModal={() => setOpen(true)}
         />
       ))}
