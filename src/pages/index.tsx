@@ -17,6 +17,7 @@ import { Sale } from "../components/sale"
 import { Team } from "../components/team"
 import { Footer } from "../components/footer"
 import { useRef } from "react"
+import { Roadmap } from "../components/roadmap"
 
 type DataProps = {
   site: {
@@ -38,7 +39,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
       <Powered />
       <Car />
       <Eth ref={buyRef} />
-
+      <Roadmap />
       <Team />
 
       <ToastContainer />
