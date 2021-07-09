@@ -15,6 +15,7 @@ import { Powered } from "../components/powered"
 import { Sale } from "../components/sale"
 import { Team } from "../components/team"
 import { Footer } from "../components/footer"
+import { Roadmap } from "../components/roadmap"
 
 import "react-toastify/dist/ReactToastify.css"
 
@@ -38,7 +39,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
       <Powered />
       <Car />
       <Eth ref={buyRef} />
-
+      <Roadmap />
       <Team />
 
       <ToastContainer />
