@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useRef } from "react"
 import { graphql, PageProps } from "gatsby"
 import { ToastContainer } from "react-toastify"
 
@@ -11,12 +11,12 @@ import Hero from "../components/hero"
 
 import Navbar from "../components/navbar"
 
-import "react-toastify/dist/ReactToastify.css"
 import { Powered } from "../components/powered"
 import { Sale } from "../components/sale"
 import { Team } from "../components/team"
 import { Footer } from "../components/footer"
-import { useRef } from "react"
+
+import "react-toastify/dist/ReactToastify.css"
 
 type DataProps = {
   site: {
@@ -42,7 +42,7 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
       <Team />
 
       <ToastContainer />
-      <Footer />
+      <Footer buildTime={data.site.buildTime} />
     </>
   )
 }
