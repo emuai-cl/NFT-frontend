@@ -1,10 +1,12 @@
 import React from "react"
 import styled from "styled-components"
+import { darken } from "polished"
 
 import tw from "twin.macro"
 
 const Container = styled.div`
-  ${tw`bg-black text-white py-8`};
+  ${tw`py-8`};
+  background-color: ${({ theme }) => darken(0.1, theme.backgrounds.page)};
 `
 
 const SubContainer = styled.div`
@@ -16,13 +18,14 @@ const SubSubContainer = styled.div`
 `
 
 const SuperTitle = styled.p`
-  ${tw`ml-2 text-yellow-300 uppercase`};
+  ${tw`ml-2  uppercase`};
+  color: ${({ theme }) => theme.colors.accent};
 `
 
 const Line = styled.div`
   ${tw`border-2  absolute h-full border`};
   left: 50%;
-  border: 2px solid #ffc100;
+  border: 2px solid ${({ theme }) => theme.gradients.second};
   border-radius: 1%;
 `
 
@@ -30,35 +33,13 @@ const Title = styled.p`
   ${tw`text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2`};
 `
 
-type TimelineProps = {
-  align?: "left" | "right"
-}
-
-const Timeline = styled.div<TimelineProps>`
-  ${tw`mb-8 flex justify-between flex-row-reverse items-center w-full`};
-`
-
-const Spacer = styled.div`
-  ${tw`order-1 w-5/12`};
-`
-const TimelineContent = styled(Spacer)<TimelineProps>`
-  ${tw`px-1 py-4`}
-  ${({ align }) => (align === "right" ? tw`text-left` : tw`text-right`)};
+const TimelineTitle = styled.p`
+  ${tw`mb-3 text-base`};
+  color: ${({ theme }) => theme.colors.accent};
 `
 
 const Image = styled.img`
   ${tw`mx-auto -mt-36 md:-mt-36`};
-`
-
-const TimelineData = styled.p`
-  ${tw`mb-3 text-base text-yellow-300`};
-`
-
-const TimelineTitle = styled.h4`
-  ${tw`mb-3 font-bold text-lg md:text-2xl`};
-`
-const TimelineDescription = styled.p`
-  ${tw`text-sm md:text-base leading-snug text-gray-50 text-opacity-100`};
 `
 
 export const Roadmap: React.FC = () => {
@@ -73,6 +54,12 @@ export const Roadmap: React.FC = () => {
               Here’s your guide to the tech fest 2021 process. Go through all
               the steps to know the exact process of the fest.
             </p>
+            <a
+              href="#"
+              className="bg-transparent mr-auto hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent"
+            >
+              Explore Now
+            </a>
           </SubSubContainer>
           <div className="ml-0 md:ml-12 lg:w-2/3 sticky">
             <div className="container mx-auto w-full h-full">
@@ -80,54 +67,62 @@ export const Roadmap: React.FC = () => {
                 <Line />
                 <Line />
                 <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                  <Spacer />
-                  <TimelineContent align="left">
-                    <TimelineData>1-6 May, 2021</TimelineData>
-                    <TimelineTitle>Registration</TimelineTitle>
-                    <TimelineDescription>
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1 w-5/12 px-1 py-4 text-right">
+                    <TimelineTitle>1-6 May, 2021</TimelineTitle>
+                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
+                      Registration
+                    </h4>
+                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       Pick your favourite event(s) and register in that event by
                       filling the form corresponding to that event. Its that
                       easy :)
-                    </TimelineDescription>
-                  </TimelineContent>
+                    </p>
+                  </div>
                 </div>
-                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full right-timeline">
-                  <Spacer />
-                  <TimelineContent align="right">
-                    <TimelineData>6-9 May, 2021</TimelineData>
-                    <TimelineTitle>Participation</TimelineTitle>
-                    <TimelineDescription>
+                <div className="mb-8 flex justify-between items-center w-full right-timeline">
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1  w-5/12 px-1 py-4 text-left">
+                    <TimelineTitle>6-9 May, 2021</TimelineTitle>
+                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
+                      Participation
+                    </h4>
+                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       Participate online. The links for your registered events
                       will be sent to you via email and whatsapp groups. Use
                       those links and show your talent.
-                    </TimelineDescription>
-                  </TimelineContent>
+                    </p>
+                  </div>
                 </div>
                 <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                  <Spacer />
-                  <TimelineContent align="left">
-                    <TimelineData>10 May, 2021</TimelineData>
-                    <TimelineTitle>Result Declaration</TimelineTitle>
-                    <TimelineDescription>
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1 w-5/12 px-1 py-4 text-right">
+                    <TimelineTitle> 10 May, 2021</TimelineTitle>
+                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
+                      Result Declaration
+                    </h4>
+                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       The ultimate genius will be revealed by our judging panel
                       on 10th May, 2021 and the resukts will be announced on the
                       whatsapp groups and will be mailed to you.
-                    </TimelineDescription>
-                  </TimelineContent>
+                    </p>
+                  </div>
                 </div>
 
-                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full right-timeline">
-                  <Spacer />
+                <div className="mb-8 flex justify-between items-center w-full right-timeline">
+                  <div className="order-1 w-5/12"></div>
 
-                  <TimelineContent align="right">
-                    <TimelineData>12 May, 2021</TimelineData>
-                    <TimelineTitle>Prize Distribution</TimelineTitle>
-                    <TimelineDescription>
+                  <div className="order-1  w-5/12 px-1 py-4">
+                    <TimelineTitle>12 May, 2021</TimelineTitle>
+                    <h4 className="mb-3 font-bold  text-lg md:text-2xl text-left">
+                      Prize Distribution
+                    </h4>
+                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       The winners will be contacted by our team for their
                       addresses and the winning goodies will be sent at their
                       addresses.
-                    </TimelineDescription>
-                  </TimelineContent>
+                    </p>
+                  </div>
                 </div>
               </div>
               <Image src="https://user-images.githubusercontent.com/54521023/116968861-ef21a000-acd2-11eb-95ac-a34b5b490265.png" />
