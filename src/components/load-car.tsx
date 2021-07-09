@@ -46,7 +46,7 @@ export default () => {
     <Container>
       <InnerContainer>
         <CenteredText>
-          Click below two preview the car with the currrent NFTs.
+          Click below to preview the car with the currrent NFTs.
         </CenteredText>
         <CenteredText>
           Keep in mind that it is updated every 1 hour.
