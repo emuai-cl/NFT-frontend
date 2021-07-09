@@ -133,7 +133,7 @@ C. There is no joint venture, partnership, employment or agency relationship cre
 `
 
 const Container = styled.div`
-  ${tw`w-4/5 mx-auto mt-40`};
+  ${tw`w-4/5 mx-auto`};
 `
 
 const Pre = styled.pre`
