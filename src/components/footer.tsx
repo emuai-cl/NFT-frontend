@@ -1,5 +1,6 @@
-import React from "react"
+import React, { useMemo } from "react"
 import { SiInstagram, SiLinkedin, SiGithub, SiTelegram } from "react-icons/si"
+import { graphql, useStaticQuery } from "gatsby"
 
 import dayjs from "dayjs"
 import styled from "styled-components"
@@ -10,11 +11,17 @@ const FooterContainer = styled.div`
   ${({ theme }) => theme.backgrounds.accent};
 `
 
-type FooterProps = {
-  buildTime: string
-}
+export const Footer: React.FC = () => {
+  const data = useStaticQuery(graphql`
+    {
+      site {
+        buildTime
+      }
+    }
+  `)
 
-export const Footer: React.FC<FooterProps> = ({ buildTime }) => {
+  const buildTime = useMemo(() => data?.site?.buildTime as string, [data])
+
   return (
     <footer className="footer bg-gray-50 relative pt-1 border-b-2 border-blue-700">
       <div className="container mx-auto px-6">

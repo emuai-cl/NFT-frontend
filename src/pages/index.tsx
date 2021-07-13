@@ -1,6 +1,7 @@
 import React, { useRef } from "react"
-import { graphql, PageProps } from "gatsby"
+import { PageProps } from "gatsby"
 import { ToastContainer } from "react-toastify"
+import YouTube from "react-youtube"
 
 import Seo from "../components/seo"
 import Car from "../components/load-car"
@@ -19,19 +20,14 @@ import { Roadmap } from "../components/roadmap"
 
 import "react-toastify/dist/ReactToastify.css"
 
-type DataProps = {
-  site: {
-    buildTime: string
-  }
-}
-
-const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
+const IndexPage: React.FC<PageProps> = () => {
   const buyRef = useRef<HTMLDivElement>()
 
   return (
     <>
       <Navbar />
       <Seo title="Home" />
+      <YouTube videoId="gJSM7a8bU3k" />
 
       <Hero buyRef={buyRef} />
       <Sale />
@@ -43,17 +39,9 @@ const IndexPage: React.FC<PageProps<DataProps>> = ({ data, path }) => {
       <Team />
 
       <ToastContainer />
-      <Footer buildTime={data.site.buildTime} />
+      <Footer />
     </>
   )
 }
 
 export default IndexPage
-
-export const query = graphql`
-  {
-    site {
-      buildTime
-    }
-  }
-`
