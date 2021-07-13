@@ -41,12 +41,15 @@ export const Footer: React.FC = () => {
               </span>
               <div className="flex flex-row mt-4 space-x-2">
                 <div className="flex flex-col">
-                  <IconLink href="#" target="_blank">
+                  <IconLink
+                    href="https://instagram.com/emuai_chile/"
+                    target="_blank"
+                  >
                     <SiInstagram />
                   </IconLink>
                 </div>
                 <div className="flex flex-col">
-                  <IconLink href="#" target="_blank">
+                  <IconLink href="https://github.com/emuai-cl/" target="_blank">
                     <SiGithub />
                   </IconLink>
                 </div>
@@ -59,10 +62,7 @@ export const Footer: React.FC = () => {
                   </IconLink>
                 </div>
                 <div className="flex flex-col">
-                  <IconLink
-                    href="https://www.linkedin.com/company/electromovilidad-uai/"
-                    target="_blank"
-                  >
+                  <IconLink href="https://t.me/emuai_nfts/" target="_blank">
                     <SiTelegram />
                   </IconLink>
                 </div>
@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
               <a
                 href="mailto:contact@myemus.info"
                 target="_blank"
-                className="my-2"
+                className="my-2 hover:text-blue-500"
               >
                 contact@myemus.info
               </a>
