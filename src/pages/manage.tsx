@@ -13,6 +13,7 @@ import { waitForNode } from "../helpers/waitForNode"
 
 import NFTList from "../components/nft-list"
 import { ImageUploadModal } from "../components/image-upload-modal"
+import { Footer } from "../components/footer"
 
 const Spacer = styled.div`
   padding-bottom: 100px;
@@ -47,6 +48,7 @@ const Manage = () => {
         <NFTList contract={contract} node={node} setOpen={setOpen} />
       )}
       <ImageUploadModal isOpen={isOpen} closeModal={closeModal} node={node} />
+      <Footer />
     </PageContainer>
   )
 }
