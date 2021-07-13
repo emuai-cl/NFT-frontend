@@ -1,6 +1,6 @@
 import React, { useMemo } from "react"
 import { SiInstagram, SiLinkedin, SiGithub, SiTelegram } from "react-icons/si"
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery, Link } from "gatsby"
 
 import dayjs from "dayjs"
 import styled from "styled-components"
@@ -9,6 +9,14 @@ import tw from "twin.macro"
 const FooterContainer = styled.div`
   ${tw`w-full py-2 mb-0 text-white text-center`};
   ${({ theme }) => theme.backgrounds.accent};
+`
+
+const StyledLink = styled(Link)`
+  ${tw`hover:text-blue-500`};
+`
+
+const IconLink = styled.a`
+  ${tw`flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800 hover:text-blue-500 hover:border-blue-800`};
 `
 
 export const Footer: React.FC = () => {
@@ -33,36 +41,30 @@ export const Footer: React.FC = () => {
               </span>
               <div className="flex flex-row mt-4 space-x-2">
                 <div className="flex flex-col">
-                  <a
-                    href="#"
-                    className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
-                  >
+                  <IconLink href="#" target="_blank">
                     <SiInstagram />
-                  </a>
+                  </IconLink>
                 </div>
                 <div className="flex flex-col">
-                  <a
-                    href="#"
-                    className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
-                  >
+                  <IconLink href="#" target="_blank">
                     <SiGithub />
-                  </a>
+                  </IconLink>
                 </div>
                 <div className="flex flex-col">
-                  <a
-                    href="#"
-                    className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
+                  <IconLink
+                    href="https://www.linkedin.com/company/electromovilidad-uai/"
+                    target="_blank"
                   >
                     <SiLinkedin />
-                  </a>
+                  </IconLink>
                 </div>
                 <div className="flex flex-col">
-                  <a
-                    href="#"
-                    className="flex items-center justify-center h-8 w-8 border rounded-full text-gray-800 border-gray-800"
+                  <IconLink
+                    href="https://www.linkedin.com/company/electromovilidad-uai/"
+                    target="_blank"
                   >
                     <SiTelegram />
-                  </a>
+                  </IconLink>
                 </div>
               </div>
             </div>
@@ -70,26 +72,30 @@ export const Footer: React.FC = () => {
               <span className="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
                 Contact us
               </span>
-              <span className="my-2">contact@myemus.info</span>
+              <a
+                href="mailto:contact@myemus.info"
+                target="_blank"
+                className="my-2"
+              >
+                contact@myemus.info
+              </a>
             </div>
             <div className="flex flex-col">
               <span className="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
                 Us
               </span>
               <span className="my-2">
-                <a href="#" className="  text-md hover:text-blue-500">
-                  Terms & conditions
-                </a>
+                <StyledLink to="/terms" className="text-md hover:text-blue-500">
+                  {`Terms & conditions`}
+                </StyledLink>
               </span>
               <span className="my-2">
-                <a href="#" className="  text-md hover:text-blue-500">
+                <StyledLink to="/about" className="">
                   Our team
-                </a>
+                </StyledLink>
               </span>
               <span className="my-2">
-                <a href="/FAQ" className="  text-md hover:text-blue-500">
-                  FAQ
-                </a>
+                <StyledLink to="/FAQ">FAQ</StyledLink>
               </span>
             </div>
           </div>
