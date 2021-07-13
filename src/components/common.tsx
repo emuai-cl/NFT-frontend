@@ -24,3 +24,17 @@ export const Accent = styled.span`
   color: ${({ theme }) => theme.colors.accent};
   font-weight: bold;
 `
+
+export const GroupContainer = styled.div`
+  ${tw`inline-flex w-full`}
+`
+
+export const FullButton = styled(Button)`
+  ${tw`w-full mx-1`};
+`
+export const ConfirmButton = styled(FullButton)`
+  ${tw`bg-green-500 hover:bg-green-600`};
+`
+export const CancelButton = styled(FullButton)`
+  ${tw`bg-red-500 hover:bg-red-600`};
+`

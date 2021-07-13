@@ -51,7 +51,7 @@ const Sold: React.FC<SoldProps> = ({ maxSupply, currentSupply }) => {
     <Container>
       <Car ref={carRef} />
       <PageParagraph>
-        <Span>{percentage}%</Span> already sold.
+        <Span>{((percentage * 10) | 0) / 10}%</Span> already sold.
       </PageParagraph>
     </Container>
   )

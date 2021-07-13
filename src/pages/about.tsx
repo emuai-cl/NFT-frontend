@@ -1,12 +1,12 @@
 import React from "react"
 import Slide from "react-reveal/Slide"
-import styled, { keyframes } from "styled-components"
+import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Zoom from "react-reveal/Zoom"
 import { Footer } from "../components/footer"
 
-import { darken, lighten } from "polished"
+import { lighten } from "polished"
 import { theme } from "../styles/theme"
 
 import tw from "twin.macro"
@@ -18,23 +18,10 @@ import {
   PageParagraph,
   PageLink,
 } from "../components/common"
-
-const gradient = keyframes`
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-`
+import { gradientBackground } from "../styles/gradientBackground"
 
 const Background = styled.div`
-  background: ${({ theme }) => theme.gradients.main};
-  background-size: 200% 200%;
-  animation: ${gradient} 15s ease infinite;
+  ${gradientBackground};
   width: stretch;
   svg {
     display: block;
@@ -85,9 +72,9 @@ const StyledPageLink = styled(PageLink)`
   ${tw`text-blue-500 hover:underline`}
 `
 
-const SubtitleWithLine = props => (
+const SubtitleWithLine: React.FC = ({ children }) => (
   <>
-    <StyledPageSubtitle>{props.children}</StyledPageSubtitle>
+    <StyledPageSubtitle>{children}</StyledPageSubtitle>
     <StyledSpan />
   </>
 )
@@ -214,7 +201,7 @@ This year we want to bring this design to reality, but it is expensive as you ma
           </StyledPageParagraph>
         </Zoom>
       </SecondAboutSection>
-      <Footer />
+      <Footer buildTime={data.site.buildTime} />
     </>
   )
 }

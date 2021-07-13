@@ -1,4 +1,11 @@
-These Terms of Use constitute a legally binding agreement made between the user (“you”), whether personally or on behalf of an entity, and EMUAI (The Company”; “we") concerning your access to and use of the https://www.myemus.info website and the smart-contract based EMUAI_NFTs application (“App” or “Application”) as well as any other media form, media channel, mobile website or mobile application, smart contracts related, linked, or otherwise connected thereto (the “website”, Site” and the “App”).
+import React from "react"
+
+import styled from "styled-components"
+
+import tw from "twin.macro"
+import NavbarComponent from "../components/navbar"
+
+const md = `These Terms of Use constitute a legally binding agreement made between the user (“you”), whether personally or on behalf of an entity, and EMUAI (The Company”; “we") concerning your access to and use of the https://www.myemus.info website and the smart-contract based EMUAI_NFTs application (“App” or “Application”) as well as any other media form, media channel, mobile website or mobile application, smart contracts related, linked, or otherwise connected thereto (the “website”, Site” and the “App”).
 
 EMU is a digital collectible built on top of the Ethereum network. The collection consists of 5940 unique physical and digital 1.5 x 1.5 centimeter squares on the EMUAI's future solar car and present digital car respectively (the “EMUs” or “squares”) that are represented by a non-fungible token (“NFT”) each. The EMUAI_NFTs smart contract allows participants to purchase the NFT representing the digital and future physical square. The Company does not provide or intend to provide a secondary marketplace for the NFT. EMUAI will provide a user interface to visualize the digital squares. After the sale of an NFT to you, the ownership of the NFT, and to the connected EMU, is transferred from the Ethereum smart contract to the purchaser and concludes the business transaction between both parties.
 
@@ -119,3 +126,25 @@ B. These Terms operate to the fullest extent permissible by law. We shall not be
 
 C. There is no joint venture, partnership, employment or agency relationship created between you and us as a result of these Terms or use of the Site. You agree that these Terms will not be construed against us by virtue of having drafted them. You hereby waive any and all defenses you may have based on the electronic form of these Terms of Use and the lack of signing by the parties hereto to execute these Terms.
 
+`
+
+const Container = styled.div`
+  ${tw`w-4/5 mx-auto mt-40`};
+`
+
+const Pre = styled.pre`
+  word-wrap: normal;
+  white-space: pre-wrap;
+`
+const Terms: React.FC = () => {
+  return (
+    <>
+      <NavbarComponent />
+      <Container>
+        <Pre children={md} />
+      </Container>
+    </>
+  )
+}
+
+export default Terms

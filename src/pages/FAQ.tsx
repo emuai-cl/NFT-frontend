@@ -1,40 +1,18 @@
 import React from "react"
 import Slide from "react-reveal/Slide"
-import styled, { keyframes } from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
-import { StaticImage } from "gatsby-plugin-image"
-import Zoom from "react-reveal/Zoom"
+import styled from "styled-components"
 
-import { darken, lighten } from "polished"
-import { theme } from "../styles/theme"
+import { lighten } from "polished"
 import { Footer } from "../components/footer"
 
 import tw from "twin.macro"
 
 import Navbar from "../components/navbar"
-import {
-  PageTitle,
-  PageSubtitle,
-  PageParagraph,
-  PageLink,
-} from "../components/common"
-
-const gradient = keyframes`
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-`
+import { PageTitle, PageSubtitle, PageParagraph } from "../components/common"
+import { gradientBackground } from "../styles/gradientBackground"
 
 const Background = styled.div`
-  background: ${({ theme }) => theme.gradients.main};
-  background-size: 200% 200%;
-  animation: ${gradient} 15s ease infinite;
+  ${gradientBackground};
   width: stretch;
   svg {
     display: block;
@@ -44,9 +22,6 @@ const Background = styled.div`
     background: #ffffff;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
-`
-const Container = styled.div`
-  ${tw`container mx-auto min-h-screen pt-40`};
 `
 
 const QuestionSection = styled.div`
@@ -62,10 +37,6 @@ const AnswerSection = styled.div`
 const StyledPageTitle = styled(PageTitle)`
   ${tw`pt-32 text-white text-6xl`};
   color: white;
-`
-
-const StyledSpan = styled.span`
-  ${tw`bg-white h-1 w-20 block mt-2 mx-auto mb-10`}
 `
 
 const StyledPageSubtitle = styled(PageSubtitle)`
@@ -84,18 +55,22 @@ const StyledLetter = styled.div`
   font-weight: 530;
 `
 
-const QandA = props => (
+type QandAProps = {
+  question: string
+  answer: string
+}
+const QandA: React.FC<QandAProps> = ({ question, answer }) => (
   <>
     <Slide left>
       <QuestionSection>
         <StyledLetter>Q</StyledLetter>
-        <StyledPageSubtitle>{props.question}</StyledPageSubtitle>
+        <StyledPageSubtitle>{question}</StyledPageSubtitle>
       </QuestionSection>
     </Slide>
     <Slide right>
       <AnswerSection>
         <StyledLetter>A</StyledLetter>
-        <StyledPageParagraph>{props.answer}</StyledPageParagraph>
+        <StyledPageParagraph>{answer}</StyledPageParagraph>
       </AnswerSection>
     </Slide>
   </>

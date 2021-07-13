@@ -5,7 +5,7 @@ import { toast } from "react-toastify"
 
 export const axiosInstance = axios.create({
   baseURL: API_URL,
-  timeout: 3000,
+  timeout: 10000,
 })
 
 axiosInstance.interceptors.response.use(
