@@ -65,12 +65,13 @@ const StyledPageLink = styled(PageLink)`
 `
 
 const ContainerForImage = styled.div`
-  ${tw`grid grid-cols-1 lg:grid-cols-3 gap-4`};
+  ${tw`grid grid-cols-1 lg:grid-cols-3`};
 `
-
+const Image = styled.div`
+  ${tw`lg:col-span-1 self-center w-4/5 mx-auto`};
+`
 const ImageText = styled.div`
-  ${tw`lg:col-span-2
-`};
+  ${tw`lg:col-span-2`};
 `
 
 const SubtitleWithLine: React.FC = ({ children }) => (
@@ -176,17 +177,15 @@ On september 2022 in Suthafrica, the `}
           <SubtitleWithLine>Our Solar Car</SubtitleWithLine>
         </Slide>
         <ContainerForImage>
-          <div>
+          <Image>
             <StaticImage
               src="../images/autoPorDentro.jpeg"
               quality={95}
               formats={["auto", "webp", "avif"]}
               alt="A Gatsby astronaut"
-              style={{
-                marginBottom: `1.45rem`,
-              }}
+              style={{}}
             />
-          </div>
+          </Image>
           <ImageText>
             <Zoom>
               <StyledPageParagraph>

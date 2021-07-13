@@ -66,7 +66,9 @@ export class Footer extends Component {
                   <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
                     Contact us
                   </span>
-                  <span class="my-2">contact@myemus.info</span>
+                  <span class="my-2" href="mailto:contact@myemus.info">
+                    contact@myemus.info
+                  </span>
                 </div>
                 <div class="flex flex-col">
                   <span class="font-bold text-gray-700 uppercase mt-4 md:mt-0 mb-2">
