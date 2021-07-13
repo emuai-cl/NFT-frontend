@@ -54,6 +54,14 @@ const AboutSection = styled.div`
   }
 `
 
+const SecondAboutSection = styled.div`
+  ${tw`flex py-12 flex-col md:flex-row`};
+  background-color: ${({ theme }) => theme.gradients.third};
+  &:nth-child(even) {
+    background-color: ${({ theme }) => lighten(0.07, theme.gradients.third)};
+  }
+`
+
 const StyledPageTitle = styled(PageTitle)`
   ${tw`pt-24 text-white text-6xl`};
   color: white;
@@ -175,7 +183,18 @@ On september 2022 in Suthafrica, the `}
           </StyledPageParagraph>
         </Zoom>
       </AboutSection>
-      <AboutSection>
+      <SecondAboutSection>
+        <StaticImage
+          src="../images/autoPorDentro.jpeg"
+          quality={95}
+          formats={["auto", "webp", "avif"]}
+          alt="A Gatsby astronaut"
+          style={{
+            marginBottom: `1.45rem`,
+            marginLeft: `25vw`,
+            marginRight: `25vw`,
+          }}
+        />
         <Slide top>
           <SubtitleWithLine>Our Solar Car</SubtitleWithLine>
         </Slide>
@@ -194,7 +213,7 @@ All of this is just showing you the tip of the iceberg, as every part of the car
 This year we want to bring this design to reality, but it is expensive as you may have realized. This is why we want you to be a part of our project and help us bring it alive.`}
           </StyledPageParagraph>
         </Zoom>
-      </AboutSection>
+      </SecondAboutSection>
       <Footer />
     </>
   )
