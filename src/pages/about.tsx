@@ -41,14 +41,6 @@ const AboutSection = styled.div`
   }
 `
 
-const SecondAboutSection = styled.div`
-  ${tw`flex px-10 py-12 flex-col md:flex-row`};
-  background-color: ${({ theme }) => theme.gradients.third};
-  &:nth-child(even) {
-    background-color: ${({ theme }) => lighten(0.07, theme.gradients.third)};
-  }
-`
-
 const StyledPageTitle = styled(PageTitle)`
   ${tw`pt-24 text-white text-6xl`};
   color: white;
@@ -70,6 +62,15 @@ const StyledPageParagraph = styled(PageParagraph)`
 `
 const StyledPageLink = styled(PageLink)`
   ${tw`text-blue-500 hover:underline`}
+`
+
+const ContainerForImage = styled.div`
+  ${tw`grid grid-cols-1 lg:grid-cols-3 gap-4`};
+`
+
+const ImageText = styled.div`
+  ${tw`lg:col-span-2
+`};
 `
 
 const SubtitleWithLine: React.FC = ({ children }) => (
@@ -170,35 +171,41 @@ On september 2022 in Suthafrica, the `}
           </StyledPageParagraph>
         </Zoom>
       </AboutSection>
-      <SecondAboutSection>
-        <StaticImage
-          src="../images/autoPorDentro.jpeg"
-          quality={95}
-          formats={["auto", "webp", "avif"]}
-          alt="A Gatsby astronaut"
-          style={{
-            marginBottom: `1.45rem`,
-          }}
-        />
+      <AboutSection>
         <Slide top>
           <SubtitleWithLine>Our Solar Car</SubtitleWithLine>
         </Slide>
-        <Zoom>
-          <StyledPageParagraph>
-            {`Our solar car is a `}
-            <StyledPageLink href="https://worldsolarchallenge.org/the-challenge/classes/challenger-class">
-              Challenger class
-            </StyledPageLink>
-            {` solar car, which means it is extremely efficient. During 2020 we designed the car using the joint knowledge of top-class students, teachers, mentors, consultants, and partners across many different areas and organized the logistics and strategy for a solar car race. We also had our press department publish us on tens of magazines and showing us on television a couple of times.
+        <ContainerForImage>
+          <div>
+            <StaticImage
+              src="../images/autoPorDentro.jpeg"
+              quality={95}
+              formats={["auto", "webp", "avif"]}
+              alt="A Gatsby astronaut"
+              style={{
+                marginBottom: `1.45rem`,
+              }}
+            />
+          </div>
+          <ImageText>
+            <Zoom>
+              <StyledPageParagraph>
+                {`Our solar car is a `}
+                <StyledPageLink href="https://worldsolarchallenge.org/the-challenge/classes/challenger-class">
+                  Challenger class
+                </StyledPageLink>
+                {` solar car, which means it is extremely efficient. During 2020 we designed the car using the joint knowledge of top-class students, teachers, mentors, consultants, and partners across many different areas and organized the logistics and strategy for a solar car race. We also had our press department publish us on tens of magazines and showing us on television a couple of times.
 
 The vehicle's structure will be made of carbon fiber for it to be light and strong. Green Composites, a composite materials company, is helping us achieve this task as they have vast experience using carbon fiber for building cars. The mechanical parts will be custom made in space-grade aluminum. Our solar panels are going to be curved so that they follow the aerodynamic shape of the car. This will be achieved thanks to the help of Gochermann Solar Technology, "a manufacturer of custom solar arrays with very special features required in solar race events". Our motor will be of the most efficient motors in the planet, at a whopping 95% and our batteries, custom made by our team for our specifications. The car will have no mirrors. Instead, it will have cameras and a screen in order to not interfere with aerodynamics. A second screen on the drive-wheel will show relevant information to the driver during que races.
 
 All of this is just showing you the tip of the iceberg, as every part of the car could be a project by itself.
 
 This year we want to bring this design to reality, but it is expensive as you may have realized. This is why we want you to be a part of our project and help us bring it alive.`}
-          </StyledPageParagraph>
-        </Zoom>
-      </SecondAboutSection>
+              </StyledPageParagraph>
+            </Zoom>
+          </ImageText>
+        </ContainerForImage>
+      </AboutSection>
       <Footer />
     </>
   )
