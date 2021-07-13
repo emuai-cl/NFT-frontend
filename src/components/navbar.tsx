@@ -35,7 +35,7 @@ const ListItem = styled.li`
 
 const StyledLink = styled(Link)`
   ${tw`inline-block py-2 px-4 lg:text-white text-gray-500  font-bold no-underline`};
-  lg:text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 `
 
 const SpecialLink = styled(Link)`
@@ -81,13 +81,14 @@ const NavbarComponent = () => {
         <Content open={open}>
           <List>
             <ListItem>
-              <StyledLink to="/">Inicio</StyledLink>
+              <StyledLink to="/">Home</StyledLink>
             </ListItem>
-
             <ListItem>
-              <StyledLink to="/about">About</StyledLink>
+              <StyledLink to="/about">About us</StyledLink>
             </ListItem>
-
+            <ListItem>
+              <StyledLink to="/FAQ">FAQ</StyledLink>
+            </ListItem>
             <ListItem>
               <SpecialLink to="/manage">Manage</SpecialLink>
             </ListItem>

@@ -10,6 +10,7 @@ import tw from "twin.macro"
 import Navbar from "../components/navbar"
 import { PageTitle, PageSubtitle, PageParagraph } from "../components/common"
 import { gradientBackground } from "../styles/gradientBackground"
+import { theme } from "../styles/theme"
 
 const Background = styled.div`
   ${gradientBackground};
@@ -86,7 +87,7 @@ const FAQ: React.FC<{}> = () => {
         </Slide>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
           <path
-            fill="#fff"
+            fill={theme.backgrounds.page}
             fillOpacity="1"
             d="M0,256L60,234.7C120,213,240,171,360,181.3C480,192,600,256,720,272C840,288,960,256,1080,224C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
           ></path>
