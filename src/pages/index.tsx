@@ -18,6 +18,7 @@ import { Footer } from "../components/footer"
 import { Roadmap } from "../components/roadmap"
 
 import "react-toastify/dist/ReactToastify.css"
+import { PromotionalVideo } from "../components/PromotionalVideo"
 
 const IndexPage: React.FC<PageProps> = () => {
   const buyRef = useRef<HTMLDivElement>()
@@ -29,6 +30,7 @@ const IndexPage: React.FC<PageProps> = () => {
 
       <Hero buyRef={buyRef} />
       <Sale />
+      <PromotionalVideo />
       <Sold />
       <Powered />
       <Car />

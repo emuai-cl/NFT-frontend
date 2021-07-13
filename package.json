@@ -44,6 +44,7 @@
     "react-reveal": "^1.2.2",
     "react-toastify": "^7.0.3",
     "react-typing-effect": "^2.0.5",
+    "react-youtube": "^7.13.1",
     "styled-components": "^5.2.3",
     "three": "^0.127.0",
     "use-constant": "^1.1.0",
