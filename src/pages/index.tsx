@@ -1,7 +1,6 @@
 import React, { useRef } from "react"
 import { PageProps } from "gatsby"
 import { ToastContainer } from "react-toastify"
-import YouTube from "react-youtube"
 
 import Seo from "../components/seo"
 import Car from "../components/load-car"
@@ -27,7 +26,6 @@ const IndexPage: React.FC<PageProps> = () => {
     <>
       <Navbar />
       <Seo title="Home" />
-      <YouTube videoId="gJSM7a8bU3k" />
 
       <Hero buyRef={buyRef} />
       <Sale />

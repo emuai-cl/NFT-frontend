@@ -42,7 +42,7 @@ const AboutSection = styled.div`
 `
 
 const SecondAboutSection = styled.div`
-  ${tw`flex py-12 flex-col md:flex-row`};
+  ${tw`flex px-10 py-12 flex-col md:flex-row`};
   background-color: ${({ theme }) => theme.gradients.third};
   &:nth-child(even) {
     background-color: ${({ theme }) => lighten(0.07, theme.gradients.third)};
@@ -79,7 +79,7 @@ const SubtitleWithLine: React.FC = ({ children }) => (
   </>
 )
 
-const About: React.FC<{}> = () => {
+const About: React.FC = ({}) => {
   const data = useStaticQuery(graphql`
     {
       file(relativePath: { eq: "images/emuai.jpeg" }) {
@@ -178,8 +178,6 @@ On september 2022 in Suthafrica, the `}
           alt="A Gatsby astronaut"
           style={{
             marginBottom: `1.45rem`,
-            marginLeft: `25vw`,
-            marginRight: `25vw`,
           }}
         />
         <Slide top>
@@ -201,7 +199,7 @@ This year we want to bring this design to reality, but it is expensive as you ma
           </StyledPageParagraph>
         </Zoom>
       </SecondAboutSection>
-      <Footer buildTime={data.site.buildTime} />
+      <Footer />
     </>
   )
 }
