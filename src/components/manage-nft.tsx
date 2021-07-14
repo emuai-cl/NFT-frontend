@@ -1,5 +1,6 @@
 import React from "react"
 import type IPFS from "ipfs-core/src/components"
+import { toast } from "react-toastify"
 
 import styled from "styled-components"
 import tw from "twin.macro"
@@ -15,7 +16,6 @@ import {
 import { useWeb3 } from "../hooks/useWeb3"
 import { useSignNFT } from "../hooks/useSignNFT"
 
-import "react-image-crop/dist/ReactCrop.css"
 import { LazyImage } from "./lazy-image"
 import { useHash } from "../hooks/useHash"
 import { useSetHash } from "../hooks/useSetHash"
@@ -25,6 +25,8 @@ import { useCallback } from "react"
 import { axiosInstance } from "../helpers/axios"
 import { MdEdit } from "react-icons/md"
 import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai"
+
+import "react-image-crop/dist/ReactCrop.css"
 
 const NFTCard = styled.div`
   ${tw`shadow-md p-4 bg-white rounded`};
@@ -66,14 +68,19 @@ export const ManageNFT: React.FC<ManageNFTProps> = ({ id, openModal, cid }) => {
   const setHash = useSetHash()
 
   const onClick = useCallback(async () => {
-    const signature = await signNFT(hash, id)
-    const { data } = await axiosInstance.post("/nft/updateNFT", {
-      path: hash,
-      id,
-      signature,
-    })
+    try {
+      const signature = await signNFT(hash, id)
 
-    console.log(data)
+      const { data } = await axiosInstance.post("/nft/updateNFT", {
+        path: hash,
+        id,
+        signature,
+      })
+
+      toast.success(`${JSON.stringify(data)} EMUS Minted`)
+    } catch (error) {
+      toast.error(`Error: ${error.message}`)
+    }
   }, [hash, id])
 
   const handleEdit = useCallback(() => {
