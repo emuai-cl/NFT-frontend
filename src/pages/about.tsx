@@ -7,31 +7,13 @@ import Zoom from "react-reveal/Zoom"
 import { Footer } from "../components/footer"
 
 import { lighten } from "polished"
-import { theme } from "../styles/theme"
 
 import tw from "twin.macro"
 
 import Navbar from "../components/navbar"
-import {
-  PageTitle,
-  PageSubtitle,
-  PageParagraph,
-  PageLink,
-} from "../components/common"
-import { gradientBackground } from "../styles/gradientBackground"
-
-const Background = styled.div`
-  ${gradientBackground};
-  width: stretch;
-  svg {
-    display: block;
-    bottom: 0;
-  }
-  path {
-    background: #ffffff;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-`
+import { PageSubtitle, PageParagraph, PageLink } from "../components/common"
+import { HeroTitle } from "../components/HeroTitle"
+import { theme } from "../styles/theme"
 
 const AboutSection = styled.div`
   ${tw`py-12`};
@@ -39,11 +21,6 @@ const AboutSection = styled.div`
   &:nth-child(even) {
     background-color: ${({ theme }) => lighten(0.07, theme.gradients.third)};
   }
-`
-
-const StyledPageTitle = styled(PageTitle)`
-  ${tw`pt-24 text-white text-6xl`};
-  color: white;
 `
 
 const StyledSpan = styled.span`
@@ -93,18 +70,7 @@ const About: React.FC = ({}) => {
   return (
     <>
       <Navbar />
-      <Background>
-        <Slide top>
-          <StyledPageTitle>About</StyledPageTitle>
-        </Slide>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
-          <path
-            fill={theme.gradients.third}
-            fillOpacity="1"
-            d="M0,256L60,234.7C120,213,240,171,360,181.3C480,192,600,256,720,272C840,288,960,256,1080,224C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-          ></path>
-        </svg>
-      </Background>
+      <HeroTitle fill={theme.gradients.third}>About</HeroTitle>
       <AboutSection>
         <Slide top>
           <SubtitleWithLine>

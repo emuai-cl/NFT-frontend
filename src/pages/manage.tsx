@@ -14,13 +14,14 @@ import { waitForNode } from "../helpers/waitForNode"
 import NFTList from "../components/nft-list"
 import { ImageUploadModal } from "../components/image-upload-modal"
 import { Footer } from "../components/footer"
+import { HeroTitle } from "../components/HeroTitle"
 
 const Spacer = styled.div`
   padding-bottom: 100px;
 `
 
 const PageContainer = styled.div`
-  height: 100%;
+  min-height: 80vh;
 `
 
 const Manage = () => {
@@ -37,19 +38,23 @@ const Manage = () => {
   const closeModal = () => setOpen(false)
 
   return (
-    <PageContainer>
-      <Navbar />
-      <Spacer />
-      {(!contract || !web3) && (
-        <Button onClick={connect}>connect wallet</Button>
-      )}
+    <>
+      <PageContainer>
+        <Navbar />
+        <HeroTitle>Manage your NFTs</HeroTitle>
 
-      {contract && (
-        <NFTList contract={contract} node={node} setOpen={setOpen} />
-      )}
-      <ImageUploadModal isOpen={isOpen} closeModal={closeModal} node={node} />
+        <Spacer />
+        {(!contract || !web3) && (
+          <Button onClick={connect}>connect wallet</Button>
+        )}
+
+        {contract && (
+          <NFTList contract={contract} node={node} setOpen={setOpen} />
+        )}
+        <ImageUploadModal isOpen={isOpen} closeModal={closeModal} node={node} />
+      </PageContainer>
       <Footer />
-    </PageContainer>
+    </>
   )
 }
 

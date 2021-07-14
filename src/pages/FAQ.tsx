@@ -8,22 +8,8 @@ import { Footer } from "../components/footer"
 import tw from "twin.macro"
 
 import Navbar from "../components/navbar"
-import { PageTitle, PageSubtitle, PageParagraph } from "../components/common"
-import { gradientBackground } from "../styles/gradientBackground"
-import { theme } from "../styles/theme"
-
-const Background = styled.div`
-  ${gradientBackground};
-  width: stretch;
-  svg {
-    display: block;
-    bottom: 0;
-  }
-  path {
-    background: #ffffff;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-`
+import { PageSubtitle, PageParagraph } from "../components/common"
+import { HeroTitle } from "../components/HeroTitle"
 
 const QuestionSection = styled.div`
   ${tw`flex py-10 mx-14 mt-6 rounded-t flex-col md:flex-row`};
@@ -33,11 +19,6 @@ const QuestionSection = styled.div`
 const AnswerSection = styled.div`
   ${tw`flex py-10 mx-14 mb-16 rounded-b flex-col md:flex-row`};
   background-color: ${({ theme }) => lighten(0.07, theme.gradients.third)};
-`
-
-const StyledPageTitle = styled(PageTitle)`
-  ${tw`pt-32 text-white text-6xl`};
-  color: white;
 `
 
 const StyledPageSubtitle = styled(PageSubtitle)`
@@ -81,18 +62,7 @@ const FAQ: React.FC<{}> = () => {
   return (
     <>
       <Navbar />
-      <Background>
-        <Slide top>
-          <StyledPageTitle>FREQUENTLY ASKED QUESTIONS</StyledPageTitle>
-        </Slide>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 300">
-          <path
-            fill={theme.backgrounds.page}
-            fillOpacity="1"
-            d="M0,256L60,234.7C120,213,240,171,360,181.3C480,192,600,256,720,272C840,288,960,256,1080,224C1200,192,1320,160,1380,144L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-          ></path>
-        </svg>
-      </Background>
+      <HeroTitle>FREQUENTLY ASKED QUESTIONS</HeroTitle>
       <QandA
         question="How do I get an EMU?"
         answer="In order to buy an EMU, you need to set up a cryto wallet like metamask and get some ETH. Then you can go to yhe homepage [myemus.info] and choose how many you want to mint. Afer you mint them, they are yours."
