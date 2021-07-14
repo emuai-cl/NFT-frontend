@@ -27,6 +27,7 @@ import { MdEdit } from "react-icons/md"
 import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai"
 
 import "react-image-crop/dist/ReactCrop.css"
+import { useForm } from "react-hook-form"
 
 const NFTCard = styled.div`
   ${tw`shadow-md p-4 bg-white rounded`};
@@ -70,18 +71,24 @@ export const ManageNFT: React.FC<ManageNFTProps> = ({ id, openModal, cid }) => {
   const onClick = useCallback(async () => {
     try {
       const signature = await signNFT(hash, id)
+      toast.success(`Transaction signed`)
 
-      const { data } = await axiosInstance.post("/nft/updateNFT", {
+      await axiosInstance.post("/nft/updateNFT", {
         path: hash,
         id,
         signature,
       })
 
-      toast.success(`${JSON.stringify(data)} EMUS Minted`)
+      toast.success(`EMU updated`)
+      setEditing(null)
+      setHash(null)
     } catch (error) {
       toast.error(`Error: ${error.message}`)
     }
   }, [hash, id])
+
+  const { handleSubmit, formState } = useForm<FormData>({})
+  const onSubmit = handleSubmit(onClick)
 
   const handleEdit = useCallback(() => {
     setEditing(id)
@@ -92,6 +99,7 @@ export const ManageNFT: React.FC<ManageNFTProps> = ({ id, openModal, cid }) => {
     setEditing(null)
     setHash(null)
   }, [])
+
   return (
     <NFTCard>
       <NFTTitle>{`EMU: #${id}`}</NFTTitle>
@@ -103,15 +111,21 @@ export const ManageNFT: React.FC<ManageNFTProps> = ({ id, openModal, cid }) => {
         }`}
       />
       {editingID === id ? (
-        <GroupContainer>
-          <CancelButton onClick={handleCancel}>
-            <CancelIcon /> <span>Cancel</span>
-          </CancelButton>
-          <ConfirmButton onClick={onClick}>
-            <ConfirmIcon />
-            <span>Confirm</span>
-          </ConfirmButton>
-        </GroupContainer>
+        formState.isSubmitting ? (
+          <GroupContainer>
+            <ConfirmButton disabled>In progress...</ConfirmButton>
+          </GroupContainer>
+        ) : (
+          <GroupContainer>
+            <CancelButton onClick={handleCancel}>
+              <CancelIcon /> <span>Cancel</span>
+            </CancelButton>
+            <ConfirmButton onClick={onSubmit}>
+              <ConfirmIcon />
+              <span>Confirm</span>
+            </ConfirmButton>
+          </GroupContainer>
+        )
       ) : (
         <FullButton onClick={handleEdit}>
           <EditIcon />
