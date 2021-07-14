@@ -1,6 +1,5 @@
 import React, { useRef } from "react"
 import { PageProps } from "gatsby"
-import { ToastContainer } from "react-toastify"
 
 import Seo from "../components/seo"
 import Car from "../components/load-car"
@@ -38,7 +37,6 @@ const IndexPage: React.FC<PageProps> = () => {
       <Roadmap />
       <Team />
 
-      <ToastContainer />
       <Footer />
     </>
   )
