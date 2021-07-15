@@ -38,3 +38,7 @@ export const ConfirmButton = styled(FullButton)`
 export const CancelButton = styled(FullButton)`
   ${tw`bg-red-500 hover:bg-red-600`};
 `
+
+export const Container = styled.div`
+  ${tw`grid lg:grid-cols-3 grid-cols-1 mx-4`};
+`

@@ -27,16 +27,14 @@ const loadNFTs = async (contract: Contract) => {
   const totalSupply = await contract.methods.totalSupply().call()
   const account = contract.defaultAccount
   const balanceOf = Number(await contract.methods.balanceOf(account).call())
-  //   if (balanceOf == 0) return []
 
   const NFTs: number[] = []
   for (let i = 0; i < totalSupply; i++) {
+    if (NFTs.length === balanceOf) break
     const id = i + 1
     const owner = await contract.methods.ownerOf(id).call()
 
     if (normalize(owner) === normalize(account)) NFTs.push(id)
-
-    if (NFTs.length === balanceOf) break
   }
   return NFTs
 }
@@ -78,8 +76,8 @@ const NFTList: FC<NFTListProps> = ({ contract, node, setOpen }) => {
     }
   }, [ids])
 
+  if (error) return <p>error: {JSON.stringify(error)}</p>
   if (isLoading) return <p>loading...</p>
-  if (error) return <p>error...</p>
 
   return (
     <Container>

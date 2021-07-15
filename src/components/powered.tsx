@@ -3,11 +3,13 @@ import EthereumAnimation from "./lottie/ethereum"
 
 import styled from "styled-components"
 import tw from "twin.macro"
-import { Accent, PageLink, PageParagraph, PageSubtitle } from "./common"
-
-const Container = styled.div`
-  ${tw`grid lg:grid-cols-3 grid-cols-1`};
-`
+import {
+  Accent,
+  PageLink,
+  PageParagraph,
+  PageSubtitle,
+  Container,
+} from "./common"
 
 export const Powered = () => {
   return (

@@ -1,5 +1,6 @@
 import React from "react"
 import type IPFS from "ipfs-core/src/components"
+import { toast } from "react-toastify"
 
 import styled from "styled-components"
 import tw from "twin.macro"
@@ -15,7 +16,6 @@ import {
 import { useWeb3 } from "../hooks/useWeb3"
 import { useSignNFT } from "../hooks/useSignNFT"
 
-import "react-image-crop/dist/ReactCrop.css"
 import { LazyImage } from "./lazy-image"
 import { useHash } from "../hooks/useHash"
 import { useSetHash } from "../hooks/useSetHash"
@@ -25,6 +25,9 @@ import { useCallback } from "react"
 import { axiosInstance } from "../helpers/axios"
 import { MdEdit } from "react-icons/md"
 import { AiOutlineCheck, AiOutlineClose } from "react-icons/ai"
+
+import "react-image-crop/dist/ReactCrop.css"
+import { useForm } from "react-hook-form"
 
 const NFTCard = styled.div`
   ${tw`shadow-md p-4 bg-white rounded`};
@@ -66,15 +69,26 @@ export const ManageNFT: React.FC<ManageNFTProps> = ({ id, openModal, cid }) => {
   const setHash = useSetHash()
 
   const onClick = useCallback(async () => {
-    const signature = await signNFT(hash, id)
-    const { data } = await axiosInstance.post("/nft/updateNFT", {
-      path: hash,
-      id,
-      signature,
-    })
+    try {
+      const signature = await signNFT(hash, id)
+      toast.success(`Transaction signed`)
 
-    console.log(data)
+      await axiosInstance.post("/nft/updateNFT", {
+        path: hash,
+        id,
+        signature,
+      })
+
+      toast.success(`EMU updated`)
+      setEditing(null)
+      setHash(null)
+    } catch (error) {
+      toast.error(`Error: ${error.message}`)
+    }
   }, [hash, id])
+
+  const { handleSubmit, formState } = useForm<FormData>({})
+  const onSubmit = handleSubmit(onClick)
 
   const handleEdit = useCallback(() => {
     setEditing(id)
@@ -85,6 +99,7 @@ export const ManageNFT: React.FC<ManageNFTProps> = ({ id, openModal, cid }) => {
     setEditing(null)
     setHash(null)
   }, [])
+
   return (
     <NFTCard>
       <NFTTitle>{`EMU: #${id}`}</NFTTitle>
@@ -96,15 +111,21 @@ export const ManageNFT: React.FC<ManageNFTProps> = ({ id, openModal, cid }) => {
         }`}
       />
       {editingID === id ? (
-        <GroupContainer>
-          <CancelButton onClick={handleCancel}>
-            <CancelIcon /> <span>Cancel</span>
-          </CancelButton>
-          <ConfirmButton onClick={onClick}>
-            <ConfirmIcon />
-            <span>Confirm</span>
-          </ConfirmButton>
-        </GroupContainer>
+        formState.isSubmitting ? (
+          <GroupContainer>
+            <ConfirmButton disabled>In progress...</ConfirmButton>
+          </GroupContainer>
+        ) : (
+          <GroupContainer>
+            <CancelButton onClick={handleCancel}>
+              <CancelIcon /> <span>Cancel</span>
+            </CancelButton>
+            <ConfirmButton onClick={onSubmit}>
+              <ConfirmIcon />
+              <span>Confirm</span>
+            </ConfirmButton>
+          </GroupContainer>
+        )
       ) : (
         <FullButton onClick={handleEdit}>
           <EditIcon />

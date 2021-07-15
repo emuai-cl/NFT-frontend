@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import loadable from "@loadable/component"
-import Ellipsis from "./react-spinners-css/ellipsis"
-import { theme } from "../styles/theme"
+import Ellipsis from "../react-spinners-css/ellipsis"
+import { theme } from "../../styles/theme"
 
 import styled from "styled-components"
 import tw from "twin.macro"
-import { Button, PageParagraph } from "./common"
+import { Button, PageParagraph } from "../common"
 
 const Container = styled.div`
   width: 100vmin;
@@ -36,7 +36,7 @@ const Loadable = loadable(async () => import("./car"), {
   ),
 })
 
-export default () => {
+export const LoadCar: React.FC = () => {
   const [load, setLoad] = useState(false)
   if (load) return <Loadable />
 

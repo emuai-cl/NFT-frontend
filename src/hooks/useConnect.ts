@@ -1,19 +1,27 @@
 import { useMemo } from "react"
 import { toast } from "react-toastify"
+import detectEthereumProvider from "@metamask/detect-provider"
+
 import abi from "../assets/abi.json"
 import { CONTRACT_ADDRESS } from "../helpers/constants"
 import { useStore } from "../state/store"
 
+type Provider = {
+  enable(): Promise<void>
+}
+
 export const getWeb3 = async () => {
   if (typeof window == undefined) return undefined
-  const web3Module = await import("web3")
-  const Web3 = web3Module.default
-  if (typeof window != undefined && window["ethereum"]) {
-    await window["ethereum"].enable()
-    return new Web3(window["ethereum"])
+  try {
+    const provider = (await detectEthereumProvider()) as Provider
+    if (!provider) throw new Error("Metamask required")
+    const web3Module = await import("web3")
+    const Web3 = web3Module.default
+    await provider?.enable()
+    return new Web3(provider as any)
+  } catch (error) {
+    toast.error(error.message)
   }
-
-  return new Web3(Web3.givenProvider || "http://127.0.0.1:7545")
 }
 
 export const useConnect = () => {
