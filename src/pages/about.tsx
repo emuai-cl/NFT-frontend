@@ -11,9 +11,10 @@ import { lighten } from "polished"
 import tw from "twin.macro"
 
 import Navbar from "../components/navbar"
-import { PageSubtitle, PageParagraph, PageLink } from "../components/common"
+import { PageParagraph, PageLink } from "../components/common"
 import { HeroTitle } from "../components/HeroTitle"
 import { theme } from "../styles/theme"
+import { SubtitleWithLine } from "../components/subtitle-with-line"
 
 const AboutSection = styled.div`
   ${tw`py-12`};
@@ -21,15 +22,6 @@ const AboutSection = styled.div`
   &:nth-child(even) {
     background-color: ${({ theme }) => lighten(0.07, theme.gradients.third)};
   }
-`
-
-const StyledSpan = styled.span`
-  ${tw`bg-white h-1 w-20 block mt-2 mx-auto mb-10`}
-`
-
-const StyledPageSubtitle = styled(PageSubtitle)`
-  ${tw`flex items-center justify-center`};
-  color: white;
 `
 
 const StyledPageParagraph = styled(PageParagraph)`
@@ -49,13 +41,6 @@ const ImageText = styled.div`
   ${tw`lg:col-span-2
 `};
 `
-
-const SubtitleWithLine: React.FC = ({ children }) => (
-  <>
-    <StyledPageSubtitle>{children}</StyledPageSubtitle>
-    <StyledSpan />
-  </>
-)
 
 const About: React.FC = ({}) => {
   const data = useStaticQuery(graphql`
@@ -147,7 +132,7 @@ On september 2022 in Suthafrica, the `}
               src="../images/autoPorDentro.jpeg"
               quality={95}
               formats={["auto", "webp", "avif"]}
-              alt="A Gatsby astronaut"
+              alt="Car"
               style={{
                 marginBottom: `1.45rem`,
               }}

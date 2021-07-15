@@ -2,7 +2,7 @@ import React, { useRef } from "react"
 import { PageProps } from "gatsby"
 
 import Seo from "../components/seo"
-import Car from "../components/load-car"
+import Car from "../components/car"
 import Sold from "../components/sold"
 
 import Eth from "../components/eth"
@@ -15,9 +15,10 @@ import { Sale } from "../components/sale"
 import { Team } from "../components/team"
 import { Footer } from "../components/footer"
 import { Roadmap } from "../components/roadmap"
+import { PromotionalVideo } from "../components/promotional-video"
+import { Letter } from "../components/letter"
 
 import "react-toastify/dist/ReactToastify.css"
-import { PromotionalVideo } from "../components/PromotionalVideo"
 
 const IndexPage: React.FC<PageProps> = () => {
   const buyRef = useRef<HTMLDivElement>()
@@ -30,6 +31,7 @@ const IndexPage: React.FC<PageProps> = () => {
       <Hero buyRef={buyRef} />
       <Sale />
       <PromotionalVideo />
+      <Letter />
       <Sold />
       <Powered />
       <Car />
