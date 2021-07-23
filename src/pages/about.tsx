@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Zoom from "react-reveal/Zoom"
 import { Footer } from "../components/footer"
+import { matchBreakpoint } from "../helpers/breakpoints"
 
 import { lighten } from "polished"
 
@@ -53,6 +54,34 @@ const About: React.FC = ({}) => {
       }
     }
   `)
+
+  const ImagenLG = () => {
+    return (
+      <StaticImage
+        src="../images/autoPorDentro.jpeg"
+        quality={95}
+        formats={["auto", "webp", "avif"]}
+        alt="Car"
+        style={{
+          marginBottom: `1.45rem`,
+        }}
+      />
+    )
+  }
+
+  const ImagenSM = () => {
+    return (
+      <StaticImage
+        src="../images/autoPorDentro.jpeg"
+        quality={95}
+        formats={["auto", "webp", "avif"]}
+        alt="Car"
+        style={{
+          marginBottom: `1.45rem`,
+        }}
+      />
+    )
+  }
   return (
     <>
       <Navbar />
