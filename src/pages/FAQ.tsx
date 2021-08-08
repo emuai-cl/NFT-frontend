@@ -92,10 +92,6 @@ const FAQ: React.FC<{}> = () => {
         answer="After you update your EMU's image, it can take some time for it to update. Please wait up to 24h before filing a complaint."
       ></QandA>
       <QandA
-        question="If you care about the planet so much, how are you doing NFTs on Ethereum?"
-        answer="More congestion on the network doesn’t necessarily mean more energy consumption. More miners do. Now, you could argue that more congestion increases the gas price and thus the incentive to mine, and so increasing the energy consumption and the emissions. While this may be true, we admit having a meaningful carbon footprint for example by the logistics of a race and the fabrication of a solar car. Our mission is to motivate and educate young people by promoting the development of sustainable transport so that we can accelerate its adoption. The future impact that we make on the planet will greatly surpass of carbon footprint. We know that around 80% of our ex-team members now work in the electromobility or solar energy sector, so this impact is already measurable. Doing NFTs greatly helps our team expand and ensure many more years of innovation and education in the renewable energies sector."
-      ></QandA>
-      <QandA
         question="Still not sure if you are a real project. How can I make sure?"
         answer='Our activity online may seem to have just appeared out of nowhere, like our twitter or this webpage, but this were only done for the NFT-fundraising idea, because our previous activity online has been in Spanish. You can visit our official Instagram [https://www.instagram.com/emuai_chile/] where we have been posting since our origins in 2017. Feel free to message us there. Also, you can take a look at our official team website [emuai.cl] and see our extensive media appearances under "Noticias".'
       ></QandA>
