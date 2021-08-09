@@ -135,6 +135,7 @@ const Container = styled.div`
 `
 
 const Pre = styled.pre`
+  ${tw`text-justify`};
   word-wrap: normal;
   white-space: pre-wrap;
 `
