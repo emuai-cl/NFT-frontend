@@ -25,8 +25,7 @@ export const Team = () => {
         <TeamCard
           name="Oliver Stehr "
           position="Team Manager"
-          description="Computer Sciences student in Adolfo Ibáñez University. \n
-My mission is to take the EMUAI team to victory by innovating in the energy and sustainable transport sectors. I want to participate in the formation of a space where students can create highly complex projects."
+          description="Computer Sciences student in Adolfo Ibáñez University. I want to participate in the formation of a space where students can create highly complex projects."
           img={oliver}
           socialNetworks={[
             {
@@ -150,7 +149,7 @@ My mission is to take the EMUAI team to victory by innovating in the energy and 
         <TeamCard
           name="Felipe Lara"
           position="Fundraising"
-          description="Member of the team since March 2020. Entered the electromobility team with the ambition of being able to contribute a 'grain of sand' to the improvement of the environmental conditions of our planet and to contribute to the sustainability of Chile."
+          description="Entered the EMUAI team with the ambition of being able to contribute a 'grain of sand' to the improvement of the environmental conditions of our planet and to contribute to the sustainability of Chile."
           img={gabriel}
           socialNetworks={[
             {
