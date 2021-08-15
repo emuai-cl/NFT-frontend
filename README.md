@@ -24,6 +24,12 @@ This frontend page is the main way to interact with [EMU NFT](https://etherscan.
 
     change version with [nvm](https://github.com/nvm-sh/nvm)
 
+1.  **Install dependencies**
+    Run
+    ```shell
+    yarn install
+    ```
+
 1.  **Develop**
     Run
     ```shell
