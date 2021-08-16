@@ -21,14 +21,68 @@ export default () => {
           gatsbyImageData(width: 350, layout: CONSTRAINED)
         }
       }
+
+      fran: file(relativePath: { eq: "team/fran.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 350, layout: CONSTRAINED)
+        }
+      }
+
+      ignacia: file(relativePath: { eq: "team/ignacia.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 350, layout: CONSTRAINED)
+        }
+      }
+
+      jesu: file(relativePath: { eq: "team/jesu.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 350, layout: CONSTRAINED)
+        }
+      }
+
+      lara: file(relativePath: { eq: "team/lara.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 350, layout: CONSTRAINED)
+        }
+      }
+
+      manu: file(relativePath: { eq: "team/manu.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 350, layout: CONSTRAINED)
+        }
+      }
+
+      pablo: file(relativePath: { eq: "team/pablo.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 350, layout: CONSTRAINED)
+        }
+      }
+
+      tobal: file(relativePath: { eq: "team/tobal.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 350, layout: CONSTRAINED)
+        }
+      }
+
+      turu: file(relativePath: { eq: "team/turu.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 350, layout: CONSTRAINED)
+        }
+      }
     }
   `)
 
   const oliver = data.oliver.childImageSharp.gatsbyImageData as IGatsbyImageData
-  const gabriel = data.gabriel.childImageSharp
-    .gatsbyImageData as IGatsbyImageData
-  const benjamin = data.benjamin.childImageSharp
-    .gatsbyImageData as IGatsbyImageData
+  const gabriel = data.gabriel.childImageSharp.gatsbyImageData as IGatsbyImageData
+  const benjamin = data.benjamin.childImageSharp.gatsbyImageData as IGatsbyImageData
+  const fran = data.fran.childImageSharp.gatsbyImageData as IGatsbyImageData
+  const ignacia = data.ignacia.childImageSharp.gatsbyImageData as IGatsbyImageData
+  const jesu = data.jesu.childImageSharp.gatsbyImageData as IGatsbyImageData
+  const lara = data.lara.childImageSharp.gatsbyImageData as IGatsbyImageData
+  const manu = data.manu.childImageSharp.gatsbyImageData as IGatsbyImageData
+  const pablo = data.pablo.childImageSharp.gatsbyImageData as IGatsbyImageData
+  const tobal = data.tobal.childImageSharp.gatsbyImageData as IGatsbyImageData
+  const turu = data.turu.childImageSharp.gatsbyImageData as IGatsbyImageData
 
-  return { oliver, gabriel, benjamin }
+  return { oliver, gabriel, benjamin, fran, ignacia, jesu, lara, manu, pablo, tobal, turu }
 }

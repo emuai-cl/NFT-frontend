@@ -17,10 +17,11 @@ const Grid = styled.div`
 `
 
 export const Team = () => {
-  const { oliver, gabriel, benjamin } = useTeamImages()
+  const { oliver, gabriel, benjamin, fran, ignacia, jesu, lara, manu, pablo, tobal, turu } = useTeamImages()
   return (
     <Container id="equipo">
       <Title>Team</Title>
+      <div></div>
       <Grid>
         <TeamCard
           name="Oliver Stehr "
@@ -85,8 +86,8 @@ export const Team = () => {
         <TeamCard
           name="Maria Francisca Ramirez"
           position="Fundraising & Spokesperson"
-          description="In the team I seek to motivate and educate people so that together we build a more sustainable world. I believe that EMUAI gives me the opportunity to reach many people and be an agent of change regarding electromobility."
-          img={gabriel}
+          description="In the team I seek to motivate and educate people so that together we build a more sustainable world."
+          img={fran}
           socialNetworks={[
             {
               name: "linkedin",
@@ -103,7 +104,7 @@ export const Team = () => {
           name="Manuel Aliaga"
           position="Communications"
           description="Head of the Communications sub-department and a journalism student."
-          img={gabriel}
+          img={manu}
           socialNetworks={[
             {
               name: "linkedin",
@@ -120,7 +121,7 @@ export const Team = () => {
           name="Ignacia Troncoso"
           position="Mechanical Systems"
           description="Student of Mechanical Engineering and Energy Engineering, Part of the EMUAI Team on Mechanical Systems. Lover of cars, music and beer."
-          img={gabriel}
+          img={ignacia}
           socialNetworks={[
             {
               name: "instagram",
@@ -133,7 +134,7 @@ export const Team = () => {
           name="María Jesús Schlotterbeck"
           position="Mechanical Structure"
           description="I am part of the Mechanics department, in charge of the structural part of the solar car in EMUAI. My dream is to motivate, help, and achieve a great change in society."
-          img={gabriel}
+          img={jesu}
           socialNetworks={[
             {
               name: "linkedin",
@@ -150,7 +151,7 @@ export const Team = () => {
           name="Felipe Lara"
           position="Fundraising"
           description="Entered the EMUAI team with the ambition of being able to contribute a 'grain of sand' to the improvement of the environmental conditions of our planet and to contribute to the sustainability of Chile."
-          img={gabriel}
+          img={lara}
           socialNetworks={[
             {
               name: "linkedin",
@@ -172,31 +173,10 @@ export const Team = () => {
         />
         
         <TeamCard
-          name="Francisco Bascuñan"
-          position="Logistics"
-          description="Business student \n Working in the logistics in EMUAI 🚘"
-          img={gabriel}
-          socialNetworks={[
-            {
-              name: "linkedin",
-              link: "https://www.linkedin.com/in/franciscobascuñan",
-            },
-            {
-              name: "instagram",
-              link: "https://www.instagram.com/pvnsho.0/",
-            },
-            {
-              name: "twitter",
-              link: "https://twitter.com/pvnsho",
-            },
-          ]}
-        />
-        
-        <TeamCard
           name="Pablo Uribe"
           position="Mechanical System"
           description="Mechanical systems sub-department member, passionate about mechanics with an environmental perspective."
-          img={gabriel}
+          img={pablo}
           socialNetworks={[
             {
               name: "linkedin",
@@ -212,8 +192,8 @@ export const Team = () => {
         <TeamCard
           name="Pedro Turu Luque"
           position="Electrical Captain"
-          description="Computer Science and Industrial Engineering student, Captain electrical equipment EMUAI"
-          img={gabriel}
+          description="Computer Science and Industrial Engineering student, Captain of electrical department EMUAI"
+          img={turu}
           socialNetworks={[
             {
               name: "linkedin",
@@ -230,7 +210,7 @@ export const Team = () => {
           name="Cristóbal Gacitúa Herrera"
           position="Fundraising"
           description="Young university student motivated to participate in innovative initiatives and projects with a view to a sustainable future."
-          img={gabriel}
+          img={tobal}
           socialNetworks={[
             {
               name: "linkedin",
