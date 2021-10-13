@@ -1,15 +1,8 @@
 import Web3 from "web3"
 import { toast } from "react-toastify"
+import { createRequestAsync } from "./createRequestAsync"
 
 type Signed = { id?: number; jsonrpc: string; result: string }
-
-const createSignTypedData = (web3: Web3) => (object: unknown) =>
-  new Promise<Signed>((resolve, reject) =>
-    web3.currentProvider["sendAsync"](object, (error, response) => {
-      if (error) reject(error)
-      resolve(response)
-    })
-  )
 
 export const signNFTUpdate = async (web3: Web3, path: string, id: number) => {
   try {
@@ -18,9 +11,8 @@ export const signNFTUpdate = async (web3: Web3, path: string, id: number) => {
     const [address] = await web3.eth.getAccounts()
 
     if (!address) throw new Error(`Couldn't find address`)
-    const signTypedData = createSignTypedData(web3)
+    const signTypedData = createRequestAsync<Signed>(web3, "eth_signTypedData")
     const result = await signTypedData({
-      method: "eth_signTypedData",
       params: [
         [
           {

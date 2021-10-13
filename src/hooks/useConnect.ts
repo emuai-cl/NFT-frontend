@@ -3,11 +3,17 @@ import { toast } from "react-toastify"
 import detectEthereumProvider from "@metamask/detect-provider"
 
 import abi from "../assets/abi.json"
-import { CONTRACT_ADDRESS } from "../helpers/constants"
+import { CONTRACT_ADDRESS, CONTRACT_CHAIN } from "../helpers/constants"
 import { useStore } from "../state/store"
+import { createRequestAsync } from "../helpers/createRequestAsync"
+import type { provider as Provider } from "web3-core"
 
-type Provider = {
+type HasEnable = {
   enable(): Promise<void>
+}
+
+const hasEnable = (provider: unknown): provider is HasEnable => {
+  return (provider as HasEnable)?.enable instanceof Function
 }
 
 export const getWeb3 = async () => {
@@ -17,8 +23,19 @@ export const getWeb3 = async () => {
     if (!provider) throw new Error("Metamask required")
     const web3Module = await import("web3")
     const Web3 = web3Module.default
-    await provider?.enable()
-    return new Web3(provider as any)
+
+    if (hasEnable(provider)) await provider.enable()
+
+    const web3 = new Web3(provider)
+
+    const switchChain = createRequestAsync<void>(
+      web3,
+      "wallet_switchEthereumChain"
+    )
+
+    await switchChain({ params: [{ chainId: CONTRACT_CHAIN }] })
+
+    return web3
   } catch (error) {
     toast.error(error.message)
   }
