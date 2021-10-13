@@ -16,6 +16,7 @@ import { PageParagraph, PageLink } from "../components/common"
 import { HeroTitle } from "../components/HeroTitle"
 import { theme } from "../styles/theme"
 import { SubtitleWithLine } from "../components/subtitle-with-line"
+import SEO from "../components/seo"
 
 const AboutSection = styled.div`
   ${tw`py-12`};
@@ -84,6 +85,7 @@ const About: React.FC = ({}) => {
   }
   return (
     <>
+      <SEO title="About us" />
       <Navbar />
       <HeroTitle fill={theme.gradients.third}>About</HeroTitle>
       <AboutSection>
@@ -145,7 +147,6 @@ Currently we are a multidisciplinary team of students from the UAI dedicated to 
             <br />
             {` 
 The weather conditions are extreme, as the race crosses the Australian desert from Darwin to Adelaide, covering more than 3000 kilometers over 7 days. It will take the cars through strong winds and sometimes rain near the coastal cities. Therefore, we can say that the BWSC is more than just a race; it is a challenge. `}
-            
             {` 
 The next iteration of this race will take place in October 2023, with three different participant categories: Cruiser, Adventure, and Challenger. We have decided to participate in the Challenger class, focusing mainly on the performance of the vehicle and trying to get from start to finish in the shortest possible time. `}
             <br />

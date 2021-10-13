@@ -6,6 +6,7 @@ import tw from "twin.macro"
 import NavbarComponent from "../components/navbar"
 import { Footer } from "../components/footer"
 import { HeroTitle } from "../components/HeroTitle"
+import SEO from "../components/seo"
 
 const md = `These Terms of Use constitute a legally binding agreement made between the user (“you”), whether personally or on behalf of an entity, and EMUAI (The Company”; “we") concerning your access to and use of the https://www.myemus.info website and the smart-contract based EMUAI_NFTs application (“App” or “Application”) as well as any other media form, media channel, mobile website or mobile application, smart contracts related, linked, or otherwise connected thereto (the “website”, Site” and the “App”).
 
@@ -143,6 +144,7 @@ const Pre = styled.pre`
 const Terms: React.FC = () => {
   return (
     <>
+      <SEO title="Terms and conditions" />
       <NavbarComponent />
       <HeroTitle>Terms and conditions</HeroTitle>
       <Container>

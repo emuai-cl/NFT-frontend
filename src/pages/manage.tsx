@@ -15,6 +15,7 @@ import NFTList from "../components/nft-list"
 import { ImageUploadModal } from "../components/image-upload-modal"
 import { Footer } from "../components/footer"
 import { HeroTitle } from "../components/HeroTitle"
+import SEO from "../components/seo"
 
 const Spacer = styled.div`
   padding-bottom: 100px;
@@ -39,6 +40,7 @@ const Manage = () => {
 
   return (
     <>
+      <SEO title="Manage your NTFs" />
       <PageContainer>
         <Navbar />
         <HeroTitle>Manage your NFTs</HeroTitle>

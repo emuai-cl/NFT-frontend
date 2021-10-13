@@ -10,6 +10,7 @@ import tw from "twin.macro"
 import Navbar from "../components/navbar"
 import { PageSubtitle, PageParagraph } from "../components/common"
 import { HeroTitle } from "../components/HeroTitle"
+import SEO from "../components/seo"
 
 const QuestionSection = styled.div`
   ${tw`flex py-10 mx-14 mt-6 rounded-t flex-col md:flex-row`};
@@ -61,6 +62,11 @@ const QandA: React.FC<QandAProps> = ({ question, answer }) => (
 const FAQ: React.FC<{}> = () => {
   return (
     <>
+      <SEO
+        title="FAQ"
+        description="Frequently asked questions about our NFT project"
+      />
+
       <Navbar />
       <HeroTitle>FREQUENTLY ASKED QUESTIONS</HeroTitle>
       <QandA
