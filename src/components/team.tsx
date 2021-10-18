@@ -25,7 +25,7 @@ export const Team = () => {
       <Grid>
         <TeamCard
           name="Oliver Stehr "
-          position="Team Manager"
+          position="Developer"
           description="Computer Sciences student in Adolfo Ibáñez University. I want to participate in the formation of a space where students can create highly complex projects."
           img={oliver}
           socialNetworks={[
@@ -208,7 +208,7 @@ export const Team = () => {
         
         <TeamCard
           name="Cristóbal Gacitúa Herrera"
-          position="Fundraising"
+          position="Comercial Captain"
           description="Young university student motivated to participate in innovative initiatives and projects with a view to a sustainable future."
           img={tobal}
           socialNetworks={[
