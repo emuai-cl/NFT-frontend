@@ -20,7 +20,7 @@ const Background = styled.div`
   }
 `
 export const StyledPageTitle = styled(PageTitle)`
-  ${tw`pt-24 text-white text-6xl`};
+  ${tw`pt-36 text-white text-6xl`};
   color: white;
 `
 
