@@ -4,6 +4,12 @@ import { IGatsbyImageData } from "gatsby-plugin-image"
 export default () => {
   const data = useStaticQuery(graphql`
     {
+      esti: file(relativePath: { eq: "team/esti.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 350, layout: CONSTRAINED)
+        }
+      }
+    
       oliver: file(relativePath: { eq: "team/oliver.png" }) {
         childImageSharp {
           gatsbyImageData(width: 350, layout: CONSTRAINED)
@@ -72,6 +78,7 @@ export default () => {
     }
   `)
 
+  const esti = data.esti.childImageSharp.gatsbyImageData as IGatsbyImageData
   const oliver = data.oliver.childImageSharp.gatsbyImageData as IGatsbyImageData
   const gabriel = data.gabriel.childImageSharp.gatsbyImageData as IGatsbyImageData
   const benjamin = data.benjamin.childImageSharp.gatsbyImageData as IGatsbyImageData
@@ -84,5 +91,5 @@ export default () => {
   const tobal = data.tobal.childImageSharp.gatsbyImageData as IGatsbyImageData
   const turu = data.turu.childImageSharp.gatsbyImageData as IGatsbyImageData
 
-  return { oliver, gabriel, benjamin, fran, ignacia, jesu, lara, manu, pablo, tobal, turu }
+  return { esti, oliver, gabriel, benjamin, fran, ignacia, jesu, lara, manu, pablo, tobal, turu }
 }
