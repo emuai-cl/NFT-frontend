@@ -4,6 +4,12 @@ import { IGatsbyImageData } from "gatsby-plugin-image"
 export default () => {
   const data = useStaticQuery(graphql`
     {
+      esti: file(relativePath: { eq: "team/esti.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 350, layout: CONSTRAINED)
+        }
+      }
+    
       oliver: file(relativePath: { eq: "team/oliver.png" }) {
         childImageSharp {
           gatsbyImageData(width: 350, layout: CONSTRAINED)
