@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `EMUAI NFT`,
-    description: `NFT.`,
-    author: `@Yhozen`,
+    description: `EMUAI Solar Team is launching an NFT fundraising sale for it's next Solar Car! Buy NFT's and own a part of the car, to customize as you wish.`,
+    author: `@emuai_SolarTeam`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
