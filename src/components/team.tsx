@@ -17,14 +17,27 @@ const Grid = styled.div`
 `
 
 export const Team = () => {
-  const { oliver, gabriel, benjamin, fran, ignacia, jesu, lara, manu, pablo, tobal, turu } = useTeamImages()
+  const { esti, oliver, gabriel, benjamin, fran, ignacia, jesu, lara, manu, pablo, tobal, turu } = useTeamImages()
   return (
     <Container id="equipo">
       <Title>Team</Title>
       <div></div>
       <Grid>
         <TeamCard
-          name="Oliver Stehr "
+          name="Esivaliz Rosales"
+          position="Team Manager"
+          description="Industial engineering student at the Adolfo Ibáñez University. With great aspirations, always looking for personal growth. Currently in EMUAI, with the goal of educating, motivating and competing."
+          img={esti}
+          socialNetworks={[
+            {
+              name: "linkedin",
+              link: "https://www.linkedin.com/in/estivaliz-rosales/",
+            },
+          ]}
+        />
+        
+        <TeamCard
+          name="Oliver Stehr"
           position="Developer"
           description="Computer Sciences student in Adolfo Ibáñez University. I want to participate in the formation of a space where students can create highly complex projects."
           img={oliver}
