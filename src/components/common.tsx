@@ -42,3 +42,6 @@ export const CancelButton = styled(FullButton)`
 export const Container = styled.div`
   ${tw`grid lg:grid-cols-3 grid-cols-1 mx-4`};
 `
+export const LetterContainer = styled.div`
+  ${tw`grid lg:grid-cols-5 mx-4`};
+`
