@@ -28,12 +28,16 @@ export const getWeb3 = async () => {
 
     const web3 = new Web3(provider)
 
-    const switchChain = createRequestAsync<void>(
-      web3,
-      "wallet_switchEthereumChain"
-    )
+    try {
+      const switchChain = createRequestAsync<void>(
+        web3,
+        "wallet_switchEthereumChain"
+      )
 
-    await switchChain({ params: [{ chainId: CONTRACT_CHAIN }] })
+      await switchChain({ params: [{ chainId: CONTRACT_CHAIN }] })
+    } catch {
+      toast.warn("Check your metamask network")
+    }
 
     return web3
   } catch (error) {
