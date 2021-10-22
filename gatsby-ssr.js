@@ -7,18 +7,11 @@
 // You can delete this file if you're not using it
 import React from "react"
 import { ThemeProvider } from "styled-components"
-import { QueryClient, QueryClientProvider } from "react-query"
 
 // Create a client
 import { theme } from "./src/styles/theme"
 import "./src/styles/global.css"
 
-const queryClient = new QueryClient()
-
 export const wrapRootElement = ({ element }) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <QueryClientProvider client={queryClient}>{element}</QueryClientProvider>
-    </ThemeProvider>
-  )
+  return <ThemeProvider theme={theme}>{element}</ThemeProvider>
 }

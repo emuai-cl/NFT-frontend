@@ -8,18 +8,15 @@
 
 import React from "react"
 import { ThemeProvider } from "styled-components"
-import { QueryClient, QueryClientProvider } from "react-query"
 import { ToastContainer } from "react-toastify"
 
 import { theme } from "./src/styles/theme"
 import "./src/styles/global.css"
 
-const queryClient = new QueryClient()
-
 export const wrapRootElement = ({ element }) => {
   return (
     <ThemeProvider theme={theme}>
-      <QueryClientProvider client={queryClient}>{element}</QueryClientProvider>
+      {element}
       <ToastContainer />
     </ThemeProvider>
   )
