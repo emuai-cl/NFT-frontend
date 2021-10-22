@@ -21,7 +21,7 @@ We buy key manufacturing materials and start the manufacturing of the carbon-fib
 
 * First Half 2022: Mounting and Testing:
 
-We finish the carbon-fiber structure of the car and mount the mechanical parts and electrical parts. We start testing the vehicle and measure key constants for the strategy. EMUs get printed on the car for the world to admire. We take the car for a ride along the beautiful Chilean landscapes.
+We finish the carbon-fiber structure of the car and mount the mechanical and electrical parts. We test the vehicle and measure key constants for the strategy. EMUs get printed on the car for the world to admire. We take the car for a ride along the beautiful Chilean landscapes.
 
 * Second Half 2021: Racing
 
