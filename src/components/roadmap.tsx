@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { darken } from "polished"
 import { theme } from "../styles/theme"
 import tw from "twin.macro"
+import { StaticImage } from "gatsby-plugin-image"
 
 const Container = styled.div`
   ${tw`py-8 opacity-90`};
@@ -18,7 +19,7 @@ const SubSubContainer = styled.div`
 `
 
 const SuperTitle = styled.p`
-  ${tw`ml-2  uppercase`};
+  ${tw` uppercase`};
   color: ${({ theme }) => theme.gradients.third};
 `
 
@@ -30,7 +31,7 @@ const Line = styled.div`
 `
 
 const Title = styled.p`
-  ${tw`text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2`};
+  ${tw`text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2 font-bold`};
 `
 
 const TimelineTitle = styled.p`
@@ -48,11 +49,19 @@ export const Roadmap: React.FC = () => {
       <Container>
         <SubContainer>
           <SubSubContainer>
-            <SuperTitle>Working Process</SuperTitle>
-            <Title>CAR'S ROADMAP</Title>
+            <SuperTitle>CAR'S</SuperTitle>
+            <Title>ROADMAP</Title>
             <p className="text-sm md:text-base text-gray-50 mb-4">
-              No hay texto para esta parte
+              Working process
             </p>
+            <StaticImage
+              src="../images/roadmap1.png"
+              quality={95}
+              alt="Stamp"
+              width={300}
+              height={300}
+              placeholder="blurred"
+            />
           </SubSubContainer>
           <div className="ml-0 md:ml-12 lg:w-2/3 sticky">
             <div className="container mx-auto w-full h-full">
@@ -60,14 +69,14 @@ export const Roadmap: React.FC = () => {
                 <Line />
                 <Line />
 
-                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full">
                   <div className="order-1 w-5/12"></div>
-                  <div className="order-1 w-5/12 px-1 py-4 text-right bg-gray-300 rounded opacity-20">
+                  <div className="order-1 w-5/12 px-1 py-4 text-right">
                     <TimelineTitle>First Half of 2020:</TimelineTitle>
                     <h4 className="mb-3 font-bold text-lg md:text-2xl px-4">
                       State of the art and Team Building
                     </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100 px-4">
+                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100 px-4 left-timeline">
                       After fixing our objective as a challenger class for the
                       BWSC, we build the dream team and start studying previous
                       designs, their pros and cons, get mentors and build habits
@@ -77,14 +86,14 @@ export const Roadmap: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mb-8 flex justify-between items-center w-full right-timeline">
+                <div className="mb-8 flex justify-between items-center w-full">
                   <div className="order-1 w-5/12"></div>
                   <div className="order-1  w-5/12 px-1 py-4 text-left">
                     <TimelineTitle>Second Half of 2020:</TimelineTitle>
                     <h4 className="mb-3 font-bold text-lg md:text-2xl">
                       General design
                     </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100 right-timeline">
                       With the dream team ready and with all the knowledge
                       needed, we set the restrictions for our car, based on the
                       car's environment and the competition's rules. We come up
