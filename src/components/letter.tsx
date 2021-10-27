@@ -98,6 +98,7 @@ export const Letter: React.FC = () => {
                       alt="Stamp"
                       width={200}
                       height={50}
+                      placeholder="blurred"
                     />
                   </StampDiv>
                 </SignedDiv>

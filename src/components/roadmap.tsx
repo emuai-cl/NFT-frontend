@@ -1,12 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import { darken } from "polished"
-
+import { theme } from "../styles/theme"
 import tw from "twin.macro"
 
 const Container = styled.div`
-  ${tw`py-8`};
-  background-color: ${({ theme }) => darken(0.1, theme.backgrounds.page)};
+  ${tw`py-8 opacity-90`};
+  background-color: ${({ theme }) => theme.gradients.first};
 `
 
 const SubContainer = styled.div`
@@ -19,13 +19,13 @@ const SubSubContainer = styled.div`
 
 const SuperTitle = styled.p`
   ${tw`ml-2  uppercase`};
-  color: ${({ theme }) => theme.colors.accent};
+  color: ${({ theme }) => theme.gradients.third};
 `
 
 const Line = styled.div`
   ${tw`border-2  absolute h-full border`};
   left: 50%;
-  border: 2px solid ${({ theme }) => theme.gradients.second};
+  border: 2px solid ${({ theme }) => darken(0.1, theme.gradients.second)};
   border-radius: 1%;
 `
 
@@ -34,8 +34,8 @@ const Title = styled.p`
 `
 
 const TimelineTitle = styled.p`
-  ${tw`mb-3 text-base`};
-  color: ${({ theme }) => theme.colors.accent};
+  ${tw`mb-3 text-base px-4`};
+  color: ${({ theme }) => darken(0.15, theme.gradients.second)};
 `
 
 const Image = styled.img`
@@ -49,78 +49,147 @@ export const Roadmap: React.FC = () => {
         <SubContainer>
           <SubSubContainer>
             <SuperTitle>Working Process</SuperTitle>
-            <Title>Working Process of Fest</Title>
+            <Title>CAR'S ROADMAP</Title>
             <p className="text-sm md:text-base text-gray-50 mb-4">
-              Here’s your guide to the tech fest 2021 process. Go through all
-              the steps to know the exact process of the fest.
+              No hay texto para esta parte
             </p>
-            <a
-              href="#"
-              className="bg-transparent mr-auto hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent"
-            >
-              Explore Now
-            </a>
           </SubSubContainer>
           <div className="ml-0 md:ml-12 lg:w-2/3 sticky">
             <div className="container mx-auto w-full h-full">
               <div className="relative wrap overflow-hidden p-10 h-full">
                 <Line />
                 <Line />
+
                 <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                   <div className="order-1 w-5/12"></div>
-                  <div className="order-1 w-5/12 px-1 py-4 text-right">
-                    <TimelineTitle>1-6 May, 2021</TimelineTitle>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                      Registration
+                  <div className="order-1 w-5/12 px-1 py-4 text-right bg-gray-300 rounded opacity-20">
+                    <TimelineTitle>First Half of 2020:</TimelineTitle>
+                    <h4 className="mb-3 font-bold text-lg md:text-2xl px-4">
+                      State of the art and Team Building
                     </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                      Pick your favourite event(s) and register in that event by
-                      filling the form corresponding to that event. Its that
-                      easy :)
+                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100 px-4">
+                      After fixing our objective as a challenger class for the
+                      BWSC, we build the dream team and start studying previous
+                      designs, their pros and cons, get mentors and build habits
+                      for remote working and designing of a solar car. We get
+                      the software and hardware needed for the work.
                     </p>
                   </div>
                 </div>
+
                 <div className="mb-8 flex justify-between items-center w-full right-timeline">
                   <div className="order-1 w-5/12"></div>
                   <div className="order-1  w-5/12 px-1 py-4 text-left">
-                    <TimelineTitle>6-9 May, 2021</TimelineTitle>
+                    <TimelineTitle>Second Half of 2020:</TimelineTitle>
                     <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                      Participation
+                      General design
                     </h4>
                     <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                      Participate online. The links for your registered events
-                      will be sent to you via email and whatsapp groups. Use
-                      those links and show your talent.
+                      With the dream team ready and with all the knowledge
+                      needed, we set the restrictions for our car, based on the
+                      car's environment and the competition's rules. We come up
+                      with three designs good enough to test and determine the
+                      best.
                     </p>
                   </div>
                 </div>
+
                 <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
                   <div className="order-1 w-5/12"></div>
                   <div className="order-1 w-5/12 px-1 py-4 text-right">
-                    <TimelineTitle> 10 May, 2021</TimelineTitle>
+                    <TimelineTitle>Q1 2021:</TimelineTitle>
                     <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                      Result Declaration
+                      Specific design
                     </h4>
                     <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                      The ultimate genius will be revealed by our judging panel
-                      on 10th May, 2021 and the resukts will be announced on the
-                      whatsapp groups and will be mailed to you.
+                      Dive into the really technical aspect of the project and
+                      thinking about every possible detail of the car. Also,
+                      this is where the strategy team overtakes the
+                      decision-making process, giving objective reasoning in
+                      design conflicts.
                     </p>
                   </div>
                 </div>
 
                 <div className="mb-8 flex justify-between items-center w-full right-timeline">
                   <div className="order-1 w-5/12"></div>
-
                   <div className="order-1  w-5/12 px-1 py-4">
-                    <TimelineTitle>12 May, 2021</TimelineTitle>
+                    <TimelineTitle>Q2 2021:</TimelineTitle>
                     <h4 className="mb-3 font-bold  text-lg md:text-2xl text-left">
-                      Prize Distribution
+                      Transition to Manufacturing
                     </h4>
                     <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
-                      The winners will be contacted by our team for their
-                      addresses and the winning goodies will be sent at their
-                      addresses.
+                      After having the car fully designed, we need to find the
+                      way to bring it to reality. This is, contacting the
+                      necessary suppliers, partnering with key manufacturing
+                      companies, and fixing possible designing problems with
+                      them.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1 w-5/12 px-1 py-4 text-right">
+                    <TimelineTitle>Q3 and Q4 2021:</TimelineTitle>
+                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
+                      Structural Manufacturing
+                    </h4>
+                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                      We buy key manufacturing materials and start the
+                      manufacturing of the carbon-fiber structure. We also buy
+                      the electrical components and start manufacturing custom
+                      aluminum mechanical parts such as suspension and direction
+                      parts.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mb-8 flex justify-between items-center w-full right-timeline">
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1  w-5/12 px-1 py-4 text-left">
+                    <TimelineTitle>First Half 2022:</TimelineTitle>
+                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
+                      Mounting and Testing
+                    </h4>
+                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                      We finish the carbon-fiber structure of the car and mount
+                      the mechanical and electrical parts. We test the vehicle
+                      and measure key constants for the strategy. EMUs get
+                      printed on the car for the world to admire. We take the
+                      car for a ride along the beautiful Chilean landscapes.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1 w-5/12 px-1 py-4 text-right">
+                    <TimelineTitle>Second Half 2021:</TimelineTitle>
+                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
+                      Racing
+                    </h4>
+                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                      We compete in the Sasol Solar Challenge in South África or
+                      in the American Solar Challenge in the United States of
+                      América, where millions of people will be watching.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mb-8 flex justify-between items-center w-full right-timeline">
+                  <div className="order-1 w-5/12"></div>
+                  <div className="order-1  w-5/12 px-1 py-4">
+                    <TimelineTitle>Second half 2022:</TimelineTitle>
+                    <h4 className="mb-3 font-bold  text-lg md:text-2xl text-left">
+                      After the first race
+                    </h4>
+                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                      The team looks for another competition before the BWSC
+                      2023. Options are in Chile, United Arab Emirates, Europe
+                      and/or a race organized by us. Before every race, the EMUs
+                      on the car get updated to the current images on the
+                      virtual representation.
                     </p>
                   </div>
                 </div>

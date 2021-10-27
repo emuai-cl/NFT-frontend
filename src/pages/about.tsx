@@ -34,15 +34,21 @@ const StyledPageParagraph = styled(PageParagraph)`
 const StyledPageLink = styled(PageLink)`
   ${tw`text-blue-500 hover:underline`}
 `
-
 const ContainerForImage = styled.div`
-  ${tw`grid grid-cols-1 lg:grid-cols-3`};
+  ${tw`grid grid-cols-1 lg:grid-cols-4`};
 `
 const Image = styled.div`
-  ${tw`lg:col-span-1 self-center w-4/5 mx-auto`};
+  ${tw`lg:col-span-1 mx-auto my-auto w-4/5`};
 `
-const ImageText = styled.div`
-  ${tw`lg:col-span-2`};
+const ImageTextContainer = styled(PageParagraph)`
+  ${tw`lg:col-span-3`};
+  color: white;
+  font-weight: 600;
+`
+const ImageText = styled(PageParagraph)`
+  ${tw`text-justify mx-auto w-4/5`};
+  color: white;
+  font-weight: 600;
 `
 
 const About: React.FC = ({}) => {
@@ -59,9 +65,8 @@ const About: React.FC = ({}) => {
   const ImagenLG = () => {
     return (
       <StaticImage
-        src="../images/autoPorDentro.jpeg"
+        src="../images/autoPorDentroVertical.jpeg"
         quality={95}
-        formats={["auto", "webp", "avif"]}
         alt="Car"
         style={{
           marginBottom: `1.45rem`,
@@ -69,7 +74,7 @@ const About: React.FC = ({}) => {
       />
     )
   }
-
+  console.log(matchBreakpoint("lg"))
   const ImagenSM = () => {
     return (
       <StaticImage
@@ -174,7 +179,7 @@ In January 2022, we are planning on going to the `}
             <br />
             <br />
             {` 
-On september 2022 in Suthafrica, the `}
+On september 2022 in Southafrica, the `}
             <StyledPageLink href="https://www.solarchallenge.org.za/">
               Sasol Solar Challenge
             </StyledPageLink>
@@ -187,20 +192,10 @@ On september 2022 in Suthafrica, the `}
           <SubtitleWithLine>Our Solar Car</SubtitleWithLine>
         </Slide>
         <ContainerForImage>
-          <Image>
-            <StaticImage
-              src="../images/autoPorDentro.jpeg"
-              quality={95}
-              formats={["auto", "webp", "avif"]}
-              alt="Car"
-              style={{
-                marginBottom: `1.45rem`,
-              }}
-            />
-          </Image>
-          <ImageText>
+          <Image>{matchBreakpoint("lg") ? <ImagenLG /> : <ImagenSM />}</Image>
+          <ImageTextContainer>
             <Zoom>
-              <StyledPageParagraph>
+              <ImageText>
                 {`Our solar car is a `}
                 <StyledPageLink href="https://worldsolarchallenge.org/the-challenge/classes/challenger-class">
                   Challenger class
@@ -217,9 +212,9 @@ On september 2022 in Suthafrica, the `}
                 {` 
 
 This year we want to bring this design to reality, but it is expensive as you may have realized. This is why we want you to be a part of our project and help us bring it alive.`}
-              </StyledPageParagraph>
+              </ImageText>
             </Zoom>
-          </ImageText>
+          </ImageTextContainer>
         </ContainerForImage>
       </AboutSection>
       <Footer />

@@ -16,6 +16,7 @@ import { ImageUploadModal } from "../components/image-upload-modal"
 import { Footer } from "../components/footer"
 import { HeroTitle } from "../components/HeroTitle"
 import SEO from "../components/seo"
+import tw from "twin.macro"
 
 const Spacer = styled.div`
   padding-bottom: 100px;
@@ -23,6 +24,9 @@ const Spacer = styled.div`
 
 const PageContainer = styled.div`
   min-height: 80vh;
+`
+const StyledButton = styled(Button)`
+  ${tw`flex flex-col mx-auto my-auto self-center justify-items-center h-16 text-lg`}
 `
 
 const Manage = () => {
@@ -46,10 +50,12 @@ const Manage = () => {
         <HeroTitle>Manage your NFTs</HeroTitle>
 
         <Spacer />
-        {(!contract || !web3) && (
-          <Button onClick={connect}>connect wallet</Button>
-        )}
-
+        <div>
+          {(!contract || !web3) && (
+            <StyledButton onClick={connect}>Connect Wallet</StyledButton>
+          )}
+        </div>
+        <Spacer />
         {contract && (
           <NFTList contract={contract} node={node} setOpen={setOpen} />
         )}
