@@ -8,6 +8,7 @@ import CountInput from "../count-input"
 import { Button, PageParagraph, PageSubtitle } from "../common"
 import { useConnect } from "../../hooks/useConnect"
 import { useContract } from "../../hooks/useContract"
+import { Check } from "./check"
 
 const estimateGas = (number: number) =>
   Math.floor((30763 * number + 35236) * 1.5)
@@ -42,6 +43,7 @@ const Eth = React.forwardRef<HTMLDivElement>((props, ref) => {
   const contract = useContract()
   const connect = useConnect()
   const [numberOfTokens, setNumberOfTokens] = useState(0)
+  const [agree, setAgree] = useState(false)
 
   useEffect(() => {
     // init()
@@ -68,7 +70,11 @@ const Eth = React.forwardRef<HTMLDivElement>((props, ref) => {
                 }
               />
               <br />
-              <SubmitButton onClick={() => mint(contract, numberOfTokens)}>
+              <Check agree={agree} setAgree={setAgree} />
+              <SubmitButton
+                disabled={!agree}
+                onClick={() => mint(contract, numberOfTokens)}
+              >
                 MINT
               </SubmitButton>
             </>
@@ -78,6 +84,7 @@ const Eth = React.forwardRef<HTMLDivElement>((props, ref) => {
                 In order to buy, first connect your wallet with the button
                 below!
               </PageParagraph>
+
               <SubmitButton onClick={connect}> Connect wallet</SubmitButton>
             </>
           )}

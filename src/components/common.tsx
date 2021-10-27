@@ -15,9 +15,10 @@ export const PageLink = styled.a`
 `
 export const Button = styled.button`
   ${tw`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white`};
-  ${({ theme }) => theme.backgrounds.accent};
   ${({ theme }) => theme.backgrounds.hoverAccent};
   ${({ theme }) => theme.backgrounds.focusAccent};
+  ${({ theme }) => theme.backgrounds.accent};
+  ${tw`disabled:opacity-50`};
 `
 
 export const Accent = styled.span`
