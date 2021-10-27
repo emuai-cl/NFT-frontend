@@ -17,8 +17,13 @@ const useID = (location: Location) => {
 const NFTPage = (props: PageProps) => {
   const id = useID(props.location)
   const { data, error } = useSWR(["nft/metadata", id], async (url, key) => {
-    const response = await axiosInstance.get(`${url}/${id}`)
-    return response.data
+    try {
+      const response = await axiosInstance.get(`${url}/${id}`)
+      return response.data
+    } catch (error) {
+      console.error(error)
+      throw error
+    }
   })
 
   if (error) return "error"
