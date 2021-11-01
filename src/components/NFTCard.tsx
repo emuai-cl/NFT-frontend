@@ -32,6 +32,10 @@ const NFTTitle = styled.h1`
 const NFTOwner = styled.p`
   ${tw`hover:cursor-pointer py-3 text-gray-600 leading-6 font-bold`};
 `
+const NFTDescription = styled.p`
+  ${tw`hover:cursor-pointer py-3 text-gray-600 leading-6`};
+`
+
 export const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
   const { data, error } = useSWR(["nft/metadata", id], async (url, id) => {
     const response = await axiosInstance.get(`${url}/${id}`)
@@ -68,9 +72,9 @@ export const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
               {shortenAddress(data?.owner) ?? "No description"}
             </PageLink>
           </NFTOwner>
-          <p className="hover:cursor-pointer py-3 text-gray-600 leading-6">
+          <NFTDescription>
             {data?.description ?? "No description"}
-          </p>
+          </NFTDescription>
         </div>
       </CardContainer>
       <Controls currentId={id} />
