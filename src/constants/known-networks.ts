@@ -1,0 +1,6 @@
+export const MAINNET = "0x1"
+export const ROPSTEN_TESTNET = "0x3"
+export const RINKEBY_TESTNET = "0x4"
+export const GOERLI_TESTNET = "0x5"
+export const KOVAN_TESTNET = "0x2a"
+export const BSC_MAINNET = "0x38"
