@@ -31,7 +31,7 @@ export const Footer: React.FC = () => {
   const buildTime = useMemo(() => data?.site?.buildTime as string, [data])
 
   return (
-    <footer tw=" bg-gray-50 relative pt-1 border-b-2 border-blue-700">
+    <footer tw="bg-gray-50 relative pt-1 border-b-2 border-blue-700">
       <div tw="container mx-auto px-6">
         <div tw="sm:flex sm:mt-8">
           <div tw="mt-8 sm:mt-0  sm:w-full sm:px-8 flex flex-col md:flex-row justify-between">
