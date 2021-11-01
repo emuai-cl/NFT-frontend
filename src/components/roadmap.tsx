@@ -49,9 +49,8 @@ export const Roadmap: React.FC = () => {
       <Container>
         <SubContainer>
           <SubSubContainer>
-            <SuperTitle>CAR'S</SuperTitle>
-            <Title>ROADMAP</Title>
-            <p tw="text-sm md:text-base text-gray-50 mb-4">Working process</p>
+            <SuperTitle>Car's</SuperTitle>
+            <Title>Roadmap</Title>
             <StaticImage
               src="../images/roadmap1.png"
               quality={95}
