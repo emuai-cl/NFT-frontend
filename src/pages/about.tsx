@@ -160,22 +160,7 @@ The next iteration of this race will take place in October 2023, with three diff
 The Bridgestone World Solar Challenge has sought to promote electromobility for over 30 years, encouraging young people to learn about the technology behind sustainable transportation and to develop cutting-edge vehicles powered solely by solar energy. This race acts as a launchpad for innovation in the field of sustainability. `}
             <br />
             <br />
-            {` 
-As the 2021 edition of this race was cancelled, a new competition took it's place in the form of a `}
-            <StyledPageLink href="https://www.worldsolarchallenge.org/2021-virtual-program/telemetry-challenge">
-              "Telemetry Challenge"
-            </StyledPageLink>
-            {` in which the teams compete globally and send their telemetry data to a server, making it public for every team to analyze. This race would take place in October 2021, organized by the BWSC.`}
-            ÷
-            {`But this is not all. We are looking to compete in Chile in 2022 in an extreme race with the highest radiation on the planet and a height difference of more than 3000 meters. This race has not yet been confirmed, but we are working closely with the organizers and will keep you in touch. `}
-            <br />
-            <br />
-            {` 
-In January 2022, we are planning on going to the `}
-            <StyledPageLink href="https://www.unitedsolarchallenge.org/index.html">
-              United Solar Challenge
-            </StyledPageLink>
-            {` in Abu Dhabi, United Arab Emirates, where the World Expo will be taking place, attracting hundreds of thousands of people. `}
+            {`Before going to the World Solar Challenge, we are goingo to other races. We are looking to compete in Chile in 2022 in an extreme race with the highest radiation on the planet and a height difference of more than 3000 meters. This race has not yet been confirmed, but we are working closely with the organizers and will keep you in touch. `}
             <br />
             <br />
             {` 
@@ -183,7 +168,7 @@ On september 2022 in Southafrica, the `}
             <StyledPageLink href="https://www.solarchallenge.org.za/">
               Sasol Solar Challenge
             </StyledPageLink>
-            {` takes place. If we have enough funding, we will also asist to this race.`}
+            {` takes place. We will also asist to this race in case we have enough funding for it's logistics.`}
           </StyledPageParagraph>
         </Zoom>
       </AboutSection>

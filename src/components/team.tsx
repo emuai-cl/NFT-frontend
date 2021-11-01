@@ -17,7 +17,20 @@ const Grid = styled.div`
 `
 
 export const Team = () => {
-  const { esti, oliver, gabriel, benjamin, fran, ignacia, jesu, lara, manu, pablo, tobal, turu } = useTeamImages()
+  const {
+    esti,
+    oliver,
+    gabriel,
+    benjamin,
+    fran,
+    ignacia,
+    jesu,
+    lara,
+    manu,
+    pablo,
+    tobal,
+    turu,
+  } = useTeamImages()
   return (
     <Container id="equipo">
       <Title>Team</Title>
@@ -35,11 +48,11 @@ export const Team = () => {
             },
           ]}
         />
-        
+
         <TeamCard
           name="Oliver Stehr"
           position="Developer"
-          description="Computer Sciences student in Adolfo Ibáñez University. I want to participate in the formation of a space where students can create highly complex projects."
+          description="Computer Science student in Adolfo Ibáñez University. I want to participate in the formation of a space where students can create highly complex projects."
           img={oliver}
           socialNetworks={[
             {
@@ -95,7 +108,7 @@ export const Team = () => {
             },
           ]}
         />
-        
+
         <TeamCard
           name="Maria Francisca Ramirez"
           position="Fundraising & Spokesperson"
@@ -112,7 +125,7 @@ export const Team = () => {
             },
           ]}
         />
-        
+
         <TeamCard
           name="Manuel Aliaga"
           position="Communications"
@@ -121,7 +134,8 @@ export const Team = () => {
           socialNetworks={[
             {
               name: "linkedin",
-              link: "https://www.linkedin.com/in/manuel-aliaga-trujillo-590463213/",
+              link:
+                "https://www.linkedin.com/in/manuel-aliaga-trujillo-590463213/",
             },
             {
               name: "instagram",
@@ -129,7 +143,7 @@ export const Team = () => {
             },
           ]}
         />
-        
+
         <TeamCard
           name="Ignacia Troncoso"
           position="Mechanical Systems"
@@ -142,7 +156,7 @@ export const Team = () => {
             },
           ]}
         />
-        
+
         <TeamCard
           name="María Jesús Schlotterbeck"
           position="Mechanical Structure"
@@ -151,7 +165,8 @@ export const Team = () => {
           socialNetworks={[
             {
               name: "linkedin",
-              link: "https://www.linkedin.com/in/mar%C3%ADa-jes%C3%BAs-schlotterbeck-byrne/",
+              link:
+                "https://www.linkedin.com/in/mar%C3%ADa-jes%C3%BAs-schlotterbeck-byrne/",
             },
             {
               name: "instagram",
@@ -159,7 +174,7 @@ export const Team = () => {
             },
           ]}
         />
-        
+
         <TeamCard
           name="Felipe Lara"
           position="Fundraising"
@@ -184,7 +199,7 @@ export const Team = () => {
             },
           ]}
         />
-        
+
         <TeamCard
           name="Pablo Uribe"
           position="Mechanical System"
@@ -201,7 +216,7 @@ export const Team = () => {
             },
           ]}
         />
-        
+
         <TeamCard
           name="Pedro Turu Luque"
           position="Electrical Captain"
@@ -218,7 +233,7 @@ export const Team = () => {
             },
           ]}
         />
-        
+
         <TeamCard
           name="Cristóbal Gacitúa Herrera"
           position="Comercial Captain"
@@ -235,7 +250,6 @@ export const Team = () => {
             },
           ]}
         />
-        
       </Grid>
     </Container>
   )
