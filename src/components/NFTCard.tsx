@@ -24,6 +24,10 @@ const Container = styled.div`
 const NFTImage = styled.img`
   ${tw`rounded-t-lg w-96 h-96`};
 `
+
+const NFTTitle = styled.h1`
+  ${tw`hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight`};
+`
 export const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
   const { data, error } = useSWR(["nft/metadata", id], async (url, id) => {
     const response = await axiosInstance.get(`${url}/${id}`)
@@ -48,9 +52,7 @@ export const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
         />
 
         <div className="py-4 px-8">
-          <h1 className="hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight">
-            EMU #{id}
-          </h1>
+          <NFTTitle>EMU #{id}</NFTTitle>
           <p className="hover:cursor-pointer py-3 text-gray-600 leading-6 font-bold">
             Owner:{" "}
             <PageLink
