@@ -51,9 +51,7 @@ export const Roadmap: React.FC = () => {
           <SubSubContainer>
             <SuperTitle>CAR'S</SuperTitle>
             <Title>ROADMAP</Title>
-            <p className="text-sm md:text-base text-gray-50 mb-4">
-              Working process
-            </p>
+            <p tw="text-sm md:text-base text-gray-50 mb-4">Working process</p>
             <StaticImage
               src="../images/roadmap1.png"
               quality={95}
@@ -63,20 +61,20 @@ export const Roadmap: React.FC = () => {
               placeholder="blurred"
             />
           </SubSubContainer>
-          <div className="ml-0 md:ml-12 lg:w-2/3 sticky">
-            <div className="container mx-auto w-full h-full">
-              <div className="relative wrap overflow-hidden p-10 h-full">
+          <div tw="ml-0 md:ml-12 lg:w-2/3 sticky">
+            <div tw="container mx-auto w-full h-full">
+              <div tw="relative  overflow-hidden p-10 h-full">
                 <Line />
                 <Line />
 
-                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1 w-5/12 px-1 py-4 text-right">
+                <div tw="mb-8 flex justify-between flex-row-reverse items-center w-full">
+                  <div tw="order-1 w-5/12"></div>
+                  <div tw="order-1 w-5/12 px-1 py-4 text-right">
                     <TimelineTitle>First Half of 2020:</TimelineTitle>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl px-4">
+                    <h4 tw="mb-3 font-bold text-lg md:text-2xl px-4">
                       State of the art and Team Building
                     </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100 px-4 left-timeline">
+                    <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100 px-4  ">
                       After fixing our objective as a challenger class for the
                       BWSC, we build the dream team and start studying previous
                       designs, their pros and cons, get mentors and build habits
@@ -86,14 +84,14 @@ export const Roadmap: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mb-8 flex justify-between items-center w-full">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1  w-5/12 px-1 py-4 text-left">
+                <div tw="mb-8 flex justify-between items-center w-full">
+                  <div tw="order-1 w-5/12"></div>
+                  <div tw="order-1  w-5/12 px-1 py-4 text-left">
                     <TimelineTitle>Second Half of 2020:</TimelineTitle>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
+                    <h4 tw="mb-3 font-bold text-lg md:text-2xl">
                       General design
                     </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100 right-timeline">
+                    <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100  ">
                       With the dream team ready and with all the knowledge
                       needed, we set the restrictions for our car, based on the
                       car's environment and the competition's rules. We come up
@@ -103,14 +101,14 @@ export const Roadmap: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1 w-5/12 px-1 py-4 text-right">
+                <div tw="mb-8 flex justify-between flex-row-reverse items-center w-full  ">
+                  <div tw="order-1 w-5/12"></div>
+                  <div tw="order-1 w-5/12 px-1 py-4 text-right">
                     <TimelineTitle>Q1 2021:</TimelineTitle>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
+                    <h4 tw="mb-3 font-bold text-lg md:text-2xl">
                       Specific design
                     </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                    <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       Dive into the really technical aspect of the project and
                       thinking about every possible detail of the car. Also,
                       this is where the strategy team overtakes the
@@ -120,14 +118,14 @@ export const Roadmap: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mb-8 flex justify-between items-center w-full right-timeline">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1  w-5/12 px-1 py-4">
+                <div tw="mb-8 flex justify-between items-center w-full  ">
+                  <div tw="order-1 w-5/12"></div>
+                  <div tw="order-1  w-5/12 px-1 py-4">
                     <TimelineTitle>Q2 2021:</TimelineTitle>
-                    <h4 className="mb-3 font-bold  text-lg md:text-2xl text-left">
+                    <h4 tw="mb-3 font-bold  text-lg md:text-2xl text-left">
                       Transition to Manufacturing
                     </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                    <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       After having the car fully designed, we need to find the
                       way to bring it to reality. This is, contacting the
                       necessary suppliers, partnering with key manufacturing
@@ -137,14 +135,14 @@ export const Roadmap: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1 w-5/12 px-1 py-4 text-right">
+                <div tw="mb-8 flex justify-between flex-row-reverse items-center w-full  ">
+                  <div tw="order-1 w-5/12"></div>
+                  <div tw="order-1 w-5/12 px-1 py-4 text-right">
                     <TimelineTitle>Q3 and Q4 2021:</TimelineTitle>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
+                    <h4 tw="mb-3 font-bold text-lg md:text-2xl">
                       Structural Manufacturing
                     </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                    <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       We buy key manufacturing materials and start the
                       manufacturing of the carbon-fiber structure. We also buy
                       the electrical components and start manufacturing custom
@@ -154,14 +152,14 @@ export const Roadmap: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mb-8 flex justify-between items-center w-full right-timeline">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1  w-5/12 px-1 py-4 text-left">
+                <div tw="mb-8 flex justify-between items-center w-full  ">
+                  <div tw="order-1 w-5/12"></div>
+                  <div tw="order-1  w-5/12 px-1 py-4 text-left">
                     <TimelineTitle>First Half 2022:</TimelineTitle>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
+                    <h4 tw="mb-3 font-bold text-lg md:text-2xl">
                       Mounting and Testing
                     </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                    <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       We finish the carbon-fiber structure of the car and mount
                       the mechanical and electrical parts. We test the vehicle
                       and measure key constants for the strategy. EMUs get
@@ -171,14 +169,12 @@ export const Roadmap: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1 w-5/12 px-1 py-4 text-right">
+                <div tw="mb-8 flex justify-between flex-row-reverse items-center w-full  ">
+                  <div tw="order-1 w-5/12"></div>
+                  <div tw="order-1 w-5/12 px-1 py-4 text-right">
                     <TimelineTitle>Second Half 2021:</TimelineTitle>
-                    <h4 className="mb-3 font-bold text-lg md:text-2xl">
-                      Racing
-                    </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                    <h4 tw="mb-3 font-bold text-lg md:text-2xl">Racing</h4>
+                    <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       We compete in the Sasol Solar Challenge in South África or
                       in the American Solar Challenge in the United States of
                       América, where millions of people will be watching.
@@ -186,14 +182,14 @@ export const Roadmap: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="mb-8 flex justify-between items-center w-full right-timeline">
-                  <div className="order-1 w-5/12"></div>
-                  <div className="order-1  w-5/12 px-1 py-4">
+                <div tw="mb-8 flex justify-between items-center w-full  ">
+                  <div tw="order-1 w-5/12"></div>
+                  <div tw="order-1  w-5/12 px-1 py-4">
                     <TimelineTitle>Second half 2022:</TimelineTitle>
-                    <h4 className="mb-3 font-bold  text-lg md:text-2xl text-left">
+                    <h4 tw="mb-3 font-bold  text-lg md:text-2xl text-left">
                       After the first race
                     </h4>
-                    <p className="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                    <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       The team looks for another competition before the BWSC
                       2023. Options are in Chile, United Arab Emirates, Europe
                       and/or a race organized by us. Before every race, the EMUs
