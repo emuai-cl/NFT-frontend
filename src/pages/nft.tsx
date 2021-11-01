@@ -2,13 +2,17 @@ import React, { useMemo } from "react"
 import { Link, PageProps } from "gatsby"
 
 import useSWR from "swr"
-import { axiosInstance } from "../helpers/axios"
 
 import Navbar from "../components/navbar"
 import Seo from "../components/seo"
 import { HeroTitle } from "../components/HeroTitle"
 import styled from "styled-components"
 import tw from "twin.macro"
+import axios from "axios"
+import { API_URL, CONTRACT_ADDRESS, CONTRACT_CHAIN } from "../helpers/constants"
+import { shortenAddress } from "../helpers/shortenAddress"
+import { scanBasePath } from "../helpers/scanBasePath"
+import { PageLink } from "../components/common"
 
 type Location = PageProps["location"]
 
@@ -37,8 +41,13 @@ const Controls = ({ currentId }: { currentId: number }) => {
   )
 }
 
+const axiosInstance = axios.create({
+  baseURL: API_URL,
+  timeout: 10000,
+})
+
 const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
-  const { data, error } = useSWR(["nft/metadata", id], async (url, key) => {
+  const { data, error } = useSWR(["nft/metadata", id], async (url, id) => {
     const response = await axiosInstance.get(`${url}/${id}`)
     return response?.data
   })
@@ -56,7 +65,7 @@ const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
     <Container>
       <CardContainer>
         <img
-          className="rounded-t-lg w-96 h-64"
+          className="rounded-t-lg w-96 h-96"
           src={`https://ipfs.io/ipfs/${data?.path}`}
           alt={`EMU #${id}`}
         />
@@ -65,8 +74,16 @@ const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
           <h1 className="hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight">
             EMU #{id}
           </h1>
-          <p className="hover:cursor-pointer py-3 text-gray-600 leading-6">
-            {data?.owner ?? "No description"}
+          <p className="hover:cursor-pointer py-3 text-gray-600 leading-6 font-bold">
+            Owner:{" "}
+            <PageLink
+              href={`${scanBasePath(CONTRACT_CHAIN)}/${CONTRACT_ADDRESS}?a=${
+                data?.owner
+              }`}
+              target="_blank"
+            >
+              {shortenAddress(data?.owner) ?? "No description"}
+            </PageLink>
           </p>
           <p className="hover:cursor-pointer py-3 text-gray-600 leading-6">
             {data?.description ?? "No description"}
