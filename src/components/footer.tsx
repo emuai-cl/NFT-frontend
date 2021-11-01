@@ -89,7 +89,7 @@ export const Footer: React.FC = () => {
                   {`Terms & conditions`}
                 </StyledLink>
               </span>
-              <span className="my-2">
+              <span tw="my-2">
                 <StyledLink to="/about">Our team</StyledLink>
               </span>
               <span tw="my-2">

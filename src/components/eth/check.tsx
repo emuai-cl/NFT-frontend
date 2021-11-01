@@ -11,7 +11,6 @@ const CheckLabel = styled.label`
 `
 const CheckInput = styled.input.attrs({
   type: "checkbox",
-  className: "form-checkbox",
 })``
 const CheckSpan = styled.span`
   ${tw`ml-2`};
