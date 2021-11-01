@@ -2,24 +2,28 @@ import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import tw from "twin.macro"
-import { PageLink } from "./common"
+import { Button } from "./common"
 
-export const Container = styled.div`
-  ${tw`mx-auto`};
+const Container = styled.div`
+  ${tw`flex justify-center mx-auto px-16`};
+`
+
+const Control = styled(Button)`
+  ${tw`px-10 m-4`};
 `
 
 export const Controls = ({ currentId }: { currentId: number }) => {
   return (
     <Container>
       {currentId > 1 && (
-        <PageLink as={Link} to={`/nft?id=${currentId - 1}`}>
+        <Control as={Link} to={`/nft?id=${currentId - 1}`}>
           previous
-        </PageLink>
+        </Control>
       )}
       {currentId < 5940 && (
-        <PageLink as={Link} to={`/nft?id=${currentId + 1}`}>
+        <Control as={Link} to={`/nft?id=${currentId + 1}`}>
           next
-        </PageLink>
+        </Control>
       )}
     </Container>
   )
