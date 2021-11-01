@@ -1,0 +1,1 @@
+export const FALLBACK_CID = "QmUwtG6Q1zPLWd4rfk5RyQCE35wJK3CVXXnDWHyiKbNUvA"

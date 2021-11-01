@@ -11,12 +11,11 @@ import { ManageNFT } from "./manage-nft"
 import { axiosInstance } from "../helpers/axios"
 
 import "react-image-crop/dist/ReactCrop.css"
+import { FALLBACK_CID } from "../constants/ipfs"
 
 const Container = styled.div`
   ${tw`grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto justify-center p-4`};
 `
-const FALLBACK_CID = "QmUwtG6Q1zPLWd4rfk5RyQCE35wJK3CVXXnDWHyiKbNUvA"
-
 type NFTListProps = {
   contract: Contract
   node: IPFS

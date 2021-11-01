@@ -3,6 +3,7 @@ import useSWR from "swr"
 import styled from "styled-components"
 import tw from "twin.macro"
 import { API_URL, CONTRACT_ADDRESS, CONTRACT_CHAIN } from "../helpers/constants"
+import { FALLBACK_CID } from "../constants/ipfs"
 import { shortenAddress } from "../helpers/shortenAddress"
 import { scanBasePath } from "../helpers/scanBasePath"
 import { PageLink } from "../components/common"
@@ -61,7 +62,7 @@ export const NFTCard: FC<NFTCardProps> = ({ id, hidden }) => {
     <Container>
       <CardContainer>
         <NFTImage
-          src={`https://ipfs.io/ipfs/${data?.path}`}
+          src={`https://ipfs.io/ipfs/${data?.path ?? FALLBACK_CID}`}
           alt={`EMU #${id}`}
         />
 
