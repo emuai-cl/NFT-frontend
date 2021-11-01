@@ -62,7 +62,9 @@ export const NFTCard: FC<NFTCardProps> = ({ id, hidden }) => {
     <Container>
       <CardContainer>
         <NFTImage
-          src={`https://ipfs.io/ipfs/${data?.path ?? FALLBACK_CID}`}
+          src={`https://ipfs.infura.io:5001/api/v0/cat?arg=${
+            data?.path ?? FALLBACK_CID
+          }`}
           alt={`EMU #${id}`}
         />
 
