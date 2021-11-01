@@ -9,14 +9,14 @@ import { PageLink } from "../components/common"
 import { Controls } from "./NFTControls"
 import axios from "axios"
 
-const CardContainer = styled.div`
-  ${tw`w-96  bg-white rounded-lg shadow-lg z-0 mx-auto`};
-`
-
 const axiosInstance = axios.create({
   baseURL: API_URL,
   timeout: 10000,
 })
+
+const CardContainer = styled.div`
+  ${tw`w-96  bg-white rounded-lg shadow-lg z-0 mx-auto`};
+`
 
 const Container = styled.div`
   ${tw`mx-auto`};
@@ -34,6 +34,10 @@ const NFTOwner = styled.p`
 `
 const NFTDescription = styled.p`
   ${tw`hover:cursor-pointer py-3 text-gray-600 leading-6`};
+`
+
+const NFTTextContainer = styled.div`
+  ${tw`py-4 px-8`};
 `
 
 export const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
@@ -59,7 +63,7 @@ export const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
           alt={`EMU #${id}`}
         />
 
-        <div className="py-4 px-8">
+        <NFTTextContainer>
           <NFTTitle>EMU #{id}</NFTTitle>
           <NFTOwner>
             Owner:{" "}
@@ -75,7 +79,7 @@ export const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
           <NFTDescription>
             {data?.description ?? "No description"}
           </NFTDescription>
-        </div>
+        </NFTTextContainer>
       </CardContainer>
       <Controls currentId={id} />
     </Container>
