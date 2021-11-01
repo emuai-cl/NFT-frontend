@@ -46,6 +46,10 @@ const axiosInstance = axios.create({
   timeout: 10000,
 })
 
+const NFTImage = styled.img`
+  ${tw`rounded-t-lg w-96 h-96`};
+`
+
 const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
   const { data, error } = useSWR(["nft/metadata", id], async (url, id) => {
     const response = await axiosInstance.get(`${url}/${id}`)
@@ -64,8 +68,7 @@ const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
   return (
     <Container>
       <CardContainer>
-        <img
-          className="rounded-t-lg w-96 h-96"
+        <NFTImage
           src={`https://ipfs.io/ipfs/${data?.path}`}
           alt={`EMU #${id}`}
         />
