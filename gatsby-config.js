@@ -31,6 +31,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-gatsby-cloud`,
+    `gatsby-plugin-loadable-components-ssr`,
     // {
     //   resolve: `gatsby-plugin-webfonts`,
     //   options: {
