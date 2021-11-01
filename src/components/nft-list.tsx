@@ -67,7 +67,6 @@ const NFTList: FC<NFTListProps> = ({ contract, node, setOpen }) => {
             const cid =
               (response.data ?? []).find(({ id }) => id == nft)?.path ??
               FALLBACK_CID
-            console.log(cid)
             return { id: nft, cid }
           })
 
