@@ -28,6 +28,10 @@ const NFTImage = styled.img`
 const NFTTitle = styled.h1`
   ${tw`hover:cursor-pointer mt-2 text-gray-900 font-bold text-2xl tracking-tight`};
 `
+
+const NFTOwner = styled.p`
+  ${tw`hover:cursor-pointer py-3 text-gray-600 leading-6 font-bold`};
+`
 export const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
   const { data, error } = useSWR(["nft/metadata", id], async (url, id) => {
     const response = await axiosInstance.get(`${url}/${id}`)
@@ -53,7 +57,7 @@ export const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
 
         <div className="py-4 px-8">
           <NFTTitle>EMU #{id}</NFTTitle>
-          <p className="hover:cursor-pointer py-3 text-gray-600 leading-6 font-bold">
+          <NFTOwner>
             Owner:{" "}
             <PageLink
               href={`${scanBasePath(CONTRACT_CHAIN)}/${CONTRACT_ADDRESS}?a=${
@@ -63,7 +67,7 @@ export const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
             >
               {shortenAddress(data?.owner) ?? "No description"}
             </PageLink>
-          </p>
+          </NFTOwner>
           <p className="hover:cursor-pointer py-3 text-gray-600 leading-6">
             {data?.description ?? "No description"}
           </p>
