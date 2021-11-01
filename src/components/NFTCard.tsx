@@ -1,4 +1,4 @@
-import React from "react"
+import React, { FC } from "react"
 import useSWR from "swr"
 import styled from "styled-components"
 import tw from "twin.macro"
@@ -40,7 +40,9 @@ const NFTTextContainer = styled.div`
   ${tw`py-4 px-8`};
 `
 
-export const NFTCard = ({ id, hidden }: { id: number; hidden?: boolean }) => {
+type NFTCardProps = { id: number; hidden?: boolean }
+
+export const NFTCard: FC<NFTCardProps> = ({ id, hidden }) => {
   const { data, error } = useSWR(["nft/metadata", id], async (url, id) => {
     const response = await axiosInstance.get(`${url}/${id}`)
     return response?.data
