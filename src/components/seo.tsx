@@ -32,12 +32,14 @@ function SEO({ description, lang, meta, title }: SEOProps) {
             title
             description
             author
+            keywords
           }
         }
       }
     `
   )
 
+  const keywords = site.siteMetadata.keywords
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
 
@@ -52,6 +54,10 @@ function SEO({ description, lang, meta, title }: SEOProps) {
         {
           name: `description`,
           content: metaDescription,
+        },
+        {
+          name: 'keywords',
+          content: keywords,
         },
         {
           property: `og:title`,
