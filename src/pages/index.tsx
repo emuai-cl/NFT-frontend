@@ -30,10 +30,10 @@ const IndexPage: React.FC<PageProps> = () => {
 
       <Hero buyRef={buyRef} />
       <Sale />
+      <Powered />
       <PromotionalVideo />
       <Letter />
       <Sold />
-      <Powered />
       <Car />
       <Eth ref={buyRef} />
       <Roadmap />
