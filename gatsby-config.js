@@ -3,6 +3,7 @@ module.exports = {
     title: `EMUAI NFT`,
     description: `EMUAI Solar Team is launching an NFT fundraising sale for it's next Solar Car! Buy NFT's and own a part of the car, to customize as you wish.`,
     author: `@emuai_SolarTeam`,
+    keywords: 'nft, emu, emuai, emus, solar car, race car, nfts, nft on a car, nft on a solar car, nft on a race car',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
