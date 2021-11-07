@@ -31,21 +31,17 @@ const onLoad = (img: HTMLImageElement, container: HTMLDivElement) => {
       element.x + element.w,
       element.y + element.h,
     ].join(",")
+    area.setAttribute("data-tip", "custom show and hide")
+    area.setAttribute("data-event", "click hover")
+    area.setAttribute("style", "cursor: pointer")
+
     map.appendChild(area)
   })
   container.appendChild(map)
   const imageMapResize = getImageMapResize(window)
   if (!imageMapResize) return
   imageMapResize()
-  console.log(typeof imageMapResize)
-}
-
-const createTooltip = () => {
-  const a = document.createElement("a")
-  a.setAttribute("data-tip", "custom show and hide")
-  a.setAttribute("data-event", "click")
-  a.innerText = "( •̀д•́)"
-  return a
+  ReactTooltip.rebuild()
 }
 
 const Car: FC = () => {
@@ -62,9 +58,6 @@ const Car: FC = () => {
       })
     }
     containerRef.current.appendChild(script)
-    const tooltip = createTooltip()
-    containerRef.current.appendChild(tooltip)
-    ReactTooltip.rebuild()
   }, [])
 
   return (
@@ -73,7 +66,15 @@ const Car: FC = () => {
         src="https://image.shutterstock.com/image-photo/three-macaroons-sweet-desserts-isolated-260nw-351030134.jpg"
         ref={imgRef}
       />
-      <ReactTooltip globalEventOff="click" />
+      <ReactTooltip
+        globalEventOff="click"
+        getContent={dataTip => (
+          <div>
+            <h3>This little buddy is {dataTip}</h3>
+            <p>Put mouse here</p>
+          </div>
+        )}
+      />
     </div>
   )
 }
