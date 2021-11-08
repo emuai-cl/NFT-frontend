@@ -1,13 +1,20 @@
 import React, { FC, useEffect, useRef } from "react"
 import ReactTooltip from "react-tooltip"
 
+import { css } from "styled-components"
+
+const areaStyle = css`
+  cursor: pointer;
+`
+
 const elements = [
   { label: "Yellow", x: 112, y: 23, w: 112, h: 89 },
   { label: "Pink", x: 27, y: 119, w: 110, h: 195 },
   { label: "Brown", x: 198, y: 124, w: 112, h: 90 },
 ]
 
-const getImageMapResize = (window: Window) => {
+const getImageMapResize = () => {
+  if (typeof window === "undefined") return
   if (!window["imageMapResize"]) return
   return window["imageMapResize"] as () => void
 }
@@ -20,10 +27,8 @@ const onLoad = (img: HTMLImageElement, container: HTMLDivElement) => {
 
   elements.forEach(element => {
     const area = document.createElement("area")
-    area.onclick = function (event) {
-      console.log(event, element)
-    }
-    area.onmouseover = () => console.log(element)
+    area.onclick = event => console.log(event, element)
+
     area.title = element.label
     area.coords = [
       element.x,
@@ -31,16 +36,21 @@ const onLoad = (img: HTMLImageElement, container: HTMLDivElement) => {
       element.x + element.w,
       element.y + element.h,
     ].join(",")
-    area.setAttribute("data-tip", "custom show and hide")
+
+    area.setAttribute("data-tip", element.label)
     area.setAttribute("data-event", "click hover")
-    area.setAttribute("style", "cursor: pointer")
+    area.setAttribute("style", `${areaStyle}`)
 
     map.appendChild(area)
   })
+
   container.appendChild(map)
-  const imageMapResize = getImageMapResize(window)
+
+  const imageMapResize = getImageMapResize()
+
   if (!imageMapResize) return
   imageMapResize()
+
   ReactTooltip.rebuild()
 }
 
