@@ -68,6 +68,7 @@ const Car: FC = () => {
       />
       <ReactTooltip
         globalEventOff="click"
+        backgroundColor={"red"}
         getContent={dataTip => (
           <div>
             <h3>This little buddy is {dataTip}</h3>
