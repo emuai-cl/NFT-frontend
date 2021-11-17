@@ -74,7 +74,7 @@ const About: React.FC = ({}) => {
       />
     )
   }
-  console.log(matchBreakpoint("lg"))
+
   const ImagenSM = () => {
     return (
       <StaticImage
