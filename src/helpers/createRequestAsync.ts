@@ -1,4 +1,4 @@
-import Web3 from "web3"
+import type Web3 from "web3"
 
 export const createRequestAsync = <T>(web3: Web3, method: string) => (
   object: Record<string, unknown>
