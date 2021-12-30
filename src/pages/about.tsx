@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Zoom from "react-reveal/Zoom"
 import { Footer } from "../components/footer"
-import { matchBreakpoint } from "../helpers/breakpoints"
+import { matchBreakpoint, useMatchBreakpoint } from "../helpers/breakpoints"
 
 import { lighten } from "polished"
 
@@ -28,6 +28,11 @@ const AboutSection = styled.div`
 
 const StyledPageParagraph = styled(PageParagraph)`
   ${tw`mx-auto text-justify w-4/5`};
+  color: white;
+  font-weight: 600;
+`
+const lgStyledPageParagraph = styled(PageParagraph)`
+  ${tw`mx-auto text-justify w-4/5 grid-cols-3`};
   color: white;
   font-weight: 600;
 `
@@ -62,6 +67,8 @@ const About: React.FC = ({}) => {
     }
   `)
 
+  const match = useMatchBreakpoint("lg")
+
   const ImagenLG = () => {
     return (
       <StaticImage
@@ -88,6 +95,7 @@ const About: React.FC = ({}) => {
       />
     )
   }
+
   return (
     <>
       <SEO title="About us" />
@@ -177,7 +185,7 @@ On september 2022 in Southafrica, the `}
           <SubtitleWithLine>Our Solar Car</SubtitleWithLine>
         </Slide>
         <ContainerForImage>
-          <Image>{matchBreakpoint("lg") ? <ImagenLG /> : <ImagenSM />}</Image>
+          <Image>{match ? <ImagenLG /> : <ImagenSM />}</Image>
           <ImageTextContainer>
             <Zoom>
               <ImageText>

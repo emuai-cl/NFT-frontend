@@ -52,11 +52,11 @@ export const Roadmap: React.FC = () => {
             <SuperTitle>Car's</SuperTitle>
             <Title>Roadmap</Title>
             <StaticImage
-              src="../images/roadmap1.png"
+              src="../images/roadmap.png"
               quality={95}
               alt="Stamp"
-              width={300}
-              height={300}
+              width={314}
+              height={316}
               placeholder="blurred"
             />
           </SubSubContainer>
