@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Zoom from "react-reveal/Zoom"
 import { Footer } from "../components/footer"
-import { matchBreakpoint, useMatchBreakpoint } from "../helpers/breakpoints"
+import { useMatchBreakpoint } from "../hooks/useMatchBreakpoint"
 
 import { lighten } from "polished"
 
