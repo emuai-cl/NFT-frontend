@@ -1,5 +1,11 @@
 import React, { useMemo } from "react"
-import { SiInstagram, SiLinkedin, SiGithub, SiTelegram } from "react-icons/si"
+import {
+  SiInstagram,
+  SiLinkedin,
+  SiGithub,
+  SiTelegram,
+  SiDiscord,
+} from "react-icons/si"
 import { graphql, useStaticQuery, Link } from "gatsby"
 
 import dayjs from "dayjs"
@@ -62,8 +68,11 @@ export const Footer: React.FC = () => {
                   </IconLink>
                 </div>
                 <div tw="flex flex-col">
-                  <IconLink href="https://t.me/emuai_nfts/" target="_blank">
-                    <SiTelegram />
+                  <IconLink
+                    href="https://discord.gg/HCrVUSYqnt"
+                    target="_blank"
+                  >
+                    <SiDiscord />
                   </IconLink>
                 </div>
               </div>
