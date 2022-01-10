@@ -65,8 +65,8 @@ export const Team = () => {
 
         <TeamCard
           name="Gabriel Pérez"
-          position="Developer"
-          description="NO DESCRIPTION"
+          position="Fullstack Developer"
+          description="Loves JS, TS, Rust, Web3, VR, Machine Learning. Basically anything that is new and promising. Always looking for new opportunities"
           img={gabriel}
           socialNetworks={[
             {
