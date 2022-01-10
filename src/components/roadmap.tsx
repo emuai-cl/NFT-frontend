@@ -4,6 +4,7 @@ import { darken } from "polished"
 import { theme } from "../styles/theme"
 import tw from "twin.macro"
 import { StaticImage } from "gatsby-plugin-image"
+import { CarSVG } from "./car.svg"
 
 const Container = styled.div`
   ${tw`py-8 opacity-90`};
@@ -47,6 +48,11 @@ const Image = styled.img`
   ${tw`mx-auto -mt-36 md:-mt-36`};
 `
 
+const StyledCarSVG = styled(CarSVG)`
+  width: 314px;
+  ${tw`text-gray-900 text-opacity-90`};
+`
+
 export const Roadmap: React.FC = () => {
   return (
     <section>
@@ -55,14 +61,7 @@ export const Roadmap: React.FC = () => {
           <SubSubContainer>
             <SuperTitle>Car's</SuperTitle>
             <Title>Roadmap</Title>
-            <StaticImage
-              src="../images/roadmap.png"
-              quality={95}
-              alt="Stamp"
-              width={314}
-              height={316}
-              placeholder="blurred"
-            />
+            <StyledCarSVG />
           </SubSubContainer>
           <div tw="ml-0 md:ml-12 lg:w-2/3 sticky">
             <div tw="container mx-auto w-full h-full">
