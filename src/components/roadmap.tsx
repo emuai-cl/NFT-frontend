@@ -31,7 +31,11 @@ const Line = styled.div`
 `
 
 const Title = styled.p`
-  ${tw`text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2 font-bold`};
+  ${tw`text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2 font-bold text-gray-900 text-opacity-90`};
+`
+
+const GoalTitle = styled.h4`
+  ${tw`mb-3 font-bold text-lg md:text-2xl text-gray-900 text-opacity-70`};
 `
 
 const TimelineTitle = styled.p`
@@ -70,9 +74,7 @@ export const Roadmap: React.FC = () => {
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1 w-5/12 px-1 py-4 text-right">
                     <TimelineTitle>First Half of 2020:</TimelineTitle>
-                    <h4 tw="mb-3 font-bold text-lg md:text-2xl px-4">
-                      State of the art and Team Building
-                    </h4>
+                    <GoalTitle>State of the art and Team Building</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100 px-4  ">
                       After fixing our objective as a challenger class for the
                       BWSC, we build the dream team and start studying previous
@@ -87,9 +89,7 @@ export const Roadmap: React.FC = () => {
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1  w-5/12 px-1 py-4 text-left">
                     <TimelineTitle>Second Half of 2020:</TimelineTitle>
-                    <h4 tw="mb-3 font-bold text-lg md:text-2xl">
-                      General design
-                    </h4>
+                    <GoalTitle>General design</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100  ">
                       With the dream team ready and with all the knowledge
                       needed, we set the restrictions for our car, based on the
@@ -104,9 +104,7 @@ export const Roadmap: React.FC = () => {
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1 w-5/12 px-1 py-4 text-right">
                     <TimelineTitle>Q1 2021:</TimelineTitle>
-                    <h4 tw="mb-3 font-bold text-lg md:text-2xl">
-                      Specific design
-                    </h4>
+                    <GoalTitle>Specific design</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       Dive into the really technical aspect of the project and
                       thinking about every possible detail of the car. Also,
@@ -121,9 +119,7 @@ export const Roadmap: React.FC = () => {
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1  w-5/12 px-1 py-4">
                     <TimelineTitle>Q2 2021:</TimelineTitle>
-                    <h4 tw="mb-3 font-bold  text-lg md:text-2xl text-left">
-                      Transition to Manufacturing
-                    </h4>
+                    <GoalTitle>Transition to Manufacturing</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       After having the car fully designed, we need to find the
                       way to bring it to reality. This is, contacting the
@@ -138,9 +134,7 @@ export const Roadmap: React.FC = () => {
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1 w-5/12 px-1 py-4 text-right">
                     <TimelineTitle>Q3 and Q4 2021:</TimelineTitle>
-                    <h4 tw="mb-3 font-bold text-lg md:text-2xl">
-                      Structural Manufacturing
-                    </h4>
+                    <GoalTitle>Structural Manufacturing</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       We buy key manufacturing materials and start the
                       manufacturing of the carbon-fiber structure. We also buy
@@ -155,9 +149,7 @@ export const Roadmap: React.FC = () => {
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1  w-5/12 px-1 py-4 text-left">
                     <TimelineTitle>First Half 2022:</TimelineTitle>
-                    <h4 tw="mb-3 font-bold text-lg md:text-2xl">
-                      Mounting and Testing
-                    </h4>
+                    <GoalTitle>Mounting and Testing</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       We finish the carbon-fiber structure of the car and mount
                       the mechanical and electrical parts. We test the vehicle
@@ -172,7 +164,7 @@ export const Roadmap: React.FC = () => {
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1 w-5/12 px-1 py-4 text-right">
                     <TimelineTitle>Second Half 2021:</TimelineTitle>
-                    <h4 tw="mb-3 font-bold text-lg md:text-2xl">Racing</h4>
+                    <GoalTitle>Racing</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       We compete in the Sasol Solar Challenge in South África or
                       in the American Solar Challenge in the United States of
@@ -185,9 +177,7 @@ export const Roadmap: React.FC = () => {
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1  w-5/12 px-1 py-4">
                     <TimelineTitle>Second half 2022:</TimelineTitle>
-                    <h4 tw="mb-3 font-bold  text-lg md:text-2xl text-left">
-                      After the first race
-                    </h4>
+                    <GoalTitle>After the first race</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       The team looks for another competition before the BWSC
                       2023. Options are in Chile, United Arab Emirates, Europe
