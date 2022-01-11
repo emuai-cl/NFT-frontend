@@ -115,7 +115,7 @@ const About: React.FC = ({}) => {
             {`Now are the days where this is possible, where the funding for the entertainment industry can come from people like you and me and not only from big corporations. But no one has ever done this kind of crowdfunding before, not until today.`}{" "}
             <br />
             <br />
-            {`In EMUAI, we want to sell pieces of our solar car's surface for people to cover with images they find special. Maybe history will remember us as the pioneers, being be the first in this new and better way to get funding. And the best part is that you can be a part in this, all thanks to Cryptocurrencies, Smart Contracts and NFTs.`}
+            {`In EMUAI, we want to sell pieces of our solar car's surface for people to cover with images they find special. Maybe history will remember us as the pioneers, being the first in this new and better way to get funding. And the best part is that you can be a part in this, all thanks to Cryptocurrencies, Smart Contracts and NFTs.`}
           </StyledPageParagraph>
         </Zoom>
       </AboutSection>
