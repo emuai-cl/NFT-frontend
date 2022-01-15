@@ -72,7 +72,7 @@ export const Roadmap: React.FC = () => {
                 <div tw="mb-8 flex justify-between flex-row-reverse items-center w-full">
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1 w-5/12 px-1 py-4 text-right">
-                    <TimelineTitle>First Half of 2020:</TimelineTitle>
+                    <TimelineTitle>S1 2020:</TimelineTitle>
                     <GoalTitle>State of the art and Team Building</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100 px-4  ">
                       After fixing our objective as a challenger class for the
@@ -87,7 +87,7 @@ export const Roadmap: React.FC = () => {
                 <div tw="mb-8 flex justify-between items-center w-full">
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1  w-5/12 px-1 py-4 text-left">
-                    <TimelineTitle>Second Half of 2020:</TimelineTitle>
+                    <TimelineTitle>S2 of 2020:</TimelineTitle>
                     <GoalTitle>General design</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100  ">
                       With the dream team ready and with all the knowledge
@@ -102,7 +102,7 @@ export const Roadmap: React.FC = () => {
                 <div tw="mb-8 flex justify-between flex-row-reverse items-center w-full  ">
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1 w-5/12 px-1 py-4 text-right">
-                    <TimelineTitle>Q1 2021:</TimelineTitle>
+                    <TimelineTitle>S1 2021:</TimelineTitle>
                     <GoalTitle>Specific design</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       Dive into the really technical aspect of the project and
@@ -117,7 +117,7 @@ export const Roadmap: React.FC = () => {
                 <div tw="mb-8 flex justify-between items-center w-full  ">
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1  w-5/12 px-1 py-4">
-                    <TimelineTitle>Q2 2021:</TimelineTitle>
+                    <TimelineTitle>S2 2021:</TimelineTitle>
                     <GoalTitle>Transition to Manufacturing</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       After having the car fully designed, we need to find the
@@ -132,7 +132,7 @@ export const Roadmap: React.FC = () => {
                 <div tw="mb-8 flex justify-between flex-row-reverse items-center w-full  ">
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1 w-5/12 px-1 py-4 text-right">
-                    <TimelineTitle>Q3 and Q4 2021:</TimelineTitle>
+                    <TimelineTitle>Q1 2022:</TimelineTitle>
                     <GoalTitle>Structural Manufacturing</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       We buy key manufacturing materials and start the
@@ -147,7 +147,7 @@ export const Roadmap: React.FC = () => {
                 <div tw="mb-8 flex justify-between items-center w-full  ">
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1  w-5/12 px-1 py-4 text-left">
-                    <TimelineTitle>First Half 2022:</TimelineTitle>
+                    <TimelineTitle>Q2 2022:</TimelineTitle>
                     <GoalTitle>Mounting and Testing</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       We finish the carbon-fiber structure of the car and mount
@@ -162,7 +162,7 @@ export const Roadmap: React.FC = () => {
                 <div tw="mb-8 flex justify-between flex-row-reverse items-center w-full  ">
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1 w-5/12 px-1 py-4 text-right">
-                    <TimelineTitle>Second Half 2021:</TimelineTitle>
+                    <TimelineTitle>Second Half 2022:</TimelineTitle>
                     <GoalTitle>Racing</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       We compete in the Sasol Solar Challenge in South África or
@@ -175,7 +175,7 @@ export const Roadmap: React.FC = () => {
                 <div tw="mb-8 flex justify-between items-center w-full  ">
                   <div tw="order-1 w-5/12"></div>
                   <div tw="order-1  w-5/12 px-1 py-4">
-                    <TimelineTitle>Second half 2022:</TimelineTitle>
+                    <TimelineTitle>2023:</TimelineTitle>
                     <GoalTitle>After the first race</GoalTitle>
                     <p tw="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
                       The team looks for another competition before the BWSC
