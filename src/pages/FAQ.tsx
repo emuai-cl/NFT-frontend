@@ -74,7 +74,7 @@ const FAQ: React.FC<{}> = () => {
         answer="In order to buy an EMU, you need to set up a cryto wallet like metamask and get some ETH. Then you can go to yhe homepage [myemus.info] and choose how many you want to mint. Afer you mint them, they are yours."
       ></QandA>
       <QandA
-        question="What space will I get on the Solar Car?"
+        question="Which space will I get on the Solar Car?"
         answer="EMUs are sold in ascending order, so it starts with the ID 1 and ends with the ID 5940. The position in the car is distributed form left to right and from top to bottom, like the way you read this text. We will start with the left side of the car from the pilot's point of view."
       ></QandA>
       <QandA

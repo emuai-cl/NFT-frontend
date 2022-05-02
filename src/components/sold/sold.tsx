@@ -7,6 +7,7 @@ import { darken } from "polished"
 
 import { theme } from "../../styles/theme"
 import { PageParagraph } from "../common"
+import { CAR_PATH } from "../../constants/car.path"
 
 const Car = styled.div`
   display: inline-block;
@@ -41,8 +42,7 @@ const Sold: React.FC<SoldProps> = ({ maxSupply, currentSupply }) => {
           0.04,
           theme.colors.accent
         )})`,
-        path:
-          "M236.68,87.79,386,87V67A3.86,3.86,0,0,1,386,65c.45-1.76,2.22-3.1,4.48-3.5l44.11.33V55.48q23.91.65,24-.53.18-2.37-97.52-12.2l-31.58-27.1C322.19,9.38,310.4,3.79,297.34,1.41,267.26-4,241.21,16.6,234.24,22.51L218.61,33.59c-12.9.19-31.52.61-53.93,1.58C103.27,37.84.46,45.26.5,52.71.51,55.3,13,58.88,70.39,63a62.79,62.79,0,0,1,1.85,13.59,62.49,62.49,0,0,1-1.19,13.71l165.63,2.64Z",
+        path: CAR_PATH,
         value: percentage,
       })
     }

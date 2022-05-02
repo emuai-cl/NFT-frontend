@@ -9,7 +9,7 @@ export default () => {
           gatsbyImageData(width: 350, layout: CONSTRAINED)
         }
       }
-    
+
       oliver: file(relativePath: { eq: "team/oliver.png" }) {
         childImageSharp {
           gatsbyImageData(width: 350, layout: CONSTRAINED)
@@ -75,21 +75,44 @@ export default () => {
           gatsbyImageData(width: 350, layout: CONSTRAINED)
         }
       }
+      matias: file(relativePath: { eq: "team/matias.png" }) {
+        childImageSharp {
+          gatsbyImageData(width: 350, layout: CONSTRAINED)
+        }
+      }
     }
   `)
 
   const esti = data.esti.childImageSharp.gatsbyImageData as IGatsbyImageData
   const oliver = data.oliver.childImageSharp.gatsbyImageData as IGatsbyImageData
-  const gabriel = data.gabriel.childImageSharp.gatsbyImageData as IGatsbyImageData
-  const benjamin = data.benjamin.childImageSharp.gatsbyImageData as IGatsbyImageData
+  const gabriel = data.gabriel.childImageSharp
+    .gatsbyImageData as IGatsbyImageData
+  const benjamin = data.benjamin.childImageSharp
+    .gatsbyImageData as IGatsbyImageData
   const fran = data.fran.childImageSharp.gatsbyImageData as IGatsbyImageData
-  const ignacia = data.ignacia.childImageSharp.gatsbyImageData as IGatsbyImageData
+  const ignacia = data.ignacia.childImageSharp
+    .gatsbyImageData as IGatsbyImageData
   const jesu = data.jesu.childImageSharp.gatsbyImageData as IGatsbyImageData
   const lara = data.lara.childImageSharp.gatsbyImageData as IGatsbyImageData
   const manu = data.manu.childImageSharp.gatsbyImageData as IGatsbyImageData
   const pablo = data.pablo.childImageSharp.gatsbyImageData as IGatsbyImageData
   const tobal = data.tobal.childImageSharp.gatsbyImageData as IGatsbyImageData
   const turu = data.turu.childImageSharp.gatsbyImageData as IGatsbyImageData
+  const matias = data.matias.childImageSharp.gatsbyImageData as IGatsbyImageData
 
-  return { esti, oliver, gabriel, benjamin, fran, ignacia, jesu, lara, manu, pablo, tobal, turu }
+  return {
+    esti,
+    oliver,
+    gabriel,
+    benjamin,
+    fran,
+    ignacia,
+    jesu,
+    lara,
+    manu,
+    pablo,
+    tobal,
+    turu,
+    matias,
+  }
 }

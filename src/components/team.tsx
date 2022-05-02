@@ -30,6 +30,7 @@ export const Team = () => {
     pablo,
     tobal,
     turu,
+    matias,
   } = useTeamImages()
   return (
     <Container id="equipo">
@@ -64,8 +65,8 @@ export const Team = () => {
 
         <TeamCard
           name="Gabriel Pérez"
-          position="Developer"
-          description="NO DESCRIPTION"
+          position="Fullstack Developer"
+          description="Loves JS, TS, Rust, Web3, VR, Machine Learning. Basically anything that is new and promising. Always looking for new opportunities"
           img={gabriel}
           socialNetworks={[
             {
@@ -99,12 +100,21 @@ export const Team = () => {
         <TeamCard
           name="Matías Vidal"
           position="Developer"
-          description="NO DESCRIPTION"
-          img={gabriel}
+          description="Computer science student in Adolfo Ibáñez University, always seeking knowledge and experience, working at web development at EMUAI and GobLabUAI"
+          img={matias}
           socialNetworks={[
             {
+              name: "github",
+              link: "https://github.com/matiascvc",
+            },
+            {
               name: "linkedin",
-              link: "https://www.linkedin.com/in/gabrielperezaguirre/",
+              link:
+                "https://www.linkedin.com/in/matias-vidal-cordero-55a4831ba/",
+            },
+            {
+              name: "instagram",
+              link: "https://www.instagram.com/matias_cvc/?hl=es",
             },
           ]}
         />

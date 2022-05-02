@@ -5,7 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import Zoom from "react-reveal/Zoom"
 import { Footer } from "../components/footer"
-import { matchBreakpoint } from "../helpers/breakpoints"
+import { useMatchBreakpoint } from "../hooks/useMatchBreakpoint"
 
 import { lighten } from "polished"
 
@@ -28,6 +28,11 @@ const AboutSection = styled.div`
 
 const StyledPageParagraph = styled(PageParagraph)`
   ${tw`mx-auto text-justify w-4/5`};
+  color: white;
+  font-weight: 600;
+`
+const lgStyledPageParagraph = styled(PageParagraph)`
+  ${tw`mx-auto text-justify w-4/5 grid-cols-3`};
   color: white;
   font-weight: 600;
 `
@@ -62,6 +67,8 @@ const About: React.FC = ({}) => {
     }
   `)
 
+  const match = useMatchBreakpoint("lg")
+
   const ImagenLG = () => {
     return (
       <StaticImage
@@ -88,6 +95,7 @@ const About: React.FC = ({}) => {
       />
     )
   }
+
   return (
     <>
       <SEO title="About us" />
@@ -107,7 +115,7 @@ const About: React.FC = ({}) => {
             {`Now are the days where this is possible, where the funding for the entertainment industry can come from people like you and me and not only from big corporations. But no one has ever done this kind of crowdfunding before, not until today.`}{" "}
             <br />
             <br />
-            {`In EMUAI, we want to sell pieces of our solar car's surface for people to cover with images they find special. Maybe history will remember us as the pioneers, being be the first in this new and better way to get funding. And the best part is that you can be a part in this, all thanks to Cryptocurrencies, Smart Contracts and NFTs.`}
+            {`In EMUAI, we want to sell pieces of our solar car's surface for people to cover with images they find special. Maybe history will remember us as the pioneers, being the first in this new and better way to get funding. And the best part is that you can be a part in this, all thanks to Cryptocurrencies, Smart Contracts and NFTs.`}
           </StyledPageParagraph>
         </Zoom>
       </AboutSection>
@@ -177,7 +185,7 @@ On september 2022 in Southafrica, the `}
           <SubtitleWithLine>Our Solar Car</SubtitleWithLine>
         </Slide>
         <ContainerForImage>
-          <Image>{matchBreakpoint("lg") ? <ImagenLG /> : <ImagenSM />}</Image>
+          <Image>{match ? <ImagenLG /> : <ImagenSM />}</Image>
           <ImageTextContainer>
             <Zoom>
               <ImageText>
