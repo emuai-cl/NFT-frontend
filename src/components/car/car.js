@@ -11,12 +11,13 @@ import {
 } from "@react-three/drei"
 import styled from "styled-components"
 import tw from "twin.macro"
+import useSWR from "swr"
+
+import { blobToDataURL } from "../../helpers/blobToDataURI"
 
 export function Model(props) {
   const ref = useRef()
-  const texture = useTexture(
-    "https://ipfs.infura.io:5001/api/v0/cat?arg=QmNffSDksetf7dt84FTeEYySBXmu8TxefNqtjTjrgVvuCw"
-  )
+  const texture = useTexture(props.carDataURI)
   texture.flipY = false
 
   useFrame(state => {
@@ -119,7 +120,46 @@ function Loader() {
   return <Html center>{progress | 0} % loaded</Html>
 }
 
+const fetcher = () =>
+  fetch(
+    "https://ipfs.infura.io:5001/api/v0/cat?arg=QmNffSDksetf7dt84FTeEYySBXmu8TxefNqtjTjrgVvuCw",
+    {
+      method: "POST", // *GET, POST,
+    }
+  )
+    .then(response => response.blob())
+    .then(blob => blobToDataURL(blob))
+
+const LoadImageTexture = () => {
+  const { data, error } = useSWR("GET_CAR_IMAGE", fetcher)
+  const isLoading = !data && !error
+
+  console.log({ data })
+
+  if (error) return <Html center>Error loading</Html>
+  if (isLoading) return <Html center>Loading...</Html>
+
+  return (
+    <>
+      <Model position={[0, -1000, 0]} carDataURI={data} />
+
+      <Environment preset="city" />
+      <ContactShadows
+        rotation-x={Math.PI / 2}
+        position={[0, -0.9, 0]}
+        opacity={0.25}
+        width={10}
+        height={10}
+        blur={1.5}
+        far={0.8}
+      />
+    </>
+  )
+}
+
 const Car = () => {
+  useSWR("GET_CAR_IMAGE", fetcher)
+
   return (
     <Container>
       <Canvas concurrent camera={{ position: [0, 3.5, 0] }}>
@@ -127,18 +167,7 @@ const Car = () => {
 
         <pointLight position={[10, 10, 10]} castShadow />
         <React.Suspense fallback={<Loader />}>
-          <Model position={[0, -1000, 0]} />
-
-          <Environment preset="city" />
-          <ContactShadows
-            rotation-x={Math.PI / 2}
-            position={[0, -0.9, 0]}
-            opacity={0.25}
-            width={10}
-            height={10}
-            blur={1.5}
-            far={0.8}
-          />
+          <LoadImageTexture />
         </React.Suspense>
 
         <OrbitControls
